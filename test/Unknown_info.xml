@@ -1,0 +1,1182 @@
+
+<package data="com.guepard.tests">
+	<import data="flash.display.Bitmap"/>
+	<import data="flash.display.BitmapData"/>
+	<import data="flash.display.MovieClip"/>
+	<import data="flash.display.Shape"/>
+	<import data="flash.display.Sprite"/>
+	<import data="flash.geom.Matrix"/>
+	<import data="flash.geom.Point"/>
+	<import data="flash.geom.Rectangle"/>
+	<class data="Unknown">
+		<variable name="unknown1" type="String"/>
+		<variable name="unknown2" type="int"/>
+		<variable name="unknown3" type="Boolean"/>
+		<variable name="unknown4" type="flash.geom.Point"/>
+		<variable name="unknown5" type="com.guepard.tests.UnknownItem"/>
+		<variable name="obj0" type="String">
+			<body>
+				<get context="String" data="&quot;string&quot;" id="1609" type="string"/>
+			</body>
+			
+		</variable>
+		
+		<variable name="obj1" type="Number">
+			<body>
+				<get context="Number" data="123.456" id="1610" type="number"/>
+			</body>
+			
+		</variable>
+		
+		<variable name="obj2" type="int">
+			<body>
+				<get context="int" data="2" id="1611" type="number"/>
+			</body>
+			
+		</variable>
+		
+		<variable name="xml" type="XML">
+			<body>
+				<get context="XML" data="<test/>" id="1612" type="nativeXML"/>
+			</body>
+			
+		</variable>
+		
+		<variable access="private" name="_instance" static="true" type="com.guepard.tests.Unknown"/>
+		<variable name="_value" type="int"/>
+		<getter access="public" name="instance" static="true" type="com.guepard.tests.Unknown">
+			<body>
+				<construction data="return" id="1613" type="keyword">
+					<get context="com.guepard.tests.Unknown" data="_instance" id="1614" member="static variable : _instance" type="unknown"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="instance" static="true" type="void">
+			<parameter name="value" type="com.guepard.tests.Unknown"/>
+			<body>
+				<get context="com.guepard.tests.Unknown" data="_instance" id="1615" member="static variable : _instance" type="unknown">
+					<set data="=" id="1616" type="operator">
+						<get context="com.guepard.tests.Unknown" data="value" id="1617" member="parameter : value" type="unknown"/>
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</setter>
+		
+		<function access="public" name="Unknown">
+			<body>
+				<construction data="if" id="1618" type="keyword">
+					<body>
+						<operation data="!" id="1619" type="operator">
+							<get context="Class : com.guepard.tests.Unknown" data="Unknown" id="1620" type="unknown">
+								<get context="com.guepard.tests.Unknown" data="instance" id="1621" member="static property : instance" type="unknown"/>
+							</get>
+							
+						</operation>
+						
+					</body>
+					
+					<construction id="1622">
+						<body>
+							<get context="Class : com.guepard.tests.Unknown" data="Unknown" id="1623" type="unknown">
+								<get context="com.guepard.tests.Unknown" data="instance" id="1624" member="static property : instance" type="unknown">
+									<set data="=" id="1625" type="operator">
+										<get context="com.guepard.tests.Unknown" data="this" id="1626" type="unknown"/>
+									</set>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="private" name="parametersAndLocals" type="String">
+			<parameter name="param1" type="Number"/>
+			<parameter name="param2" type="String"/>
+			<parameter name="param3" type="Array"/>
+			<local name="s" type="String"/>
+			<local name="n" type="Number"/>
+			<local name="i" type="Number"/>
+			<local name="u" type="int"/>
+			<local name="b" type="Boolean"/>
+			<local name="r" type="String"/>
+			<local name="p" type="flash.geom.Point"/>
+			<local name="m" type="flash.geom.Matrix"/>
+			<local name="d" type="flash.geom.Point"/>
+			<local name="regExp1" type="RegExp"/>
+			<local name="regExp2" type="RegExp"/>
+			<local name="s_t_r" type="String"/>
+			<local name="f" type="Boolean"/>
+			<local name="element" type="Object"/>
+			<local name="v" type="com.guepard.tests.UnknownItem"/>
+			<local name="tmp" type="Number"/>
+			<body>
+				<get context="String" data="s" id="1627" member="local : s" type="unknown">
+					<set data="=" id="1628" type="operator">
+						<get context="String" data="&quot;test&quot;" id="1629" type="string"/>
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="n" id="1630" member="local : n" type="unknown">
+					<set data="=" id="1631" type="operator">
+						<get context="Number" data="123.123" id="1632" type="number"/>
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="i" id="1633" member="local : i" type="unknown">
+					<set data="=" id="1634" type="operator">
+						<get context="Class : Math" data="Math" id="1635" type="unknown">
+							<get context="Function : Number" data="round" id="1636" member="static function : round" type="unknown">
+								<run context="Number" data="(" id="1637" type="block">
+									<body>
+										<get context="Number" data="n" id="1638" member="local : n" type="unknown"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="int" data="u" id="1639" member="local : u" type="unknown">
+					<set data="=" id="1640" type="operator">
+						<get context="Class : int" data="int" id="1641" type="unknown">
+							<run context="int" data="(" id="1642" type="block">
+								<body>
+									<get context="Number" data="n" id="1643" member="local : n" type="unknown"/>
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Boolean" data="b" id="1644" member="local : b" type="unknown">
+					<set data="=" id="1645" type="operator">
+						<get context="Boolean" data="true" id="1646" type="boolean"/>
+					</set>
+					
+				</get>
+				
+				<get context="String" data="r" id="1647" member="local : r" type="unknown">
+					<set data="=" id="1648" type="operator">
+						<get context="Number" data="n" id="1649" member="local : n" type="unknown">
+							<operation data="+" id="1650" type="operator">
+								<get context="Number" data="i" id="1651" member="local : i" type="unknown">
+									<operation data="+" id="1652" type="operator">
+										<get context="String" data="s" id="1653" member="local : s" type="unknown"/>
+									</operation>
+									
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="flash.geom.Point" data="p" id="1654" member="local : p" type="unknown">
+					<set data="=" id="1655" type="operator">
+						<get context="Class : flash.geom.Point" data="Point" id="1656" type="unknown">
+							<get context="Function : flash.geom.Point" data="polar" id="1657" member="static function : polar" type="unknown">
+								<run context="flash.geom.Point" data="(" id="1658" type="block">
+									<body>
+										<get context="int" data="1" id="1659" type="number"/>
+										<get context="int" data="2" id="1661" type="number"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="flash.geom.Matrix" data="m" id="1662" member="local : m" type="unknown">
+					<set data="=" id="1663" type="operator">
+						<construction data="new" id="1664" type="keyword">
+							<get context="Class : flash.geom.Matrix" data="Matrix" id="1665" type="unknown">
+								<run context="flash.geom.Matrix" data="(" id="1666" type="block">
+									<body>
+										<get context="int" data="1" id="1667" type="number"/>
+										<get context="int" data="2" id="1669" type="number"/>
+										<get context="int" data="3" id="1671" type="number"/>
+										<get context="int" data="4" id="1673" type="number"/>
+										<get context="int" data="5" id="1675" type="number"/>
+										<get context="int" data="6" id="1677" type="number"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="flash.geom.Point" data="d" id="1678" member="local : d" type="unknown">
+					<set data="=" id="1679" type="operator">
+						<get context="flash.geom.Matrix" data="m" id="1680" member="local : m" type="unknown">
+							<get context="Function : flash.geom.Point" data="deltaTransformPoint" id="1681" member="function : deltaTransformPoint" type="unknown">
+								<run context="flash.geom.Point" data="(" id="1682" type="block">
+									<body>
+										<get context="flash.geom.Point" data="p" id="1683" member="local : p" type="unknown"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="RegExp" data="regExp1" id="1684" member="local : regExp1" type="unknown">
+					<set data="=" id="1685" type="operator">
+						<get context="RegExp" data="/(1,2,3)\/\/.*|\/\* [^]*?\*\//g" id="1686" type="regularExpression"/>
+					</set>
+					
+				</get>
+				
+				<get context="RegExp" data="regExp2" id="1687" member="local : regExp2" type="unknown">
+					<set data="=" id="1688" type="operator">
+						<get context="RegExp" data="/&apos;([^&apos;]*)&apos;/" id="1689" type="regularExpression"/>
+					</set>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="unknown5" id="1690" member="variable : unknown5" type="unknown">
+					<set data="=" id="1691" type="operator">
+						<construction data="new" id="1692" type="keyword">
+							<get context="Class : com.guepard.tests.UnknownItem" data="UnknownItem" id="1693" type="unknown">
+								<run context="com.guepard.tests.UnknownItem" data="(" id="1694" type="block"/>
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="param1" id="1695" member="parameter : param1" type="unknown">
+					<set data="=" id="1696" type="operator">
+						<block context="Number" data="(" id="1697" type="block">
+							<body>
+								<get context="Number" data="n" id="1698" member="local : n" type="unknown">
+									<operation data="+" id="1699" type="operator">
+										<get context="Number" data="i" id="1700" member="local : i" type="unknown"/>
+									</operation>
+									
+								</get>
+								
+							</body>
+							
+							<operation data="/" id="1701" type="operator">
+								<get context="Number" data="2.2356478" id="1702" type="number"/>
+							</operation>
+							
+						</block>
+						
+					</set>
+					
+				</get>
+				
+				<get context="String" data="s_t_r" id="1703" member="local : s_t_r" type="unknown">
+					<set data="=" id="1704" type="operator">
+						<get context="String" data="&quot;this string&quot;" id="1705" type="string"/>
+					</set>
+					
+				</get>
+				
+				<construction data="if" id="1706" type="keyword">
+					<body>
+						<get context="String" data="s_t_r" id="1707" member="local : s_t_r" type="unknown">
+							<operation data="<" id="1708" type="operator">
+								<get context="Number" data="n" id="1709" member="local : n" type="unknown"/>
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="1710">
+						<body>
+							<get context="Boolean" data="f" id="1711" member="local : f" type="unknown">
+								<set data="=" id="1712" type="operator">
+									<get context="Number" data="n" id="1713" member="local : n" type="unknown">
+										<operation data=">" id="1714" type="operator">
+											<get context="int" data="u" id="1715" member="local : u" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="String" data="unknown1" id="1716" member="variable : unknown1" type="unknown">
+								<set data="=" id="1717" type="operator">
+									<get context="String" data="&quot;str&quot;" id="1718" type="string"/>
+								</set>
+								
+							</get>
+							
+							<get context="int" data="unknown2" id="1719" member="variable : unknown2" type="unknown">
+								<set data="=" id="1720" type="operator">
+									<get context="int" data="1" id="1721" type="number"/>
+								</set>
+								
+							</get>
+							
+							<get context="Boolean" data="unknown3" id="1722" member="variable : unknown3" type="unknown">
+								<set data="=" id="1723" type="operator">
+									<get context="int" data="unknown2" id="1724" member="variable : unknown2" type="unknown">
+										<operation data=">" id="1725" type="operator">
+											<get context="String" data="unknown1" id="1726" member="variable : unknown1" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="flash.geom.Point" data="unknown4" id="1727" member="variable : unknown4" type="unknown">
+								<set data="=" id="1728" type="operator">
+									<get context="flash.geom.Point" data="p" id="1729" member="local : p" type="unknown">
+										<get context="Function : flash.geom.Point" data="add" id="1730" member="function : add" type="unknown">
+											<run context="flash.geom.Point" data="(" id="1731" type="block">
+												<body>
+													<construction data="new" id="1732" type="keyword">
+														<get context="Class : flash.geom.Point" data="Point" id="1733" type="unknown">
+															<run context="flash.geom.Point" data="(" id="1734" type="block">
+																<body>
+																	<get context="int" data="1" id="1735" type="number"/>
+																	<get context="int" data="2" id="1737" type="number"/>
+																</body>
+																
+															</run>
+															
+														</get>
+														
+													</construction>
+													
+												</body>
+												
+											</run>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="String" data="param2" id="1738" member="parameter : param2" type="unknown">
+								<set data="=" id="1739" type="operator">
+									<get context="Number" data="param1" id="1740" member="parameter : param1" type="unknown">
+										<get context="Function : String" data="toString" id="1741" member="function : toString" type="unknown">
+											<run context="String" data="(" id="1742" type="block"/>
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Array" data="param3" id="1743" member="parameter : param3" type="unknown">
+								<set data="=" id="1744" type="operator">
+									<get context="String" data="param2" id="1745" member="parameter : param2" type="unknown">
+										<get context="Function : Array" data="split" id="1746" member="function : split" type="unknown">
+											<run context="Array" data="(" id="1747" type="block">
+												<body>
+													<get context="String" data="&quot;,&quot;" id="1748" type="string"/>
+												</body>
+												
+											</run>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Object" data="element" id="1749" member="local : element" type="unknown">
+								<set data="=" id="1750" type="operator">
+									<get context="Array" data="param3" id="1751" member="parameter : param3" type="unknown">
+										<element context="Object" data="[" id="1752" type="block">
+											<body>
+												<get context="int" data="0" id="1753" type="number"/>
+											</body>
+											
+										</element>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+				<get context="com.guepard.tests.UnknownItem" data="v" id="1754" member="local : v" type="unknown">
+					<set data="=" id="1755" type="operator">
+						<construction data="new" id="1756" type="keyword">
+							<get context="Class : com.guepard.tests.UnknownItem" data="UnknownItem" id="1757" type="unknown">
+								<run context="com.guepard.tests.UnknownItem" data="(" id="1758" type="block">
+									<body>
+										<get context="int" data="1" id="1759" type="number"/>
+										<get context="int" data="2" id="1761" type="number"/>
+										<get context="int" data="3" id="1763" type="number"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="v" id="1764" member="local : v" type="unknown">
+					<get context="int" data="unknown" id="1765" member="property : unknown" type="unknown">
+						<set data="=" id="1766" type="operator">
+							<get context="int" data="10" id="1767" type="number"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="Number" data="tmp" id="1768" member="local : tmp" type="unknown">
+					<set data="=" id="1769" type="operator">
+						<get context="Class : com.guepard.tests.Unknown" data="Unknown" id="1770" type="unknown">
+							<get context="com.guepard.tests.Unknown" data="instance" id="1771" member="static property : instance" type="unknown">
+								<get context="com.guepard.tests.UnknownItem" data="unknown5" id="1772" member="variable : unknown5" type="unknown">
+									<get context="Function : com.guepard.tests.UnknownItem" data="clone" id="1773" member="function : clone" type="unknown">
+										<run context="com.guepard.tests.UnknownItem" data="(" id="1774" type="block">
+											<get context="Number" data="length" id="1775" member="property : length" type="unknown"/>
+										</run>
+										
+									</get>
+									
+								</get>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<construction data="return" id="1776" type="keyword">
+					<get context="Number" data="n" id="1777" member="local : n" type="unknown">
+						<operation data="+" id="1778" type="operator">
+							<get context="Number" data="i" id="1779" member="local : i" type="unknown">
+								<operation data="+" id="1780" type="operator">
+									<get context="String" data="s" id="1781" member="local : s" type="unknown"/>
+								</operation>
+								
+							</get>
+							
+						</operation>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="private" name="arrays" type="void">
+			<parameter name="classes" type="Vector.<Class>"/>
+			<parameter name="instances" type="Vector.<flash.display.DisplayObject>"/>
+			<parameter name="interfaces" type="Vector.<flash.display.IBitmapDrawable>"/>
+			<parameter name="multy" type="Vector.<Vector.<Vector.<Boolean>>>"/>
+			<local name="numbers" type="Vector.<int>"/>
+			<local name="strings" type="Vector.<String>"/>
+			<local name="booleans" type="Vector.<Boolean>"/>
+			<local name="objects" type="Vector.<Object>"/>
+			<local name="a" type="int"/>
+			<local name="b" type="int"/>
+			<local name="i" type="int"/>
+			<local name="x" type="XML"/>
+			<body>
+				<get context="Vector.<int>" data="numbers" id="1782" member="local : numbers" type="unknown">
+					<set data="=" id="1783" type="operator">
+						<array context="Vector.<int>" data="[" id="1784" type="block">
+							<body>
+								<get context="int" data="1" id="1785" type="number"/>
+								<get context="int" data="2" id="1787" type="number"/>
+								<get context="int" data="3" id="1789" type="number"/>
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<String>" data="strings" id="1790" member="local : strings" type="unknown">
+					<set data="=" id="1791" type="operator">
+						<array context="Vector.<String>" data="[" id="1792" type="block">
+							<body>
+								<get context="String" data="&quot;test&quot;" id="1793" type="string"/>
+								<get context="Class : String" data="String" id="1795" type="unknown">
+									<run context="String" data="(" id="1796" type="block">
+										<body>
+											<get context="com.guepard.tests.Unknown" data="this" id="1797" type="unknown"/>
+										</body>
+										
+									</run>
+									
+								</get>
+								
+								<get context="Vector.<int>" data="numbers" id="1799" member="local : numbers" type="unknown">
+									<get context="Function : String" data="join" id="1800" member="function : join" type="unknown">
+										<run context="String" data="(" id="1801" type="block">
+											<body>
+												<get context="String" data="&quot;;&quot;" id="1802" type="string"/>
+											</body>
+											
+										</run>
+										
+									</get>
+									
+								</get>
+								
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Boolean>" data="booleans" id="1803" member="local : booleans" type="unknown">
+					<set data="=" id="1804" type="operator">
+						<array context="Vector.<Boolean>" data="[" id="1805" type="block">
+							<body>
+								<get context="Boolean" data="true" id="1806" type="boolean"/>
+								<get context="Vector.<int>" data="numbers" id="1808" member="local : numbers" type="unknown">
+									<element context="int" data="[" id="1809" type="block">
+										<body>
+											<get context="int" data="0" id="1810" type="number"/>
+										</body>
+										
+										<operation data=">" id="1811" type="operator">
+											<get context="int" data="1" id="1812" type="number"/>
+										</operation>
+										
+									</element>
+									
+								</get>
+								
+								<operation data="!" id="1814" type="operator">
+									<get context="Vector.<int>" data="numbers" id="1815" member="local : numbers" type="unknown"/>
+								</operation>
+								
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Object>" data="objects" id="1816" member="local : objects" type="unknown">
+					<set data="=" id="1817" type="operator">
+						<array context="Vector.<Object>" data="[" id="1818" type="block">
+							<body>
+								<get context="Boolean" data="true" id="1819" type="boolean"/>
+								<get context="int" data="1" id="1821" type="number"/>
+								<get context="String" data="&quot;str&quot;" id="1823" type="string"/>
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Class>" data="classes" id="1824" member="parameter : classes" type="unknown">
+					<set data="=" id="1825" type="operator">
+						<array context="Vector.<Class>" data="[" id="1826" type="block">
+							<body>
+								<get context="Class : flash.display.MovieClip" data="MovieClip" id="1827" type="unknown"/>
+								<get context="Class : flash.display.Shape" data="Shape" id="1829" type="unknown"/>
+								<get context="Class : flash.display.Sprite" data="Sprite" id="1831" type="unknown"/>
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<flash.display.DisplayObject>" data="instances" id="1832" member="parameter : instances" type="unknown">
+					<set data="=" id="1833" type="operator">
+						<array context="Vector.<flash.display.DisplayObject>" data="[" id="1834" type="block">
+							<body>
+								<construction data="new" id="1835" type="keyword">
+									<get context="Class : flash.display.MovieClip" data="MovieClip" id="1836" type="unknown">
+										<run context="flash.display.MovieClip" data="(" id="1837" type="block"/>
+									</get>
+									
+								</construction>
+								
+								<construction data="new" id="1839" type="keyword">
+									<get context="Class : flash.display.Shape" data="Shape" id="1840" type="unknown">
+										<run context="flash.display.Shape" data="(" id="1841" type="block"/>
+									</get>
+									
+								</construction>
+								
+								<construction data="new" id="1843" type="keyword">
+									<get context="Class : flash.display.Sprite" data="Sprite" id="1844" type="unknown">
+										<run context="flash.display.Sprite" data="(" id="1845" type="block"/>
+									</get>
+									
+								</construction>
+								
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<flash.display.IBitmapDrawable>" data="interfaces" id="1846" member="parameter : interfaces" type="unknown">
+					<set data="=" id="1847" type="operator">
+						<array context="Vector.<flash.display.IBitmapDrawable>" data="[" id="1848" type="block">
+							<body>
+								<construction data="new" id="1849" type="keyword">
+									<get context="Class : flash.display.Bitmap" data="Bitmap" id="1850" type="unknown">
+										<run context="flash.display.Bitmap" data="(" id="1851" type="block"/>
+									</get>
+									
+								</construction>
+								
+								<construction data="new" id="1853" type="keyword">
+									<get context="Class : flash.display.BitmapData" data="BitmapData" id="1854" type="unknown">
+										<run context="flash.display.BitmapData" data="(" id="1855" type="block">
+											<body>
+												<get context="int" data="100" id="1856" type="number"/>
+												<get context="int" data="100" id="1858" type="number"/>
+											</body>
+											
+										</run>
+										
+									</get>
+									
+								</construction>
+								
+								<construction data="new" id="1860" type="keyword">
+									<get context="Class : flash.display.Sprite" data="Sprite" id="1861" type="unknown">
+										<run context="flash.display.Sprite" data="(" id="1862" type="block"/>
+									</get>
+									
+								</construction>
+								
+								<construction data="new" id="1864" type="keyword">
+									<get context="Class : flash.display.MovieClip" data="MovieClip" id="1865" type="unknown">
+										<run context="flash.display.MovieClip" data="(" id="1866" type="block"/>
+									</get>
+									
+								</construction>
+								
+							</body>
+							
+						</array>
+						
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="int" data="a" id="1867" member="local : a" type="unknown">
+					<set data="=" id="1868" type="operator">
+						<get context="int" data="123" id="1869" type="number"/>
+					</set>
+					
+				</get>
+				
+				<get context="int" data="b" id="1870" member="local : b" type="unknown">
+					<set data="=" id="1871" type="operator">
+						<get context="int" data="235" id="1872" type="number"/>
+					</set>
+					
+				</get>
+				
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1873" member="parameter : multy" type="unknown">
+					<set data="=" id="1874" type="operator">
+						<array context="Array" data="[" id="1875" type="block"/>
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1876" member="parameter : multy" type="unknown">
+					<element context="Vector.<Vector.<Boolean>>" data="[" id="1877" type="block">
+						<body>
+							<get context="int" data="0" id="1878" type="number"/>
+						</body>
+						
+						<set data="=" id="1879" type="operator">
+							<get context="String" data="&quot;str&quot;" id="1880" type="string"/>
+						</set>
+						
+					</element>
+					
+				</get>
+				
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1881" member="parameter : multy" type="unknown">
+					<set data="=" id="1882" type="operator">
+						<array context="Array" data="[" id="1883" type="block"/>
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1884" member="parameter : multy" type="unknown">
+					<element context="Vector.<Vector.<Boolean>>" data="[" id="1885" type="block">
+						<body>
+							<get context="int" data="0" id="1886" type="number"/>
+						</body>
+						
+						<set data="=" id="1887" type="operator">
+							<construction data="new" id="1888" type="keyword">
+								<get context="Class : Array" data="Array" id="1889" type="unknown">
+									<run context="Array" data="(" id="1890" type="block"/>
+								</get>
+								
+							</construction>
+							
+						</set>
+						
+					</element>
+					
+				</get>
+				
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1891" member="parameter : multy" type="unknown">
+					<element context="Vector.<Vector.<Boolean>>" data="[" id="1892" type="block">
+						<body>
+							<get context="int" data="0" id="1893" type="number"/>
+						</body>
+						
+						<element context="Vector.<Boolean>" data="[" id="1894" type="block">
+							<body>
+								<get context="int" data="1" id="1895" type="number"/>
+							</body>
+							
+							<set data="=" id="1896" type="operator">
+								<array context="Array" data="[" id="1897" type="block"/>
+							</set>
+							
+						</element>
+						
+					</element>
+					
+				</get>
+				
+				<null/>
+				<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1898" member="parameter : multy" type="unknown">
+					<element context="Vector.<Vector.<Boolean>>" data="[" id="1899" type="block">
+						<body>
+							<get context="int" data="0" id="1900" type="number"/>
+						</body>
+						
+						<element context="Vector.<Boolean>" data="[" id="1901" type="block">
+							<body>
+								<get context="int" data="1" id="1902" type="number"/>
+							</body>
+							
+							<element context="Boolean" data="[" id="1903" type="block">
+								<body>
+									<get context="int" data="3" id="1904" type="number"/>
+								</body>
+								
+								<set data="=" id="1905" type="operator">
+									<get context="int" data="a" id="1906" member="local : a" type="unknown">
+										<operation data=">" id="1907" type="operator">
+											<get context="int" data="b" id="1908" member="local : b" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</set>
+								
+							</element>
+							
+						</element>
+						
+					</element>
+					
+				</get>
+				
+				<get context="int" data="i" id="1909" member="local : i" type="unknown">
+					<set data="=" id="1910" type="operator">
+						<get context="Vector.<Vector.<Vector.<Boolean>>>" data="multy" id="1911" member="parameter : multy" type="unknown">
+							<element context="Vector.<Vector.<Boolean>>" data="[" id="1912" type="block">
+								<body>
+									<get context="int" data="0" id="1913" type="number"/>
+								</body>
+								
+								<element context="Vector.<Boolean>" data="[" id="1914" type="block">
+									<body>
+										<get context="int" data="2" id="1915" type="number"/>
+									</body>
+									
+									<get context="uint" data="length" id="1916" member="variable : length" type="unknown"/>
+								</element>
+								
+							</element>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="XML" data="x" id="1917" member="local : x" type="unknown">
+					<set data="=" id="1918" type="operator">
+						<get context="XML" data="<root />" id="1919" type="nativeXML"/>
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="private" name="unknownArrayItem" type="void">
+			<local name="array" type="Array"/>
+			<local name="item" type="Object"/>
+			<local name="t0" type="String"/>
+			<body>
+				<get context="Array" data="array" id="1920" member="local : array" type="unknown">
+					<set data="=" id="1921" type="operator">
+						<array context="Array" data="[" id="1922" type="block"/>
+					</set>
+					
+				</get>
+				
+				<null/>
+				<get context="Array" data="array" id="1923" member="local : array" type="unknown">
+					<get context="Function : uint" data="push" id="1924" member="function : push" type="unknown">
+						<run context="uint" data="(" id="1925" type="block">
+							<body>
+								<construction data="new" id="1926" type="keyword">
+									<get context="Class : flash.display.Sprite" data="Sprite" id="1927" type="unknown">
+										<run context="flash.display.Sprite" data="(" id="1928" type="block"/>
+									</get>
+									
+								</construction>
+								
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</get>
+				
+				<get context="Array" data="array" id="1929" member="local : array" type="unknown">
+					<get context="Function : uint" data="push" id="1930" member="function : push" type="unknown">
+						<run context="uint" data="(" id="1931" type="block">
+							<body>
+								<construction data="new" id="1932" type="keyword">
+									<get context="Class : flash.geom.Point" data="Point" id="1933" type="unknown">
+										<run context="flash.geom.Point" data="(" id="1934" type="block"/>
+									</get>
+									
+								</construction>
+								
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</get>
+				
+				<get context="Array" data="array" id="1935" member="local : array" type="unknown">
+					<get context="Function : uint" data="push" id="1936" member="function : push" type="unknown">
+						<run context="uint" data="(" id="1937" type="block">
+							<body>
+								<construction data="new" id="1938" type="keyword">
+									<get context="Class : flash.geom.Rectangle" data="Rectangle" id="1939" type="unknown">
+										<run context="flash.geom.Rectangle" data="(" id="1940" type="block"/>
+									</get>
+									
+								</construction>
+								
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</get>
+				
+				<get context="Array" data="array" id="1941" member="local : array" type="unknown">
+					<get context="Function : uint" data="push" id="1942" member="function : push" type="unknown">
+						<run context="uint" data="(" id="1943" type="block">
+							<body>
+								<object context="Object" data="{" id="1944" type="block">
+									<properties>
+										<property name="x">
+											<get context="int" data="1" id="1947" type="number"/>
+										</property>
+										
+										<property name="y">
+											<get context="int" data="2" id="1951" type="number"/>
+										</property>
+										
+									</properties>
+									
+								</object>
+								
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</get>
+				
+				<construction data="for" id="1952" type="keyword">
+					<body>
+						<get context="String" data="t0" id="3561" member="local : t0" type="unknown">
+							<operation data="in" id="3562" type="operator">
+								<get context="Array" data="array" id="3563" member="local : array" type="unknown"/>
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="1956">
+						<body>
+							<get context="Object" data="item" id="3564" member="local : item" type="unknown">
+								<set data="=" id="3567" type="operator">
+									<get context="Array" data="array" id="3568" member="local : array" type="unknown">
+										<element context="Object" data="[" id="3572" type="operator">
+											<body>
+												<get context="String" data="t0" id="3569" member="local : t0" type="unknown"/>
+											</body>
+											
+										</element>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Function : void" data="trace" id="1957" type="unknown">
+								<run context="void" data="(" id="1958" type="block">
+									<body>
+										<get context="Object" data="item" id="1959" member="local : item" type="unknown">
+											<get data="x" id="1960" type="unknown"/>
+										</get>
+										
+									</body>
+									
+								</run>
+								
+							</get>
+							
+							<get context="Object" data="item" id="1961" member="local : item" type="unknown">
+								<get context="Number" data="x" id="1962" type="unknown">
+									<set data="=" id="1963" type="operator">
+										<get context="Class : Math" data="Math" id="1964" type="unknown">
+											<get context="Function : Number" data="random" id="1965" member="static function : random" type="unknown">
+												<run context="Number" data="(" id="1966" type="block"/>
+											</get>
+											
+										</get>
+										
+									</set>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+				<get context="Function : void" data="trace" id="1967" type="unknown">
+					<run context="void" data="(" id="1968" type="block">
+						<body>
+							<get context="Array" data="array" id="1969" member="local : array" type="unknown">
+								<element context="Object" data="[" id="1970" type="block">
+									<body>
+										<get context="int" data="0" id="1971" type="number"/>
+									</body>
+									
+									<get data="transform" id="1972" type="unknown">
+										<get data="matrix" id="1973" type="unknown"/>
+									</get>
+									
+								</element>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="1974" type="unknown">
+					<run context="void" data="(" id="1975" type="block">
+						<body>
+							<get context="Array" data="array" id="1976" member="local : array" type="unknown">
+								<element context="Object" data="[" id="1977" type="block">
+									<body>
+										<get context="int" data="1" id="1978" type="number"/>
+									</body>
+									
+									<get data="x" id="1979" type="unknown"/>
+								</element>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="private" name="unknownParameters" type="void">
+			<parameter name="param1" type="int">
+				<body>
+					<get context="int" data="10" id="1980" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="param2" type="String">
+				<body>
+					<get context="String" data="&quot;s&quot;" id="1981" type="string"/>
+				</body>
+				
+			</parameter>
+			
+			<local name="v" type="int"/>
+			<body>
+				<get context="int" data="v" id="1982" member="local : v" type="unknown">
+					<set data="=" id="1983" type="operator">
+						<get context="Function : int" data="get" id="1984" member="function : get" type="keyword">
+							<run context="int" data="(" id="1985" type="block"/>
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Function : void" data="set" id="1986" member="function : set" type="keyword">
+					<run context="void" data="(" id="1987" type="block">
+						<body>
+							<get context="int" data="v" id="1988" member="local : v" type="unknown">
+								<operation data="+" id="1989" type="operator">
+									<get context="int" data="10" id="1990" type="number"/>
+								</operation>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="set" type="void">
+			<parameter name="value" type="int"/>
+			<body>
+				<get context="int" data="_value" id="1991" member="variable : _value" type="unknown">
+					<set data="=" id="1992" type="operator">
+						<get context="int" data="value" id="1993" member="parameter : value" type="unknown"/>
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="get" type="int">
+			<body>
+				<construction data="return" id="1994" type="keyword">
+					<get context="int" data="_value" id="1995" member="variable : _value" type="unknown"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>

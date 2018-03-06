@@ -1,0 +1,613 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="Matrix3D"/>
+		<keyword data="extends"/>
+		<unknown data="Object"/>
+		<block data="{">
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="determinant"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="return"/>
+				<number data="0"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="position"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Vector3D"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="position"/>
+			<block data="(">
+				<unknown data="pos"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="rawData"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Vector"/>
+			<block data=".<">
+				<unknown data="Number"/>
+			</block>
+			
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="rawData"/>
+			<block data="(">
+				<unknown data="v"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="append"/>
+			<block data="(">
+				<unknown data="lhs"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="appendRotation"/>
+			<block data="(">
+				<unknown data="degrees"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="axis"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data=","/>
+				<unknown data="pivotPoint"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data="="/>
+				<literal data="null"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="appendScale"/>
+			<block data="(">
+				<unknown data="xScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="yScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="zScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="appendTranslation"/>
+			<block data="(">
+				<unknown data="x"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="y"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="z"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="clone"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Matrix3D"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyColumnFrom"/>
+			<block data="(">
+				<unknown data="column"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data=","/>
+				<unknown data="vector3D"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyColumnTo"/>
+			<block data="(">
+				<unknown data="column"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data=","/>
+				<unknown data="vector3D"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyFrom"/>
+			<block data="(">
+				<unknown data="sourceMatrix3D"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyRawDataFrom"/>
+			<block data="(">
+				<unknown data="vector"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+				<operator data=","/>
+				<unknown data="index"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="transpose"/>
+				<operator data=":"/>
+				<unknown data="Boolean"/>
+				<operator data="="/>
+				<boolean data="false"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyRawDataTo"/>
+			<block data="(">
+				<unknown data="vector"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+				<operator data=","/>
+				<unknown data="index"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="transpose"/>
+				<operator data=":"/>
+				<unknown data="Boolean"/>
+				<operator data="="/>
+				<boolean data="false"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyRowFrom"/>
+			<block data="(">
+				<unknown data="row"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data=","/>
+				<unknown data="vector3D"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyRowTo"/>
+			<block data="(">
+				<unknown data="row"/>
+				<operator data=":"/>
+				<unknown data="uint"/>
+				<operator data=","/>
+				<unknown data="vector3D"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="copyToMatrix3D"/>
+			<block data="(">
+				<unknown data="dest"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="decompose"/>
+			<block data="(">
+				<unknown data="orientationStyle"/>
+				<operator data=":"/>
+				<unknown data="String"/>
+				<operator data="="/>
+				<string data="&quot;eulerAngles&quot;"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Vector"/>
+			<block data=".<">
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="deltaTransformVector"/>
+			<block data="(">
+				<unknown data="v"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Vector3D"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="identity"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="static"/>
+			<keyword data="function"/>
+			<unknown data="interpolate"/>
+			<block data="(">
+				<unknown data="thisMat"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+				<operator data=","/>
+				<unknown data="toMat"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+				<operator data=","/>
+				<unknown data="percent"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Matrix3D"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="interpolateTo"/>
+			<block data="(">
+				<unknown data="toMat"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+				<operator data=","/>
+				<unknown data="percent"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="invert"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Boolean"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="Matrix3D"/>
+			<block data="(">
+				<unknown data="v"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+				<operator data="="/>
+				<literal data="null"/>
+			</block>
+			
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="pointAt"/>
+			<block data="(">
+				<unknown data="pos"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data=","/>
+				<unknown data="at"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data="="/>
+				<literal data="null"/>
+				<operator data=","/>
+				<unknown data="up"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data="="/>
+				<literal data="null"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="prepend"/>
+			<block data="(">
+				<unknown data="rhs"/>
+				<operator data=":"/>
+				<unknown data="Matrix3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="prependRotation"/>
+			<block data="(">
+				<unknown data="degrees"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="axis"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data=","/>
+				<unknown data="pivotPoint"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+				<operator data="="/>
+				<literal data="null"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="prependScale"/>
+			<block data="(">
+				<unknown data="xScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="yScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="zScale"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="prependTranslation"/>
+			<block data="(">
+				<unknown data="x"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="y"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data=","/>
+				<unknown data="z"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="recompose"/>
+			<block data="(">
+				<unknown data="components"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Vector3D"/>
+				</block>
+				
+				<operator data=","/>
+				<unknown data="orientationStyle"/>
+				<operator data=":"/>
+				<unknown data="String"/>
+				<operator data="="/>
+				<string data="&quot;eulerAngles&quot;"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Boolean"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="transformVector"/>
+			<block data="(">
+				<unknown data="v"/>
+				<operator data=":"/>
+				<unknown data="Vector3D"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Vector3D"/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="transformVectors"/>
+			<block data="(">
+				<unknown data="vin"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+				<operator data=","/>
+				<unknown data="vout"/>
+				<operator data=":"/>
+				<unknown data="Vector"/>
+				<block data=".<">
+					<unknown data="Number"/>
+				</block>
+				
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="transpose"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{"/>
+		</block>
+		
+	</block>
+	
+</class>

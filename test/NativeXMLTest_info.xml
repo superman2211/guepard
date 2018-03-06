@@ -1,0 +1,774 @@
+
+<package data="com.guepard.tests">
+	<class data="NativeXMLTest">
+		<variable access="private" name="xml1" type="XML">
+			<body>
+				<get context="XML" data="<test x=&apos;1&apos; y=&quot;2&quot; name=&quot;superman &apos;bla bla bla&apos; \&apos;symbol\&apos; &quot;/>" id="193" type="nativeXML"/>
+			</body>
+			
+		</variable>
+		
+		<variable access="private" name="xml2" type="XML">
+			<body>
+				<get context="XML" data="<root name=&quot;superman&quot;>									<!-- This Is XML Comment -->									<item value=&quot;1&quot;/>									<item value=&quot;2&quot;>This is Text</item>									<item value=&quot;3&quot;>										<sub text=&quot;&quot;></sub>										<item value=&quot;2211&quot;/>									</item>								</root>" id="194" type="nativeXML"/>
+			</body>
+			
+		</variable>
+		
+		<function access="public" name="NativeXMLTest">
+			<local name="xml" type="XML"/>
+			<body>
+				<get context="Function : void" data="trace" id="195" type="unknown">
+					<run context="void" data="(" id="196" type="block">
+						<body>
+							<get context="String" data="&quot;xml1&quot;" id="197" type="string"/>
+							<get context="XML" data="xml1" id="199" member="variable : xml1" type="unknown"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="200" type="unknown">
+					<run context="void" data="(" id="201" type="block">
+						<body>
+							<get context="String" data="&quot;xml2&quot;" id="202" type="string"/>
+							<get context="XML" data="xml2" id="204" member="variable : xml2" type="unknown"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="205" type="unknown">
+					<run context="void" data="(" id="206" type="block">
+						<body>
+							<get context="String" data="&quot;xml1.toXMLString()&quot;" id="207" type="string"/>
+							<get context="XML" data="xml1" id="209" member="variable : xml1" type="unknown">
+								<get context="Function : String" data="toXMLString" id="210" member="function : toXMLString" type="unknown">
+									<run context="String" data="(" id="211" type="block"/>
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="212" type="unknown">
+					<run context="void" data="(" id="213" type="block"/>
+				</get>
+				
+				<get context="Function : void" data="trace" id="214" type="unknown">
+					<run context="void" data="(" id="215" type="block">
+						<body>
+							<get context="String" data="&quot;xml2.toXMLString()&quot;" id="216" type="string"/>
+							<get context="XML" data="xml2" id="218" member="variable : xml2" type="unknown">
+								<get context="Function : String" data="toXMLString" id="219" member="function : toXMLString" type="unknown">
+									<run context="String" data="(" id="220" type="block"/>
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="221" type="unknown">
+					<run context="void" data="(" id="222" type="block"/>
+				</get>
+				
+				<get context="Function : void" data="trace" id="223" type="unknown">
+					<run context="void" data="(" id="224" type="block">
+						<body>
+							<get context="String" data="&quot;xml1.@name&quot;" id="225" type="string"/>
+							<get context="XML" data="xml1" id="227" member="variable : xml1" type="unknown">
+								<attribute data="@" id="228" type="operator">
+									<get context="XMLList" data="name" id="229" type="unknown"/>
+								</attribute>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="230" type="unknown">
+					<run context="void" data="(" id="231" type="block">
+						<body>
+							<get context="String" data="&quot;xml1.attributes()[0]&quot;" id="232" type="string"/>
+							<get context="XML" data="xml1" id="234" member="variable : xml1" type="unknown">
+								<get context="Function : XMLList" data="attributes" id="235" member="function : attributes" type="unknown">
+									<run context="XMLList" data="(" id="236" type="block">
+										<element context="XMLList" data="[" id="237" type="block">
+											<body>
+												<get context="int" data="0" id="238" type="number"/>
+											</body>
+											
+										</element>
+										
+									</run>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="239" type="unknown">
+					<run context="void" data="(" id="240" type="block">
+						<body>
+							<get context="String" data="&quot;xml1.attribute(&apos;name&apos;)&quot;" id="241" type="string"/>
+							<get context="XML" data="xml1" id="243" member="variable : xml1" type="unknown">
+								<get context="Function : XMLList" data="attribute" id="244" member="function : attribute" type="unknown">
+									<run context="XMLList" data="(" id="245" type="block">
+										<body>
+											<get context="String" data="&apos;name&apos;" id="246" type="string"/>
+										</body>
+										
+									</run>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="247" type="unknown">
+					<run context="void" data="(" id="248" type="block">
+						<body>
+							<get context="String" data="&quot;xml2.item[0].toXMLString()&quot;" id="249" type="string"/>
+							<get context="XML" data="xml2" id="251" member="variable : xml2" type="unknown">
+								<get context="XMLList" data="item" id="252" type="unknown">
+									<element context="XMLList" data="[" id="253" type="block">
+										<body>
+											<get context="int" data="0" id="254" type="number"/>
+										</body>
+										
+										<get context="Function : String" data="toXMLString" id="255" member="function : toXMLString" type="unknown">
+											<run context="String" data="(" id="256" type="block"/>
+										</get>
+										
+									</element>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="257" type="unknown">
+					<run context="void" data="(" id="258" type="block">
+						<body>
+							<get context="String" data="&quot;xml2.child(&apos;item&apos;)[0].@value&quot;" id="259" type="string"/>
+							<get context="XML" data="xml2" id="261" member="variable : xml2" type="unknown">
+								<get context="Function : XMLList" data="child" id="262" member="function : child" type="unknown">
+									<run context="XMLList" data="(" id="263" type="block">
+										<body>
+											<get context="String" data="&apos;item&apos;" id="264" type="string"/>
+										</body>
+										
+										<element context="XMLList" data="[" id="265" type="block">
+											<body>
+												<get context="int" data="0" id="266" type="number"/>
+											</body>
+											
+											<attribute data="@" id="267" type="operator">
+												<get context="XMLList" data="value" id="268" type="unknown"/>
+											</attribute>
+											
+										</element>
+										
+									</run>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="269" type="unknown">
+					<run context="void" data="(" id="270" type="block">
+						<body>
+							<get context="String" data="&quot;xml2.item[0].@value&quot;" id="271" type="string"/>
+							<get context="XML" data="xml2" id="273" member="variable : xml2" type="unknown">
+								<get context="XMLList" data="item" id="274" type="unknown">
+									<element context="XMLList" data="[" id="275" type="block">
+										<body>
+											<get context="int" data="0" id="276" type="number"/>
+										</body>
+										
+										<attribute data="@" id="277" type="operator">
+											<get context="XMLList" data="value" id="278" type="unknown"/>
+										</attribute>
+										
+									</element>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="279" type="unknown">
+					<run context="void" data="(" id="280" type="block">
+						<body>
+							<get context="String" data="&quot;xml2..item[3].@value&quot;" id="281" type="string"/>
+							<get context="XML" data="xml2" id="283" member="variable : xml2" type="unknown">
+								<descendant data=".." id="284" type="operator">
+									<get context="XMLList" data="item" id="285" type="unknown">
+										<element context="XMLList" data="[" id="286" type="block">
+											<body>
+												<get context="int" data="3" id="287" type="number"/>
+											</body>
+											
+											<attribute data="@" id="288" type="operator">
+												<get context="XMLList" data="value" id="289" type="unknown"/>
+											</attribute>
+											
+										</element>
+										
+									</get>
+									
+								</descendant>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="290" type="unknown">
+					<run context="void" data="(" id="291" type="block">
+						<body>
+							<get context="String" data="&quot;xml2.descendants(&apos;item&apos;)[3].attribute(&apos;value&apos;)&quot;" id="292" type="string"/>
+							<get context="XML" data="xml2" id="294" member="variable : xml2" type="unknown">
+								<get context="Function : XMLList" data="descendants" id="295" member="function : descendants" type="unknown">
+									<run context="XMLList" data="(" id="296" type="block">
+										<body>
+											<get context="String" data="&apos;item&apos;" id="297" type="string"/>
+										</body>
+										
+										<element context="XMLList" data="[" id="298" type="block">
+											<body>
+												<get context="int" data="3" id="299" type="number"/>
+											</body>
+											
+											<get context="Function : XMLList" data="attribute" id="300" member="function : attribute" type="unknown">
+												<run context="XMLList" data="(" id="301" type="block">
+													<body>
+														<get context="String" data="&apos;value&apos;" id="302" type="string"/>
+													</body>
+													
+												</run>
+												
+											</get>
+											
+										</element>
+										
+									</run>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="XML" data="xml" id="303" member="local : xml" type="unknown">
+					<set data="=" id="304" type="operator">
+						<construction data="new" id="305" type="keyword">
+							<get context="Class : XML" data="XML" id="306" type="unknown">
+								<run context="XML" data="(" id="307" type="block">
+									<body>
+										<get context="String" data="&quot;<root/>&quot;" id="308" type="string"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="XML" data="xml" id="309" member="local : xml" type="unknown">
+					<attribute data="@" id="310" type="operator">
+						<get context="XMLList" data="test" id="311" type="unknown">
+							<set data="=" id="312" type="operator">
+								<get context="int" data="123" id="313" type="number"/>
+							</set>
+							
+						</get>
+						
+					</attribute>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="314" type="unknown">
+					<run context="void" data="(" id="315" type="block">
+						<body>
+							<get context="String" data="&quot;xml.toXMLString()&quot;" id="316" type="string"/>
+							<get context="XML" data="xml" id="318" member="local : xml" type="unknown">
+								<get context="Function : String" data="toXMLString" id="319" member="function : toXMLString" type="unknown">
+									<run context="String" data="(" id="320" type="block"/>
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="321" type="unknown">
+					<run context="void" data="(" id="322" type="block">
+						<body>
+							<get context="String" data="&quot;xml.@test&quot;" id="323" type="string"/>
+							<get context="XML" data="xml" id="325" member="local : xml" type="unknown">
+								<attribute data="@" id="326" type="operator">
+									<get context="XMLList" data="test" id="327" type="unknown"/>
+								</attribute>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="testCondition" id="328" member="function : testCondition" type="unknown">
+					<run context="void" data="(" id="329" type="block"/>
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="private" name="testCondition" type="void">
+			<local name="myXML" type="XML"/>
+			<body>
+				<get context="XML" data="myXML" id="330" member="local : myXML" type="unknown">
+					<set data="=" id="331" type="operator">
+						<get context="XML" data="<order> 					<item id=&apos;1&apos;> 						<menuName>burger</menuName> 						<price>3.95</price> 					</item> 					<item id=&apos;2&apos;> 						<menuName>fries</menuName> 						<price>1.45</price> 					</item> 				</order>" id="332" type="nativeXML"/>
+					</set>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="333" type="unknown">
+					<run context="void" data="(" id="334" type="block">
+						<body>
+							<get context="String" data="&quot;myXML.item[0].menuName&quot;" id="335" type="string"/>
+							<get context="XML" data="myXML" id="337" member="local : myXML" type="unknown">
+								<get context="XMLList" data="item" id="338" type="unknown">
+									<element context="XMLList" data="[" id="339" type="block">
+										<body>
+											<get context="int" data="0" id="340" type="number"/>
+										</body>
+										
+										<get context="XMLList" data="menuName" id="341" type="unknown"/>
+									</element>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="342" type="unknown">
+					<run context="void" data="(" id="343" type="block">
+						<body>
+							<get context="String" data="&quot;myXML.item.(@id==2).menuName&quot;" id="344" type="string"/>
+							<get context="XML" data="myXML" id="346" member="local : myXML" type="unknown">
+								<get context="XMLList" data="item" id="347" type="unknown">
+									<get context="Function : XML" data="__find__" id="3506" type="unknown">
+										<run context="XML" id="3507">
+											<body>
+												<construction data="function" id="3512" type="keyword">
+													<method>
+														<anonymous type="Boolean">
+															<parameter name="t0" type="XML"/>
+															<body>
+																<construction data="return" id="3508" type="keyword">
+																	<get context="Class : int" data="int" id="3510" type="unknown">
+																		<run context="int" data="(" id="3511" type="operator">
+																			<body>
+																				<get context="XML" data="t0" id="3509" member="parameter : t0" type="unknown">
+																					<attribute data="@" id="349" type="operator">
+																						<get context="XMLList" data="id" id="350" type="unknown"/>
+																					</attribute>
+																					
+																				</get>
+																				
+																			</body>
+																			
+																			<operation data="==" id="351" type="operator">
+																				<get context="int" data="2" id="352" type="number"/>
+																			</operation>
+																			
+																		</run>
+																		
+																	</get>
+																	
+																</construction>
+																
+															</body>
+															
+														</anonymous>
+														
+													</method>
+													
+												</construction>
+												
+											</body>
+											
+											<get context="XMLList" data="menuName" id="353" type="unknown"/>
+										</run>
+										
+									</get>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="354" type="unknown">
+					<run context="void" data="(" id="355" type="block">
+						<body>
+							<get context="String" data="&quot;myXML.item.(menuName==&apos;burger&apos;).price&quot;" id="356" type="string"/>
+							<get context="XML" data="myXML" id="358" member="local : myXML" type="unknown">
+								<get context="XMLList" data="item" id="359" type="unknown">
+									<get context="Function : XML" data="__find__" id="3513" type="unknown">
+										<run context="XML" id="3514">
+											<body>
+												<construction data="function" id="3519" type="keyword">
+													<method>
+														<anonymous type="Boolean">
+															<parameter name="t0" type="XML"/>
+															<body>
+																<construction data="return" id="3515" type="keyword">
+																	<get context="Class : String" data="String" id="3517" type="unknown">
+																		<run context="String" data="(" id="3518" type="operator">
+																			<body>
+																				<get context="XML" data="t0" id="3516" member="parameter : t0" type="unknown">
+																					<get context="XMLList" data="menuName" id="361" type="unknown"/>
+																				</get>
+																				
+																			</body>
+																			
+																			<operation data="==" id="362" type="operator">
+																				<get context="String" data="&quot;burger&quot;" id="363" type="string"/>
+																			</operation>
+																			
+																		</run>
+																		
+																	</get>
+																	
+																</construction>
+																
+															</body>
+															
+														</anonymous>
+														
+													</method>
+													
+												</construction>
+												
+											</body>
+											
+											<get context="XMLList" data="price" id="364" type="unknown"/>
+										</run>
+										
+									</get>
+									
+								</get>
+								
+							</get>
+							
+						</body>
+						
+					</run>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="testBug" type="void">
+			<parameter name="ioXMLNode" type="XML"/>
+			<local name="dispose" type="int"/>
+			<local name="psName" type="String"/>
+			<local name="pnDifficulty" type="int"/>
+			<body>
+				<get context="int" data="dispose" id="365" member="local : dispose" type="unknown">
+					<set data="=" id="366" type="operator">
+						<get context="int" data="100" id="367" type="number"/>
+					</set>
+					
+				</get>
+				
+				<get context="int" data="dispose" id="368" member="local : dispose" type="unknown">
+					<operation data="<<=" id="369" type="operator">
+						<get context="int" data="2" id="370" type="number"/>
+					</operation>
+					
+				</get>
+				
+				<get context="String" data="psName" id="371" member="local : psName" type="unknown">
+					<set data="=" id="372" type="operator">
+						<get context="XML" data="ioXMLNode" id="373" member="parameter : ioXMLNode" type="unknown">
+							<get context="XMLList" data="properties" id="374" type="unknown">
+								<get context="Function : XMLList" data="text" id="375" member="function : text" type="unknown">
+									<get context="Function : XML" data="__find__" id="3520" type="unknown">
+										<run context="XML" id="3521">
+											<body>
+												<construction data="function" id="3526" type="keyword">
+													<method>
+														<anonymous type="Boolean">
+															<parameter name="t0" type="XML"/>
+															<body>
+																<construction data="return" id="3522" type="keyword">
+																	<get context="Class : String" data="String" id="3524" type="unknown">
+																		<run context="String" data="(" id="3525" type="operator">
+																			<body>
+																				<get context="XML" data="t0" id="3523" member="parameter : t0" type="unknown">
+																					<attribute data="@" id="377" type="operator">
+																						<get context="XMLList" data="name" id="378" type="unknown"/>
+																					</attribute>
+																					
+																				</get>
+																				
+																			</body>
+																			
+																			<operation data="==" id="379" type="operator">
+																				<get context="String" data="&quot;name&quot;" id="380" type="string"/>
+																			</operation>
+																			
+																		</run>
+																		
+																	</get>
+																	
+																</construction>
+																
+															</body>
+															
+														</anonymous>
+														
+													</method>
+													
+												</construction>
+												
+											</body>
+											
+											<get context="Function : XMLList" data="text" id="381" member="function : text" type="unknown">
+												<run context="XMLList" data="(" id="382" type="block"/>
+											</get>
+											
+										</run>
+										
+									</get>
+									
+								</get>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="383" type="unknown">
+					<run context="void" data="(" id="384" type="block">
+						<body>
+							<get context="String" data="&quot;psName&quot;" id="385" type="string"/>
+							<get context="String" data="psName" id="387" member="local : psName" type="unknown"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="int" data="pnDifficulty" id="388" member="local : pnDifficulty" type="unknown">
+					<set data="=" id="389" type="operator">
+						<get context="Class : int" data="int" id="390" type="unknown">
+							<run context="int" data="(" id="391" type="block">
+								<body>
+									<get context="XML" data="ioXMLNode" id="392" member="parameter : ioXMLNode" type="unknown">
+										<get context="XMLList" data="properties" id="393" type="unknown">
+											<get context="XMLList" data="numeric" id="394" type="unknown">
+												<get context="Function : XML" data="__find__" id="3527" type="unknown">
+													<run context="XML" id="3528">
+														<body>
+															<construction data="function" id="3533" type="keyword">
+																<method>
+																	<anonymous type="Boolean">
+																		<parameter name="t0" type="XML"/>
+																		<body>
+																			<construction data="return" id="3529" type="keyword">
+																				<get context="Class : String" data="String" id="3531" type="unknown">
+																					<run context="String" data="(" id="3532" type="operator">
+																						<body>
+																							<get context="XML" data="t0" id="3530" member="parameter : t0" type="unknown">
+																								<attribute data="@" id="396" type="operator">
+																									<get context="XMLList" data="name" id="397" type="unknown"/>
+																								</attribute>
+																								
+																							</get>
+																							
+																						</body>
+																						
+																						<operation data="==" id="398" type="operator">
+																							<get context="String" data="&quot;difficulty&quot;" id="399" type="string"/>
+																						</operation>
+																						
+																					</run>
+																					
+																				</get>
+																				
+																			</construction>
+																			
+																		</body>
+																		
+																	</anonymous>
+																	
+																</method>
+																
+															</construction>
+															
+														</body>
+														
+														<attribute context="XMLList" data="@" id="400" type="operator">
+															<get context="XMLList" data="value" id="401" type="unknown"/>
+														</attribute>
+														
+													</run>
+													
+												</get>
+												
+											</get>
+											
+										</get>
+										
+									</get>
+									
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="402" type="unknown">
+					<run context="void" data="(" id="403" type="block">
+						<body>
+							<get context="String" data="&quot;pnDifficulty&quot;" id="404" type="string"/>
+							<get context="int" data="pnDifficulty" id="406" member="local : pnDifficulty" type="unknown"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<get context="XML" data="ioXMLNode" id="407" member="parameter : ioXMLNode" type="unknown">
+					<set data="=" id="408" type="operator">
+						<get context="XML" data="ioXMLNode" id="409" member="parameter : ioXMLNode" type="unknown">
+							<get context="Function : XML" data="replace" id="410" member="function : replace" type="unknown">
+								<run context="XML" data="(" id="411" type="block">
+									<body>
+										<get context="String" data="&quot;data&quot;" id="412" type="string"/>
+										<get context="XML" data="<data><empty/></data>" id="414" type="nativeXML"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Function : void" data="trace" id="415" type="unknown">
+					<run context="void" data="(" id="416" type="block">
+						<body>
+							<get context="String" data="&quot;ioXMLNode&quot;" id="417" type="string"/>
+							<get context="XML" data="ioXMLNode" id="419" member="parameter : ioXMLNode" type="unknown"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+				<construction data="throw" id="420" type="keyword">
+					<construction data="new" id="421" type="keyword">
+						<get context="Class : Error" data="Error" id="422" type="unknown">
+							<run context="Error" data="(" id="423" type="block">
+								<body>
+									<get context="String" data="&quot;genHScrollBar error: constructor method position argument requires either \&quot;top\&quot; (genHScrollBar.TOP) or \&quot;bottom\&quot; (genHScrollBar.BOTTOM).&quot;" id="424" type="string"/>
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>

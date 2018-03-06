@@ -1,0 +1,192 @@
+
+<package data="com.guepard.tests">
+	<class data="UnknownItem">
+		<variable access="public" name="x" type="int"/>
+		<variable access="public" name="y" type="int"/>
+		<variable access="public" name="z" type="int"/>
+		<variable access="public" name="name" type="String"/>
+		<variable access="public" name="parameter" type="Boolean"/>
+		<getter access="public" name="length" type="Number">
+			<body>
+				<construction data="return" id="2032" type="keyword">
+					<get context="Class : Math" data="Math" id="2033" type="unknown">
+						<get context="Function : Number" data="sqrt" id="2034" member="static function : sqrt" type="unknown">
+							<run context="Number" data="(" id="2035" type="block">
+								<body>
+									<get context="int" data="x" id="2036" member="variable : x" type="unknown">
+										<operation data="*" id="2037" type="operator">
+											<get context="int" data="x" id="2038" member="variable : x" type="unknown">
+												<operation data="+" id="2039" type="operator">
+													<get context="int" data="y" id="2040" member="variable : y" type="unknown">
+														<operation data="*" id="2041" type="operator">
+															<get context="int" data="y" id="2042" member="variable : y" type="unknown">
+																<operation data="+" id="2043" type="operator">
+																	<get context="int" data="z" id="2044" member="variable : z" type="unknown">
+																		<operation data="*" id="2045" type="operator">
+																			<get context="int" data="z" id="2046" member="variable : z" type="unknown"/>
+																		</operation>
+																		
+																	</get>
+																	
+																</operation>
+																
+															</get>
+															
+														</operation>
+														
+													</get>
+													
+												</operation>
+												
+											</get>
+											
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<getter access="public" name="unknown" type="int">
+			<body>
+				<construction data="return" id="2047" type="keyword">
+					<get data="null" id="2048" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="unknown" type="void">
+			<parameter name="value" type="int"/>
+		</setter>
+		
+		<function access="public" name="UnknownItem">
+			<parameter name="x" type="int">
+				<body>
+					<get context="int" data="0" id="2049" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="y" type="int">
+				<body>
+					<get context="int" data="0" id="2050" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="z" type="int">
+				<body>
+					<get context="int" data="0" id="2051" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="name" type="String">
+				<body>
+					<get context="String" data="&quot;default&quot;" id="2052" type="string"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="parameter" type="Boolean">
+				<body>
+					<get context="Boolean" data="true" id="2053" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<get context="com.guepard.tests.UnknownItem" data="this" id="2054" type="unknown">
+					<get context="int" data="x" id="2055" member="variable : x" type="unknown">
+						<set data="=" id="2056" type="operator">
+							<get context="int" data="x" id="2057" member="parameter : x" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="this" id="2058" type="unknown">
+					<get context="int" data="y" id="2059" member="variable : y" type="unknown">
+						<set data="=" id="2060" type="operator">
+							<get context="int" data="y" id="2061" member="parameter : y" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="this" id="2062" type="unknown">
+					<get context="int" data="z" id="2063" member="variable : z" type="unknown">
+						<set data="=" id="2064" type="operator">
+							<get context="int" data="z" id="2065" member="parameter : z" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="this" id="2066" type="unknown">
+					<get context="String" data="name" id="2067" member="variable : name" type="unknown">
+						<set data="=" id="2068" type="operator">
+							<get context="String" data="name" id="2069" member="parameter : name" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.UnknownItem" data="this" id="2070" type="unknown">
+					<get context="Boolean" data="parameter" id="2071" member="variable : parameter" type="unknown">
+						<set data="=" id="2072" type="operator">
+							<get context="Boolean" data="parameter" id="2073" member="parameter : parameter" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="clone" type="com.guepard.tests.UnknownItem">
+			<body>
+				<construction data="return" id="2074" type="keyword">
+					<construction data="new" id="2075" type="keyword">
+						<get context="Class : com.guepard.tests.UnknownItem" data="UnknownItem" id="2076" type="unknown">
+							<run context="com.guepard.tests.UnknownItem" data="(" id="2077" type="block">
+								<body>
+									<get context="int" data="x" id="2078" member="variable : x" type="unknown"/>
+									<get context="int" data="y" id="2080" member="variable : y" type="unknown"/>
+									<get context="int" data="z" id="2082" member="variable : z" type="unknown"/>
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>

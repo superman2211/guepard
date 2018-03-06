@@ -1,0 +1,452 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="NativeXMLTest"/>
+		<block data="{">
+			<keyword data="private"/>
+			<keyword data="var"/>
+			<unknown data="xml1"/>
+			<operator data=":"/>
+			<unknown data="XML"/>
+			<operator data="="/>
+			<nativeXML data="<test x=&apos;1&apos; y=&quot;2&quot; name=&quot;superman &apos;bla bla bla&apos; \&apos;symbol\&apos; &quot;/>"/>
+			<operator data=";"/>
+			<keyword data="private"/>
+			<keyword data="var"/>
+			<unknown data="xml2"/>
+			<operator data=":"/>
+			<unknown data="XML"/>
+			<operator data="="/>
+			<nativeXML data="<root name=&quot;superman&quot;>									<!-- This Is XML Comment -->									<item value=&quot;1&quot;/>									<item value=&quot;2&quot;>This is Text</item>									<item value=&quot;3&quot;>										<sub text=&quot;&quot;></sub>										<item value=&quot;2211&quot;/>									</item>								</root>"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="NativeXMLTest"/>
+			<block data="("/>
+			<block data="{">
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml1&quot;"/>
+					<operator data=","/>
+					<unknown data="xml1"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml1.toXMLString()&quot;"/>
+					<operator data=","/>
+					<unknown data="xml1"/>
+					<operator data="."/>
+					<unknown data="toXMLString"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2.toXMLString()&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data="."/>
+					<unknown data="toXMLString"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml1.@name&quot;"/>
+					<operator data=","/>
+					<unknown data="xml1"/>
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="name"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml1.attributes()[0]&quot;"/>
+					<operator data=","/>
+					<unknown data="xml1"/>
+					<operator data="."/>
+					<unknown data="attributes"/>
+					<block data="("/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml1.attribute(&apos;name&apos;)&quot;"/>
+					<operator data=","/>
+					<unknown data="xml1"/>
+					<operator data="."/>
+					<unknown data="attribute"/>
+					<block data="(">
+						<string data="&apos;name&apos;"/>
+					</block>
+					
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2.item[0].toXMLString()&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data="."/>
+					<unknown data="item"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="toXMLString"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2.child(&apos;item&apos;)[0].@value&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data="."/>
+					<unknown data="child"/>
+					<block data="(">
+						<string data="&apos;item&apos;"/>
+					</block>
+					
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="value"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2.item[0].@value&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data="."/>
+					<unknown data="item"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="value"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2..item[3].@value&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data=".."/>
+					<unknown data="item"/>
+					<block data="[">
+						<number data="3"/>
+					</block>
+					
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="value"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml2.descendants(&apos;item&apos;)[3].attribute(&apos;value&apos;)&quot;"/>
+					<operator data=","/>
+					<unknown data="xml2"/>
+					<operator data="."/>
+					<unknown data="descendants"/>
+					<block data="(">
+						<string data="&apos;item&apos;"/>
+					</block>
+					
+					<block data="[">
+						<number data="3"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="attribute"/>
+					<block data="(">
+						<string data="&apos;value&apos;"/>
+					</block>
+					
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="xml"/>
+				<operator data=":"/>
+				<unknown data="XML"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="XML"/>
+				<block data="(">
+					<string data="&quot;<root/>&quot;"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="xml"/>
+				<operator data="."/>
+				<operator data="@"/>
+				<unknown data="test"/>
+				<operator data="="/>
+				<number data="123"/>
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml.toXMLString()&quot;"/>
+					<operator data=","/>
+					<unknown data="xml"/>
+					<operator data="."/>
+					<unknown data="toXMLString"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;xml.@test&quot;"/>
+					<operator data=","/>
+					<unknown data="xml"/>
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="test"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="testCondition"/>
+				<block data="("/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="private"/>
+			<keyword data="function"/>
+			<unknown data="testCondition"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="myXML"/>
+				<operator data=":"/>
+				<unknown data="XML"/>
+				<operator data="="/>
+				<nativeXML data="<order> 					<item id=&apos;1&apos;> 						<menuName>burger</menuName> 						<price>3.95</price> 					</item> 					<item id=&apos;2&apos;> 						<menuName>fries</menuName> 						<price>1.45</price> 					</item> 				</order>"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;myXML.item[0].menuName&quot;"/>
+					<operator data=","/>
+					<unknown data="myXML"/>
+					<operator data="."/>
+					<unknown data="item"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="menuName"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;myXML.item.(@id==2).menuName&quot;"/>
+					<operator data=","/>
+					<unknown data="myXML"/>
+					<operator data="."/>
+					<unknown data="item"/>
+					<operator data="."/>
+					<block data="(">
+						<operator data="@"/>
+						<unknown data="id"/>
+						<operator data="=="/>
+						<number data="2"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="menuName"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;myXML.item.(menuName==&apos;burger&apos;).price&quot;"/>
+					<operator data=","/>
+					<unknown data="myXML"/>
+					<operator data="."/>
+					<unknown data="item"/>
+					<operator data="."/>
+					<block data="(">
+						<unknown data="menuName"/>
+						<operator data="=="/>
+						<string data="&quot;burger&quot;"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="price"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="testBug"/>
+			<block data="(">
+				<unknown data="ioXMLNode"/>
+				<operator data=":"/>
+				<unknown data="XML"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="dispose"/>
+				<operator data=":"/>
+				<unknown data="int"/>
+				<operator data="="/>
+				<number data="100"/>
+				<operator data=";"/>
+				<unknown data="dispose"/>
+				<operator data="<<="/>
+				<number data="2"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="psName"/>
+				<operator data=":"/>
+				<unknown data="String"/>
+				<operator data="="/>
+				<unknown data="ioXMLNode"/>
+				<operator data="."/>
+				<unknown data="properties"/>
+				<operator data="."/>
+				<unknown data="text"/>
+				<operator data="."/>
+				<block data="(">
+					<operator data="@"/>
+					<unknown data="name"/>
+					<operator data="=="/>
+					<string data="&quot;name&quot;"/>
+				</block>
+				
+				<operator data="."/>
+				<unknown data="text"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;psName&quot;"/>
+					<operator data=","/>
+					<unknown data="psName"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="pnDifficulty"/>
+				<operator data=":"/>
+				<unknown data="int"/>
+				<operator data="="/>
+				<unknown data="int"/>
+				<block data="(">
+					<unknown data="ioXMLNode"/>
+					<operator data="."/>
+					<unknown data="properties"/>
+					<operator data="."/>
+					<unknown data="numeric"/>
+					<operator data="."/>
+					<block data="(">
+						<operator data="@"/>
+						<unknown data="name"/>
+						<operator data="=="/>
+						<string data="&quot;difficulty&quot;"/>
+					</block>
+					
+					<operator data="."/>
+					<operator data="@"/>
+					<unknown data="value"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;pnDifficulty&quot;"/>
+					<operator data=","/>
+					<unknown data="pnDifficulty"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="ioXMLNode"/>
+				<operator data="="/>
+				<unknown data="ioXMLNode"/>
+				<operator data="."/>
+				<unknown data="replace"/>
+				<block data="(">
+					<string data="&quot;data&quot;"/>
+					<operator data=","/>
+					<nativeXML data="<data><empty/></data>"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<string data="&quot;ioXMLNode&quot;"/>
+					<operator data=","/>
+					<unknown data="ioXMLNode"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="throw"/>
+				<keyword data="new"/>
+				<unknown data="Error"/>
+				<block data="(">
+					<string data="&quot;genHScrollBar error: constructor method position argument requires either \&quot;top\&quot; (genHScrollBar.TOP) or \&quot;bottom\&quot; (genHScrollBar.BOTTOM).&quot;"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

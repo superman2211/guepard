@@ -1,0 +1,822 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="Bitmap"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="BitmapData"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="MovieClip"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="Shape"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="Sprite"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="geom"/>
+		<operator data="."/>
+		<unknown data="Matrix"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="geom"/>
+		<operator data="."/>
+		<unknown data="Point"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="geom"/>
+		<operator data="."/>
+		<unknown data="Rectangle"/>
+		<operator data=";"/>
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="Unknown"/>
+		<block data="{">
+			<keyword data="var"/>
+			<unknown data="unknown1"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="unknown2"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="unknown3"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="unknown4"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="unknown5"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="obj0"/>
+			<operator data=":"/>
+			<operator data="*"/>
+			<operator data="="/>
+			<string data="&quot;string&quot;"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="obj1"/>
+			<operator data=":"/>
+			<operator data="*"/>
+			<operator data="="/>
+			<number data="123.456"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="obj2"/>
+			<operator data=":"/>
+			<operator data="*"/>
+			<operator data="="/>
+			<number data="2"/>
+			<operator data=";"/>
+			<keyword data="var"/>
+			<unknown data="xml"/>
+			<operator data="="/>
+			<nativeXML data="<test/>"/>
+			<operator data=";"/>
+			<keyword data="private"/>
+			<keyword data="static"/>
+			<keyword data="var"/>
+			<unknown data="_instance"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="static"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="instance"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="_instance"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="static"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="instance"/>
+			<block data="(">
+				<unknown data="value"/>
+			</block>
+			
+			<block data="{">
+				<unknown data="_instance"/>
+				<operator data="="/>
+				<unknown data="value"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="Unknown"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="if"/>
+				<block data="(">
+					<operator data="!"/>
+					<unknown data="Unknown"/>
+					<operator data="."/>
+					<unknown data="instance"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="Unknown"/>
+					<operator data="."/>
+					<unknown data="instance"/>
+					<operator data="="/>
+					<unknown data="this"/>
+					<operator data=";"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="private"/>
+			<keyword data="function"/>
+			<unknown data="parametersAndLocals"/>
+			<block data="(">
+				<unknown data="param1"/>
+				<operator data=","/>
+				<unknown data="param2"/>
+				<operator data=","/>
+				<unknown data="param3"/>
+			</block>
+			
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="s"/>
+				<operator data="="/>
+				<string data="&quot;test&quot;"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="n"/>
+				<operator data="="/>
+				<number data="123.123"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="i"/>
+				<operator data="="/>
+				<unknown data="Math"/>
+				<operator data="."/>
+				<unknown data="round"/>
+				<block data="(">
+					<unknown data="n"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="u"/>
+				<operator data="="/>
+				<unknown data="int"/>
+				<block data="(">
+					<unknown data="n"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="b"/>
+				<operator data="="/>
+				<boolean data="true"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="r"/>
+				<operator data="="/>
+				<unknown data="n"/>
+				<operator data="+"/>
+				<unknown data="i"/>
+				<operator data="+"/>
+				<unknown data="s"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="p"/>
+				<operator data="="/>
+				<unknown data="Point"/>
+				<operator data="."/>
+				<unknown data="polar"/>
+				<block data="(">
+					<number data="1"/>
+					<operator data=","/>
+					<number data="2"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="m"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Matrix"/>
+				<block data="(">
+					<number data="1"/>
+					<operator data=","/>
+					<number data="2"/>
+					<operator data=","/>
+					<number data="3"/>
+					<operator data=","/>
+					<number data="4"/>
+					<operator data=","/>
+					<number data="5"/>
+					<operator data=","/>
+					<number data="6"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="d"/>
+				<operator data="="/>
+				<unknown data="m"/>
+				<operator data="."/>
+				<unknown data="deltaTransformPoint"/>
+				<block data="(">
+					<unknown data="p"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="regExp1"/>
+				<operator data="="/>
+				<regularExpression data="/(1,2,3)\/\/.*|\/\* [^]*?\*\//g"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="regExp2"/>
+				<operator data="="/>
+				<regularExpression data="/&apos;([^&apos;]*)&apos;/"/>
+				<operator data=";"/>
+				<unknown data="unknown5"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="UnknownItem"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="param1"/>
+				<operator data="="/>
+				<block data="(">
+					<unknown data="n"/>
+					<operator data="+"/>
+					<unknown data="i"/>
+				</block>
+				
+				<operator data="/"/>
+				<number data="2.2356478"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="s_t_r"/>
+				<operator data="="/>
+				<string data="&quot;this string&quot;"/>
+				<operator data=";"/>
+				<keyword data="if"/>
+				<block data="(">
+					<unknown data="s_t_r"/>
+					<operator data="<"/>
+					<unknown data="n"/>
+				</block>
+				
+				<block data="{">
+					<keyword data="var"/>
+					<unknown data="f"/>
+					<operator data="="/>
+					<unknown data="n"/>
+					<operator data=">"/>
+					<unknown data="u"/>
+					<operator data=";"/>
+					<unknown data="unknown1"/>
+					<operator data="="/>
+					<string data="&quot;str&quot;"/>
+					<operator data=";"/>
+					<unknown data="unknown2"/>
+					<operator data="="/>
+					<number data="1"/>
+					<operator data=";"/>
+					<unknown data="unknown3"/>
+					<operator data="="/>
+					<unknown data="unknown2"/>
+					<operator data=">"/>
+					<unknown data="unknown1"/>
+					<operator data=";"/>
+					<unknown data="unknown4"/>
+					<operator data="="/>
+					<unknown data="p"/>
+					<operator data="."/>
+					<unknown data="add"/>
+					<block data="(">
+						<keyword data="new"/>
+						<unknown data="Point"/>
+						<block data="(">
+							<number data="1"/>
+							<operator data=","/>
+							<number data="2"/>
+						</block>
+						
+					</block>
+					
+					<operator data=";"/>
+					<unknown data="param2"/>
+					<operator data="="/>
+					<unknown data="param1"/>
+					<operator data="."/>
+					<unknown data="toString"/>
+					<block data="("/>
+					<operator data=";"/>
+					<unknown data="param3"/>
+					<operator data="="/>
+					<unknown data="param2"/>
+					<operator data="."/>
+					<unknown data="split"/>
+					<block data="(">
+						<string data="&quot;,&quot;"/>
+					</block>
+					
+					<operator data=";"/>
+					<keyword data="var"/>
+					<unknown data="element"/>
+					<operator data="="/>
+					<unknown data="param3"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data=";"/>
+				</block>
+				
+				<keyword data="var"/>
+				<unknown data="v"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="UnknownItem"/>
+				<block data="(">
+					<number data="1"/>
+					<operator data=","/>
+					<number data="2"/>
+					<operator data=","/>
+					<number data="3"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="v"/>
+				<operator data="."/>
+				<unknown data="unknown"/>
+				<operator data="="/>
+				<number data="10"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="tmp"/>
+				<operator data="="/>
+				<unknown data="Unknown"/>
+				<operator data="."/>
+				<unknown data="instance"/>
+				<operator data="."/>
+				<unknown data="unknown5"/>
+				<operator data="."/>
+				<unknown data="clone"/>
+				<block data="("/>
+				<operator data="."/>
+				<unknown data="length"/>
+				<operator data=";"/>
+				<keyword data="return"/>
+				<unknown data="n"/>
+				<operator data="+"/>
+				<unknown data="i"/>
+				<operator data="+"/>
+				<unknown data="s"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="private"/>
+			<keyword data="function"/>
+			<unknown data="arrays"/>
+			<block data="(">
+				<unknown data="classes"/>
+				<operator data=","/>
+				<unknown data="instances"/>
+				<operator data=","/>
+				<unknown data="interfaces"/>
+				<operator data=","/>
+				<unknown data="multy"/>
+			</block>
+			
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="numbers"/>
+				<operator data="="/>
+				<block data="[">
+					<number data="1"/>
+					<operator data=","/>
+					<number data="2"/>
+					<operator data=","/>
+					<number data="3"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="strings"/>
+				<operator data="="/>
+				<block data="[">
+					<string data="&quot;test&quot;"/>
+					<operator data=","/>
+					<unknown data="String"/>
+					<block data="(">
+						<unknown data="this"/>
+					</block>
+					
+					<operator data=","/>
+					<unknown data="numbers"/>
+					<operator data="."/>
+					<unknown data="join"/>
+					<block data="(">
+						<string data="&quot;;&quot;"/>
+					</block>
+					
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="booleans"/>
+				<operator data="="/>
+				<block data="[">
+					<boolean data="true"/>
+					<operator data=","/>
+					<unknown data="numbers"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data=">"/>
+					<number data="1"/>
+					<operator data=","/>
+					<operator data="!"/>
+					<unknown data="numbers"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="objects"/>
+				<operator data="="/>
+				<block data="[">
+					<boolean data="true"/>
+					<operator data=","/>
+					<number data="1"/>
+					<operator data=","/>
+					<string data="&quot;str&quot;"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="classes"/>
+				<operator data="="/>
+				<block data="[">
+					<unknown data="MovieClip"/>
+					<operator data=","/>
+					<unknown data="Shape"/>
+					<operator data=","/>
+					<unknown data="Sprite"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="instances"/>
+				<operator data="="/>
+				<block data="[">
+					<keyword data="new"/>
+					<unknown data="MovieClip"/>
+					<block data="("/>
+					<operator data=","/>
+					<keyword data="new"/>
+					<unknown data="Shape"/>
+					<block data="("/>
+					<operator data=","/>
+					<keyword data="new"/>
+					<unknown data="Sprite"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="interfaces"/>
+				<operator data="="/>
+				<block data="[">
+					<keyword data="new"/>
+					<unknown data="Bitmap"/>
+					<block data="("/>
+					<operator data=","/>
+					<keyword data="new"/>
+					<unknown data="BitmapData"/>
+					<block data="(">
+						<number data="100"/>
+						<operator data=","/>
+						<number data="100"/>
+					</block>
+					
+					<operator data=","/>
+					<keyword data="new"/>
+					<unknown data="Sprite"/>
+					<block data="("/>
+					<operator data=","/>
+					<keyword data="new"/>
+					<unknown data="MovieClip"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="a"/>
+				<operator data="="/>
+				<number data="123"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="b"/>
+				<operator data="="/>
+				<number data="235"/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<operator data="="/>
+				<block data="["/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<block data="[">
+					<number data="0"/>
+				</block>
+				
+				<operator data="="/>
+				<string data="&quot;str&quot;"/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<operator data="="/>
+				<block data="["/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<block data="[">
+					<number data="0"/>
+				</block>
+				
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Array"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<block data="[">
+					<number data="0"/>
+				</block>
+				
+				<block data="[">
+					<number data="1"/>
+				</block>
+				
+				<operator data="="/>
+				<block data="["/>
+				<operator data=";"/>
+				<unknown data="multy"/>
+				<block data="[">
+					<number data="0"/>
+				</block>
+				
+				<block data="[">
+					<number data="1"/>
+				</block>
+				
+				<block data="[">
+					<number data="3"/>
+				</block>
+				
+				<operator data="="/>
+				<unknown data="a"/>
+				<operator data=">"/>
+				<unknown data="b"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="i"/>
+				<operator data="="/>
+				<unknown data="multy"/>
+				<block data="[">
+					<number data="0"/>
+				</block>
+				
+				<block data="[">
+					<number data="2"/>
+				</block>
+				
+				<operator data="."/>
+				<unknown data="length"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="x"/>
+				<operator data="="/>
+				<nativeXML data="<root />"/>
+			</block>
+			
+			<keyword data="private"/>
+			<keyword data="function"/>
+			<unknown data="unknownArrayItem"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="array"/>
+				<operator data="="/>
+				<block data="["/>
+				<operator data=";"/>
+				<unknown data="array"/>
+				<operator data="."/>
+				<unknown data="push"/>
+				<block data="(">
+					<keyword data="new"/>
+					<unknown data="Sprite"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="array"/>
+				<operator data="."/>
+				<unknown data="push"/>
+				<block data="(">
+					<keyword data="new"/>
+					<unknown data="Point"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="array"/>
+				<operator data="."/>
+				<unknown data="push"/>
+				<block data="(">
+					<keyword data="new"/>
+					<unknown data="Rectangle"/>
+					<block data="("/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="array"/>
+				<operator data="."/>
+				<unknown data="push"/>
+				<block data="(">
+					<block data="{">
+						<unknown data="x"/>
+						<operator data=":"/>
+						<number data="1"/>
+						<operator data=","/>
+						<unknown data="y"/>
+						<operator data=":"/>
+						<number data="2"/>
+					</block>
+					
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="for"/>
+				<keyword data="each"/>
+				<block data="(">
+					<keyword data="var"/>
+					<unknown data="item"/>
+					<operator data="in"/>
+					<unknown data="array"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="trace"/>
+					<block data="(">
+						<unknown data="item"/>
+						<operator data="."/>
+						<unknown data="x"/>
+					</block>
+					
+					<operator data=";"/>
+					<unknown data="item"/>
+					<operator data="."/>
+					<unknown data="x"/>
+					<operator data="="/>
+					<unknown data="Math"/>
+					<operator data="."/>
+					<unknown data="random"/>
+					<block data="("/>
+					<operator data=";"/>
+				</block>
+				
+				<unknown data="trace"/>
+				<block data="(">
+					<unknown data="array"/>
+					<block data="[">
+						<number data="0"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="transform"/>
+					<operator data="."/>
+					<unknown data="matrix"/>
+				</block>
+				
+				<operator data=";"/>
+				<unknown data="trace"/>
+				<block data="(">
+					<unknown data="array"/>
+					<block data="[">
+						<number data="1"/>
+					</block>
+					
+					<operator data="."/>
+					<unknown data="x"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="private"/>
+			<keyword data="function"/>
+			<unknown data="unknownParameters"/>
+			<block data="(">
+				<unknown data="param1"/>
+				<operator data=":"/>
+				<operator data="*"/>
+				<operator data="="/>
+				<number data="10"/>
+				<operator data=","/>
+				<unknown data="param2"/>
+				<operator data=":"/>
+				<operator data="*"/>
+				<operator data="="/>
+				<string data="&quot;s&quot;"/>
+			</block>
+			
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="v"/>
+				<operator data="="/>
+				<keyword data="get"/>
+				<block data="("/>
+				<operator data=";"/>
+				<keyword data="set"/>
+				<block data="(">
+					<unknown data="v"/>
+					<operator data="+"/>
+					<number data="10"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="var"/>
+			<unknown data="_value"/>
+			<operator data=":"/>
+			<unknown data="int"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="int"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="_value"/>
+				<operator data="="/>
+				<unknown data="value"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="_value"/>
+				<operator data=";"/>
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

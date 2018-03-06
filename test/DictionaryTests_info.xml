@@ -1,0 +1,642 @@
+
+<package data="com.guepard.tests">
+	<import data="flash.geom.Matrix"/>
+	<import data="flash.geom.Point"/>
+	<import data="flash.utils.Dictionary"/>
+	<class data="DictionaryTests">
+		<variable access="private" name="_dict" type="flash.utils.Dictionary"/>
+		<getter access="public" name="dict" type="flash.utils.Dictionary">
+			<body>
+				<construction data="return" id="7" type="keyword">
+					<get context="flash.utils.Dictionary" data="_dict" id="8" member="variable : _dict" type="unknown"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<function access="public" name="DictionaryTests">
+			<body>
+				<get context="flash.utils.Dictionary" data="_dict" id="9" member="variable : _dict" type="unknown">
+					<set data="=" id="10" type="operator">
+						<construction data="new" id="11" type="keyword">
+							<get context="Class : flash.utils.Dictionary" data="Dictionary" id="12" type="unknown">
+								<run context="flash.utils.Dictionary" data="(" id="13" type="block"/>
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="flash.utils.Dictionary" data="_dict" id="14" member="variable : _dict" type="unknown">
+					<element context="flash.geom.Point" data="[" id="15" type="block">
+						<body>
+							<get context="Class : flash.geom.Matrix" data="Matrix" id="16" type="unknown"/>
+						</body>
+						
+						<set data="=" id="17" type="operator">
+							<construction data="new" id="18" type="keyword">
+								<get context="Class : flash.geom.Point" data="Point" id="19" type="unknown">
+									<run context="flash.geom.Point" data="(" id="20" type="block"/>
+								</get>
+								
+							</construction>
+							
+						</set>
+						
+					</element>
+					
+				</get>
+				
+				<get context="flash.utils.Dictionary" data="_dict" id="21" member="variable : _dict" type="unknown">
+					<element context="flash.geom.Matrix" data="[" id="22" type="block">
+						<body>
+							<get context="Class : flash.geom.Point" data="Point" id="23" type="unknown"/>
+						</body>
+						
+						<set data="=" id="24" type="operator">
+							<construction data="new" id="25" type="keyword">
+								<get context="Class : flash.geom.Matrix" data="Matrix" id="26" type="unknown">
+									<run context="flash.geom.Matrix" data="(" id="27" type="block"/>
+								</get>
+								
+							</construction>
+							
+						</set>
+						
+					</element>
+					
+				</get>
+				
+				<get context="flash.utils.Dictionary" data="_dict" id="28" member="variable : _dict" type="unknown">
+					<element context="Class : flash.geom.Matrix" data="[" id="29" type="block">
+						<body>
+							<get context="flash.utils.Dictionary" data="_dict" id="30" member="variable : _dict" type="unknown">
+								<element data="[" id="31" type="block">
+									<body>
+										<get context="Class : flash.geom.Matrix" data="Matrix" id="32" type="unknown"/>
+									</body>
+									
+								</element>
+								
+							</get>
+							
+						</body>
+						
+						<set data="=" id="33" type="operator">
+							<get context="Class : flash.geom.Matrix" data="Matrix" id="34" type="unknown"/>
+						</set>
+						
+					</element>
+					
+				</get>
+				
+				<get context="flash.utils.Dictionary" data="_dict" id="35" member="variable : _dict" type="unknown">
+					<element context="Class : flash.geom.Point" data="[" id="36" type="block">
+						<body>
+							<get context="flash.utils.Dictionary" data="_dict" id="37" member="variable : _dict" type="unknown">
+								<element data="[" id="38" type="block">
+									<body>
+										<get context="Class : flash.geom.Point" data="Point" id="39" type="unknown"/>
+									</body>
+									
+								</element>
+								
+							</get>
+							
+						</body>
+						
+						<set data="=" id="40" type="operator">
+							<get context="Class : flash.geom.Point" data="Point" id="41" type="unknown"/>
+						</set>
+						
+					</element>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="cycles" type="void">
+			<local name="prop" type="Object"/>
+			<local name="a" type="Number"/>
+			<local name="value" type="Object"/>
+			<local name="t0" type="String"/>
+			<local name="t1" type="String"/>
+			<body>
+				<construction data="for" id="42" type="keyword">
+					<body>
+						<get context="String" data="t0" id="3574" member="local : t0" type="unknown">
+							<operation data="in" id="3575" type="operator">
+								<get context="flash.utils.Dictionary" data="_dict" id="3576" member="variable : _dict" type="unknown">
+									<get context="Vector.<Object>" data="_keys" id="3577" member="variable : _keys" type="unknown"/>
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="46">
+						<body>
+							<get context="Object" data="prop" id="3578" member="local : prop" type="unknown">
+								<set data="=" id="3582" type="operator">
+									<get context="flash.utils.Dictionary" data="_dict" id="3583" member="variable : _dict" type="unknown">
+										<get context="Vector.<Object>" data="_keys" id="3584" member="variable : _keys" type="unknown">
+											<element context="Object" data="[" id="3589" type="operator">
+												<body>
+													<get context="String" data="t0" id="3585" member="local : t0" type="unknown"/>
+												</body>
+												
+											</element>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Function : void" data="trace" id="47" type="unknown">
+								<run context="void" data="(" id="48" type="block">
+									<body>
+										<get context="Object" data="prop" id="49" member="local : prop" type="unknown">
+											<operation data="+" id="50" type="operator">
+												<get context="String" data="&quot; = &quot;" id="51" type="string">
+													<operation data="+" id="52" type="operator">
+														<get context="flash.utils.Dictionary" data="dict" id="53" member="property : dict" type="unknown">
+															<element data="[" id="54" type="block">
+																<body>
+																	<get context="Object" data="prop" id="55" member="local : prop" type="unknown"/>
+																</body>
+																
+															</element>
+															
+														</get>
+														
+													</operation>
+													
+												</get>
+												
+											</operation>
+											
+										</get>
+										
+									</body>
+									
+								</run>
+								
+							</get>
+							
+							<construction data="if" id="56" type="keyword">
+								<body>
+									<get context="Object" data="prop" id="57" member="local : prop" type="unknown">
+										<operation data="==" id="58" type="operator">
+											<get context="Class : flash.geom.Matrix" data="Matrix" id="59" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+								<construction id="60">
+									<body>
+										<get context="flash.utils.Dictionary" data="_dict" id="61" member="variable : _dict" type="unknown">
+											<element data="[" id="62" type="block">
+												<body>
+													<get context="Object" data="prop" id="63" member="local : prop" type="unknown"/>
+												</body>
+												
+												<get context="int" data="tx" id="64" type="unknown">
+													<set data="=" id="65" type="operator">
+														<get context="int" data="10" id="66" type="number"/>
+													</set>
+													
+												</get>
+												
+											</element>
+											
+										</get>
+										
+										<get context="Number" data="a" id="67" member="local : a" type="unknown">
+											<set data="=" id="68" type="operator">
+												<get context="flash.utils.Dictionary" data="dict" id="69" member="property : dict" type="unknown">
+													<element data="[" id="70" type="block">
+														<body>
+															<get context="Object" data="prop" id="71" member="local : prop" type="unknown"/>
+														</body>
+														
+														<get context="int" data="ty" id="72" type="unknown">
+															<set data="=" id="73" type="operator">
+																<get context="int" data="20" id="74" type="number"/>
+															</set>
+															
+														</get>
+														
+													</element>
+													
+												</get>
+												
+											</set>
+											
+										</get>
+										
+									</body>
+									
+								</construction>
+								
+							</construction>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+				<construction data="for" id="75" type="keyword">
+					<body>
+						<get context="String" data="t1" id="3591" member="local : t1" type="unknown">
+							<operation data="in" id="3592" type="operator">
+								<get context="flash.utils.Dictionary" data="dict" id="3593" member="property : dict" type="unknown">
+									<get context="Vector.<Object>" data="_values" id="3594" member="variable : _values" type="unknown"/>
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="79">
+						<body>
+							<get context="Object" data="value" id="3595" member="local : value" type="unknown">
+								<set data="=" id="3599" type="operator">
+									<get context="flash.utils.Dictionary" data="dict" id="3600" member="property : dict" type="unknown">
+										<get context="Vector.<Object>" data="_values" id="3601" member="variable : _values" type="unknown">
+											<element context="Object" data="[" id="3606" type="operator">
+												<body>
+													<get context="String" data="t1" id="3602" member="local : t1" type="unknown"/>
+												</body>
+												
+											</element>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Function : void" data="trace" id="80" type="unknown">
+								<run context="void" data="(" id="81" type="block">
+									<body>
+										<get context="Object" data="value" id="82" member="local : value" type="unknown"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="remove" type="void">
+			<body>
+				<construction data="delete" id="83" type="keyword">
+					<get context="flash.utils.Dictionary" data="_dict" id="84" member="variable : _dict" type="unknown">
+						<element data="[" id="85" type="block">
+							<body>
+								<get context="Class : flash.geom.Matrix" data="Matrix" id="86" type="unknown"/>
+							</body>
+							
+						</element>
+						
+					</get>
+					
+				</construction>
+				
+				<construction data="delete" id="87" type="keyword">
+					<get context="flash.utils.Dictionary" data="dict" id="88" member="property : dict" type="unknown">
+						<element data="[" id="89" type="block">
+							<body>
+								<get context="Class : flash.geom.Point" data="Point" id="90" type="unknown"/>
+							</body>
+							
+						</element>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="test" static="true" type="void">
+			<local name="test" type="com.guepard.tests.DictionaryTests"/>
+			<local name="prop" type="Object"/>
+			<local name="b" type="Number"/>
+			<local name="value" type="Object"/>
+			<local name="t0" type="String"/>
+			<local name="t1" type="String"/>
+			<body>
+				<get context="com.guepard.tests.DictionaryTests" data="test" id="91" member="local : test" type="unknown">
+					<set data="=" id="92" type="operator">
+						<construction data="new" id="93" type="keyword">
+							<get context="Class : com.guepard.tests.DictionaryTests" data="DictionaryTests" id="94" type="unknown">
+								<run context="com.guepard.tests.DictionaryTests" data="(" id="95" type="block"/>
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<construction data="for" id="96" type="keyword">
+					<body>
+						<get context="String" data="t0" id="3608" member="local : t0" type="unknown">
+							<operation data="in" id="3609" type="operator">
+								<get context="com.guepard.tests.DictionaryTests" data="test" id="3610" member="local : test" type="unknown">
+									<get context="flash.utils.Dictionary" data="dict" id="3611" member="property : dict" type="unknown">
+										<get context="Vector.<Object>" data="_keys" id="3612" member="variable : _keys" type="unknown"/>
+									</get>
+									
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="101">
+						<body>
+							<get context="Object" data="prop" id="3613" member="local : prop" type="unknown">
+								<set data="=" id="3618" type="operator">
+									<get context="com.guepard.tests.DictionaryTests" data="test" id="3619" member="local : test" type="unknown">
+										<get context="flash.utils.Dictionary" data="dict" id="3620" member="property : dict" type="unknown">
+											<get context="Vector.<Object>" data="_keys" id="3621" member="variable : _keys" type="unknown">
+												<element context="Object" data="[" id="3627" type="operator">
+													<body>
+														<get context="String" data="t0" id="3622" member="local : t0" type="unknown"/>
+													</body>
+													
+												</element>
+												
+											</get>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Function : void" data="trace" id="102" type="unknown">
+								<run context="void" data="(" id="103" type="block">
+									<body>
+										<get context="Object" data="prop" id="104" member="local : prop" type="unknown">
+											<operation data="+" id="105" type="operator">
+												<get context="String" data="&quot; = &quot;" id="106" type="string">
+													<operation data="+" id="107" type="operator">
+														<get context="com.guepard.tests.DictionaryTests" data="test" id="108" member="local : test" type="unknown">
+															<get context="flash.utils.Dictionary" data="dict" id="109" member="property : dict" type="unknown">
+																<element data="[" id="110" type="block">
+																	<body>
+																		<get context="Object" data="prop" id="111" member="local : prop" type="unknown"/>
+																	</body>
+																	
+																</element>
+																
+															</get>
+															
+														</get>
+														
+													</operation>
+													
+												</get>
+												
+											</operation>
+											
+										</get>
+										
+									</body>
+									
+								</run>
+								
+							</get>
+							
+							<construction data="if" id="112" type="keyword">
+								<body>
+									<get context="Object" data="prop" id="113" member="local : prop" type="unknown">
+										<operation data="==" id="114" type="operator">
+											<get context="Class : flash.geom.Matrix" data="Matrix" id="115" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+								<construction id="116">
+									<body>
+										<get context="com.guepard.tests.DictionaryTests" data="test" id="117" member="local : test" type="unknown">
+											<get context="flash.utils.Dictionary" data="dict" id="118" member="property : dict" type="unknown">
+												<element data="[" id="119" type="block">
+													<body>
+														<get context="Object" data="prop" id="120" member="local : prop" type="unknown"/>
+													</body>
+													
+													<get context="int" data="tx" id="121" type="unknown">
+														<set data="=" id="122" type="operator">
+															<get context="int" data="10" id="123" type="number"/>
+														</set>
+														
+													</get>
+													
+												</element>
+												
+											</get>
+											
+										</get>
+										
+										<get context="Number" data="b" id="124" member="local : b" type="unknown">
+											<set data="=" id="125" type="operator">
+												<get context="com.guepard.tests.DictionaryTests" data="test" id="126" member="local : test" type="unknown">
+													<get context="flash.utils.Dictionary" data="dict" id="127" member="property : dict" type="unknown">
+														<element data="[" id="128" type="block">
+															<body>
+																<get context="Object" data="prop" id="129" member="local : prop" type="unknown"/>
+															</body>
+															
+															<get context="int" data="ty" id="130" type="unknown">
+																<set data="=" id="131" type="operator">
+																	<get context="int" data="20" id="132" type="number"/>
+																</set>
+																
+															</get>
+															
+														</element>
+														
+													</get>
+													
+												</get>
+												
+											</set>
+											
+										</get>
+										
+									</body>
+									
+								</construction>
+								
+							</construction>
+							
+							<construction data="if" id="133" type="keyword">
+								<body>
+									<get context="Object" data="prop" id="134" member="local : prop" type="unknown">
+										<operation data="==" id="135" type="operator">
+											<get context="Class : flash.geom.Point" data="Point" id="136" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+								<construction id="137">
+									<body>
+										<construction data="delete" id="138" type="keyword">
+											<get context="com.guepard.tests.DictionaryTests" data="test" id="139" member="local : test" type="unknown">
+												<get context="flash.utils.Dictionary" data="dict" id="140" member="property : dict" type="unknown">
+													<element data="[" id="141" type="block">
+														<body>
+															<get context="Object" data="prop" id="142" member="local : prop" type="unknown"/>
+														</body>
+														
+													</element>
+													
+												</get>
+												
+											</get>
+											
+										</construction>
+										
+									</body>
+									
+								</construction>
+								
+							</construction>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+				<construction data="for" id="143" type="keyword">
+					<body>
+						<get context="String" data="t1" id="3629" member="local : t1" type="unknown">
+							<operation data="in" id="3630" type="operator">
+								<get context="com.guepard.tests.DictionaryTests" data="test" id="3631" member="local : test" type="unknown">
+									<get context="flash.utils.Dictionary" data="dict" id="3632" member="property : dict" type="unknown">
+										<get context="Vector.<Object>" data="_values" id="3633" member="variable : _values" type="unknown"/>
+									</get>
+									
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="148">
+						<body>
+							<get context="Object" data="value" id="3634" member="local : value" type="unknown">
+								<set data="=" id="3639" type="operator">
+									<get context="com.guepard.tests.DictionaryTests" data="test" id="3640" member="local : test" type="unknown">
+										<get context="flash.utils.Dictionary" data="dict" id="3641" member="property : dict" type="unknown">
+											<get context="Vector.<Object>" data="_values" id="3642" member="variable : _values" type="unknown">
+												<element context="Object" data="[" id="3648" type="operator">
+													<body>
+														<get context="String" data="t1" id="3643" member="local : t1" type="unknown"/>
+													</body>
+													
+												</element>
+												
+											</get>
+											
+										</get>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<construction data="if" id="149" type="keyword">
+								<body>
+									<get context="Object" data="value" id="150" member="local : value" type="unknown">
+										<operation data="is" id="151" type="operator">
+											<get context="Class : flash.geom.Point" data="Point" id="152" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+								<construction id="153">
+									<body>
+										<get context="Object" data="value" id="154" member="local : value" type="unknown">
+											<get context="int" data="x" id="155" type="unknown">
+												<set data="=" id="156" type="operator">
+													<get context="int" data="10" id="157" type="number"/>
+												</set>
+												
+											</get>
+											
+										</get>
+										
+										<get context="Object" data="value" id="158" member="local : value" type="unknown">
+											<get context="int" data="y" id="159" type="unknown">
+												<set data="=" id="160" type="operator">
+													<get context="int" data="20" id="161" type="number"/>
+												</set>
+												
+											</get>
+											
+										</get>
+										
+									</body>
+									
+								</construction>
+								
+							</construction>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>

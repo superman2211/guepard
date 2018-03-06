@@ -1,0 +1,295 @@
+
+<package data="com.guepard.tests">
+	<class data="Matrix3D">
+		<extends data="Object"/>
+		<getter access="public" name="determinant" type="Number">
+			<body>
+				<construction data="return" id="162" type="keyword">
+					<get context="int" data="0" id="163" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<getter access="public" name="position" type="com.guepard.tests.Vector3D">
+			<body>
+				<construction data="return" id="164" type="keyword">
+					<get data="null" id="165" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="position" type="void">
+			<parameter name="pos" type="com.guepard.tests.Vector3D"/>
+		</setter>
+		
+		<getter access="public" name="rawData" type="Vector.<Number>">
+			<body>
+				<construction data="return" id="166" type="keyword">
+					<get data="null" id="167" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="rawData" type="void">
+			<parameter name="v" type="Vector.<Number>"/>
+		</setter>
+		
+		<function access="public" name="append" type="void">
+			<parameter name="lhs" type="com.guepard.tests.Matrix3D"/>
+		</function>
+		
+		<function access="public" name="appendRotation" type="void">
+			<parameter name="degrees" type="Number"/>
+			<parameter name="axis" type="com.guepard.tests.Vector3D"/>
+			<parameter name="pivotPoint" type="com.guepard.tests.Vector3D">
+				<body>
+					<get data="null" id="168" type="literal"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="appendScale" type="void">
+			<parameter name="xScale" type="Number"/>
+			<parameter name="yScale" type="Number"/>
+			<parameter name="zScale" type="Number"/>
+		</function>
+		
+		<function access="public" name="appendTranslation" type="void">
+			<parameter name="x" type="Number"/>
+			<parameter name="y" type="Number"/>
+			<parameter name="z" type="Number"/>
+		</function>
+		
+		<function access="public" name="clone" type="com.guepard.tests.Matrix3D">
+			<body>
+				<construction data="return" id="169" type="keyword">
+					<get data="null" id="170" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="copyColumnFrom" type="void">
+			<parameter name="column" type="uint"/>
+			<parameter name="vector3D" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="copyColumnTo" type="void">
+			<parameter name="column" type="uint"/>
+			<parameter name="vector3D" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="copyFrom" type="void">
+			<parameter name="sourceMatrix3D" type="com.guepard.tests.Matrix3D"/>
+		</function>
+		
+		<function access="public" name="copyRawDataFrom" type="void">
+			<parameter name="vector" type="Vector.<Number>"/>
+			<parameter name="index" type="uint">
+				<body>
+					<get context="int" data="0" id="171" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="transpose" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="172" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="copyRawDataTo" type="void">
+			<parameter name="vector" type="Vector.<Number>"/>
+			<parameter name="index" type="uint">
+				<body>
+					<get context="int" data="0" id="173" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="transpose" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="174" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="copyRowFrom" type="void">
+			<parameter name="row" type="uint"/>
+			<parameter name="vector3D" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="copyRowTo" type="void">
+			<parameter name="row" type="uint"/>
+			<parameter name="vector3D" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="copyToMatrix3D" type="void">
+			<parameter name="dest" type="com.guepard.tests.Matrix3D"/>
+		</function>
+		
+		<function access="public" name="decompose" type="Vector.<com.guepard.tests.Vector3D>">
+			<parameter name="orientationStyle" type="String">
+				<body>
+					<get context="String" data="&quot;eulerAngles&quot;" id="175" type="string"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<construction data="return" id="176" type="keyword">
+					<get data="null" id="177" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="deltaTransformVector" type="com.guepard.tests.Vector3D">
+			<parameter name="v" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="178" type="keyword">
+					<get data="null" id="179" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="identity" type="void"/>
+		<function access="public" name="interpolate" static="true" type="com.guepard.tests.Matrix3D">
+			<parameter name="thisMat" type="com.guepard.tests.Matrix3D"/>
+			<parameter name="toMat" type="com.guepard.tests.Matrix3D"/>
+			<parameter name="percent" type="Number"/>
+			<body>
+				<construction data="return" id="180" type="keyword">
+					<get data="null" id="181" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="interpolateTo" type="void">
+			<parameter name="toMat" type="com.guepard.tests.Matrix3D"/>
+			<parameter name="percent" type="Number"/>
+		</function>
+		
+		<function access="public" name="invert" type="Boolean">
+			<body>
+				<construction data="return" id="182" type="keyword">
+					<get data="null" id="183" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="Matrix3D">
+			<parameter name="v" type="Vector.<Number>">
+				<body>
+					<get data="null" id="184" type="literal"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="pointAt" type="void">
+			<parameter name="pos" type="com.guepard.tests.Vector3D"/>
+			<parameter name="at" type="com.guepard.tests.Vector3D">
+				<body>
+					<get data="null" id="185" type="literal"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="up" type="com.guepard.tests.Vector3D">
+				<body>
+					<get data="null" id="186" type="literal"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="prepend" type="void">
+			<parameter name="rhs" type="com.guepard.tests.Matrix3D"/>
+		</function>
+		
+		<function access="public" name="prependRotation" type="void">
+			<parameter name="degrees" type="Number"/>
+			<parameter name="axis" type="com.guepard.tests.Vector3D"/>
+			<parameter name="pivotPoint" type="com.guepard.tests.Vector3D">
+				<body>
+					<get data="null" id="187" type="literal"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+		<function access="public" name="prependScale" type="void">
+			<parameter name="xScale" type="Number"/>
+			<parameter name="yScale" type="Number"/>
+			<parameter name="zScale" type="Number"/>
+		</function>
+		
+		<function access="public" name="prependTranslation" type="void">
+			<parameter name="x" type="Number"/>
+			<parameter name="y" type="Number"/>
+			<parameter name="z" type="Number"/>
+		</function>
+		
+		<function access="public" name="recompose" type="Boolean">
+			<parameter name="components" type="Vector.<com.guepard.tests.Vector3D>"/>
+			<parameter name="orientationStyle" type="String">
+				<body>
+					<get context="String" data="&quot;eulerAngles&quot;" id="188" type="string"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<construction data="return" id="189" type="keyword">
+					<get data="null" id="190" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="transformVector" type="com.guepard.tests.Vector3D">
+			<parameter name="v" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="191" type="keyword">
+					<get data="null" id="192" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="transformVectors" type="void">
+			<parameter name="vin" type="Vector.<Number>"/>
+			<parameter name="vout" type="Vector.<Number>"/>
+		</function>
+		
+		<function access="public" name="transpose" type="void"/>
+	</class>
+	
+</package>

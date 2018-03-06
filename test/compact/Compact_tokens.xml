@@ -1,0 +1,38 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<operator data="."/>
+	<unknown data="compact"/>
+	<block data="{">
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="Compact"/>
+		<block data="{">
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="Compact"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="message"/>
+				<operator data=":"/>
+				<unknown data="String"/>
+				<operator data="="/>
+				<string data="&quot;\\&quot;"/>
+				<operator data="+"/>
+				<number data="123"/>
+				<operator data="+"/>
+				<string data="&quot; is missing or is not in the correct format&quot;"/>
+				<operator data=";"/>
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

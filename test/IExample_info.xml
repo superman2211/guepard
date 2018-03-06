@@ -1,0 +1,13 @@
+
+<package data="com.guepard.tests">
+	<interface data="IExample">
+		<function name="test" type="void"/>
+		<getter name="example" type="Number"/>
+		<setter name="example" type="void">
+			<parameter name="value" type="Number"/>
+		</setter>
+		
+		<function access="public" name="IExample"/>
+	</interface>
+	
+</package>

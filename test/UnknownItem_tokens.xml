@@ -1,0 +1,157 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="UnknownItem"/>
+		<block data="{">
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="x"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="y"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="z"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="name"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="parameter"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="length"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="Math"/>
+				<operator data="."/>
+				<unknown data="sqrt"/>
+				<block data="(">
+					<unknown data="x"/>
+					<operator data="*"/>
+					<unknown data="x"/>
+					<operator data="+"/>
+					<unknown data="y"/>
+					<operator data="*"/>
+					<unknown data="y"/>
+					<operator data="+"/>
+					<unknown data="z"/>
+					<operator data="*"/>
+					<unknown data="z"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="unknown"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="return"/>
+				<literal data="null"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="unknown"/>
+			<block data="(">
+				<unknown data="value"/>
+			</block>
+			
+			<block data="{"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="UnknownItem"/>
+			<block data="(">
+				<unknown data="x"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="y"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="z"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="name"/>
+				<operator data="="/>
+				<string data="&quot;default&quot;"/>
+				<operator data=","/>
+				<unknown data="parameter"/>
+				<operator data="="/>
+				<boolean data="true"/>
+			</block>
+			
+			<block data="{">
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data="="/>
+				<unknown data="x"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data="="/>
+				<unknown data="y"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data="="/>
+				<unknown data="z"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="name"/>
+				<operator data="="/>
+				<unknown data="name"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="parameter"/>
+				<operator data="="/>
+				<unknown data="parameter"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="clone"/>
+			<block data="("/>
+			<block data="{">
+				<keyword data="return"/>
+				<keyword data="new"/>
+				<unknown data="UnknownItem"/>
+				<block data="(">
+					<unknown data="x"/>
+					<operator data=","/>
+					<unknown data="y"/>
+					<operator data=","/>
+					<unknown data="z"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

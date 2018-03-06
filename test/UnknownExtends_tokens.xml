@@ -1,0 +1,197 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="DisplayObject"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="display"/>
+		<operator data="."/>
+		<unknown data="Sprite"/>
+		<operator data=";"/>
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="UnknownExtends"/>
+		<keyword data="extends"/>
+		<unknown data="Sprite"/>
+		<block data="{">
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="UnknownExtends"/>
+			<block data="("/>
+			<block data="{">
+				<unknown data="super"/>
+				<block data="("/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="addChild"/>
+			<block data="(">
+				<unknown data="child"/>
+				<operator data=":"/>
+				<unknown data="DisplayObject"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="DisplayObject"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="addChild"/>
+				<block data="(">
+					<unknown data="child"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="addEventListener"/>
+			<block data="(">
+				<unknown data="type"/>
+				<operator data=":"/>
+				<unknown data="String"/>
+				<operator data=","/>
+				<unknown data="listener"/>
+				<operator data=":"/>
+				<unknown data="Function"/>
+				<operator data=","/>
+				<unknown data="useCapture"/>
+				<operator data=":"/>
+				<unknown data="Boolean"/>
+				<operator data="="/>
+				<boolean data="false"/>
+				<operator data=","/>
+				<unknown data="priority"/>
+				<operator data=":"/>
+				<unknown data="int"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="useWeakReference"/>
+				<operator data=":"/>
+				<unknown data="Boolean"/>
+				<operator data="="/>
+				<boolean data="false"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="addEventListener"/>
+				<block data="(">
+					<unknown data="type"/>
+					<operator data=","/>
+					<unknown data="listener"/>
+					<operator data=","/>
+					<unknown data="useCapture"/>
+					<operator data=","/>
+					<unknown data="priority"/>
+					<operator data=","/>
+					<unknown data="useWeakReference"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="alpha"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="alpha"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="alpha"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="alpha"/>
+				<operator data="="/>
+				<unknown data="value"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="width"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="width"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="override"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="width"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="super"/>
+				<operator data="."/>
+				<unknown data="width"/>
+				<operator data="="/>
+				<unknown data="value"/>
+				<operator data=";"/>
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

@@ -1,0 +1,32 @@
+
+<package data="com.guepard.tests.compact">
+	<class data="Compact">
+		<function access="public" name="Compact">
+			<local name="message" type="String"/>
+			<body>
+				<get context="String" data="message" id="0" member="local : message" type="unknown">
+					<set data="=" id="1" type="operator">
+						<get context="String" data="&quot;\\&quot;" id="2" type="string">
+							<operation data="+" id="3" type="operator">
+								<get context="int" data="123" id="4" type="number">
+									<operation data="+" id="5" type="operator">
+										<get context="String" data="&quot; is missing or is not in the correct format&quot;" id="6" type="string"/>
+									</operation>
+									
+								</get>
+								
+							</operation>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>

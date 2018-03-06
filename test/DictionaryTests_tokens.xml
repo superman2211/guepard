@@ -1,0 +1,375 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="geom"/>
+		<operator data="."/>
+		<unknown data="Matrix"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="geom"/>
+		<operator data="."/>
+		<unknown data="Point"/>
+		<operator data=";"/>
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="utils"/>
+		<operator data="."/>
+		<unknown data="Dictionary"/>
+		<operator data=";"/>
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="DictionaryTests"/>
+		<block data="{">
+			<keyword data="private"/>
+			<keyword data="var"/>
+			<unknown data="_dict"/>
+			<operator data=":"/>
+			<unknown data="Dictionary"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="dict"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Dictionary"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="_dict"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="DictionaryTests"/>
+			<block data="("/>
+			<block data="{">
+				<unknown data="_dict"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Dictionary"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="_dict"/>
+				<block data="[">
+					<unknown data="Matrix"/>
+				</block>
+				
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Point"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="_dict"/>
+				<block data="[">
+					<unknown data="Point"/>
+				</block>
+				
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Matrix"/>
+				<block data="("/>
+				<operator data=";"/>
+				<unknown data="_dict"/>
+				<block data="[">
+					<unknown data="_dict"/>
+					<block data="[">
+						<unknown data="Matrix"/>
+					</block>
+					
+				</block>
+				
+				<operator data="="/>
+				<unknown data="Matrix"/>
+				<operator data=";"/>
+				<unknown data="_dict"/>
+				<block data="[">
+					<unknown data="_dict"/>
+					<block data="[">
+						<unknown data="Point"/>
+					</block>
+					
+				</block>
+				
+				<operator data="="/>
+				<unknown data="Point"/>
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="cycles"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="for"/>
+				<block data="(">
+					<keyword data="var"/>
+					<unknown data="prop"/>
+					<operator data=":"/>
+					<unknown data="Object"/>
+					<operator data="in"/>
+					<unknown data="_dict"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="trace"/>
+					<block data="(">
+						<unknown data="prop"/>
+						<operator data="+"/>
+						<string data="&quot; = &quot;"/>
+						<operator data="+"/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+					</block>
+					
+					<operator data=";"/>
+					<keyword data="if"/>
+					<block data="(">
+						<unknown data="prop"/>
+						<operator data="=="/>
+						<unknown data="Matrix"/>
+					</block>
+					
+					<block data="{">
+						<unknown data="_dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+						<operator data="."/>
+						<unknown data="tx"/>
+						<operator data="="/>
+						<number data="10"/>
+						<operator data=";"/>
+						<keyword data="var"/>
+						<unknown data="a"/>
+						<operator data=":"/>
+						<unknown data="Number"/>
+						<operator data="="/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+						<operator data="."/>
+						<unknown data="ty"/>
+						<operator data="="/>
+						<number data="20"/>
+						<operator data=";"/>
+					</block>
+					
+				</block>
+				
+				<keyword data="for"/>
+				<keyword data="each"/>
+				<block data="(">
+					<keyword data="var"/>
+					<unknown data="value"/>
+					<operator data=":"/>
+					<unknown data="Object"/>
+					<operator data="in"/>
+					<unknown data="dict"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="trace"/>
+					<block data="(">
+						<unknown data="value"/>
+					</block>
+					
+					<operator data=";"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="remove"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="delete"/>
+				<unknown data="_dict"/>
+				<block data="[">
+					<unknown data="Matrix"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="delete"/>
+				<unknown data="dict"/>
+				<block data="[">
+					<unknown data="Point"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="static"/>
+			<keyword data="function"/>
+			<unknown data="test"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="test"/>
+				<operator data=":"/>
+				<unknown data="DictionaryTests"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="DictionaryTests"/>
+				<block data="("/>
+				<operator data=";"/>
+				<keyword data="for"/>
+				<block data="(">
+					<keyword data="var"/>
+					<unknown data="prop"/>
+					<operator data=":"/>
+					<unknown data="Object"/>
+					<operator data="in"/>
+					<unknown data="test"/>
+					<operator data="."/>
+					<unknown data="dict"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="trace"/>
+					<block data="(">
+						<unknown data="prop"/>
+						<operator data="+"/>
+						<string data="&quot; = &quot;"/>
+						<operator data="+"/>
+						<unknown data="test"/>
+						<operator data="."/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+					</block>
+					
+					<operator data=";"/>
+					<keyword data="if"/>
+					<block data="(">
+						<unknown data="prop"/>
+						<operator data="=="/>
+						<unknown data="Matrix"/>
+					</block>
+					
+					<block data="{">
+						<unknown data="test"/>
+						<operator data="."/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+						<operator data="."/>
+						<unknown data="tx"/>
+						<operator data="="/>
+						<number data="10"/>
+						<operator data=";"/>
+						<keyword data="var"/>
+						<unknown data="b"/>
+						<operator data=":"/>
+						<unknown data="Number"/>
+						<operator data="="/>
+						<unknown data="test"/>
+						<operator data="."/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+						<operator data="."/>
+						<unknown data="ty"/>
+						<operator data="="/>
+						<number data="20"/>
+						<operator data=";"/>
+					</block>
+					
+					<keyword data="if"/>
+					<block data="(">
+						<unknown data="prop"/>
+						<operator data="=="/>
+						<unknown data="Point"/>
+					</block>
+					
+					<block data="{">
+						<keyword data="delete"/>
+						<unknown data="test"/>
+						<operator data="."/>
+						<unknown data="dict"/>
+						<block data="[">
+							<unknown data="prop"/>
+						</block>
+						
+						<operator data=";"/>
+					</block>
+					
+				</block>
+				
+				<keyword data="for"/>
+				<keyword data="each"/>
+				<block data="(">
+					<keyword data="var"/>
+					<unknown data="value"/>
+					<operator data=":"/>
+					<unknown data="Object"/>
+					<operator data="in"/>
+					<unknown data="test"/>
+					<operator data="."/>
+					<unknown data="dict"/>
+				</block>
+				
+				<block data="{">
+					<keyword data="if"/>
+					<block data="(">
+						<unknown data="value"/>
+						<operator data="is"/>
+						<unknown data="Point"/>
+					</block>
+					
+					<block data="{">
+						<unknown data="value"/>
+						<operator data="."/>
+						<unknown data="x"/>
+						<operator data="="/>
+						<number data="10"/>
+						<operator data=";"/>
+						<unknown data="value"/>
+						<operator data="."/>
+						<unknown data="y"/>
+						<operator data="="/>
+						<number data="20"/>
+						<operator data=";"/>
+					</block>
+					
+				</block>
+				
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

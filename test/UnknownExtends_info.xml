@@ -1,0 +1,148 @@
+
+<package data="com.guepard.tests">
+	<import data="flash.display.DisplayObject"/>
+	<import data="flash.display.Sprite"/>
+	<class data="UnknownExtends">
+		<extends data="flash.display.Sprite"/>
+		<function access="public" name="UnknownExtends">
+			<body>
+				<get context="flash.display.Sprite" data="super" id="1996" member="function : Sprite" type="unknown">
+					<run context="flash.display.Sprite" data="(" id="1997" type="block"/>
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="addChild" override="true" type="flash.display.DisplayObject">
+			<parameter name="child" type="flash.display.DisplayObject"/>
+			<body>
+				<construction data="return" id="1998" type="keyword">
+					<get context="flash.display.Sprite" data="super" id="1999" member="function : Sprite" type="unknown">
+						<get context="Function : flash.display.DisplayObject" data="addChild" id="2000" member="function : addChild" type="unknown">
+							<run context="flash.display.DisplayObject" data="(" id="2001" type="block">
+								<body>
+									<get context="flash.display.DisplayObject" data="child" id="2002" member="parameter : child" type="unknown"/>
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="addEventListener" override="true" type="void">
+			<parameter name="type" type="String"/>
+			<parameter name="listener" type="Function"/>
+			<parameter name="useCapture" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="2003" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="priority" type="int">
+				<body>
+					<get context="int" data="0" id="2004" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="useWeakReference" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="2005" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<get context="flash.display.Sprite" data="super" id="2006" member="function : Sprite" type="unknown">
+					<get context="Function : void" data="addEventListener" id="2007" member="function : addEventListener" type="unknown">
+						<run context="void" data="(" id="2008" type="block">
+							<body>
+								<get context="String" data="type" id="2009" member="parameter : type" type="unknown"/>
+								<get context="Function" data="listener" id="2011" member="parameter : listener" type="unknown"/>
+								<get context="Boolean" data="useCapture" id="2013" member="parameter : useCapture" type="unknown"/>
+								<get context="int" data="priority" id="2015" member="parameter : priority" type="unknown"/>
+								<get context="Boolean" data="useWeakReference" id="2017" member="parameter : useWeakReference" type="unknown"/>
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<getter access="public" name="alpha" override="true" type="Number">
+			<body>
+				<construction data="return" id="2018" type="keyword">
+					<get context="flash.display.Sprite" data="super" id="2019" member="function : Sprite" type="unknown">
+						<get context="Number" data="alpha" id="2020" member="property : alpha" type="unknown"/>
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="alpha" override="true" type="void">
+			<parameter name="value" type="Number"/>
+			<body>
+				<get context="flash.display.Sprite" data="super" id="2021" member="function : Sprite" type="unknown">
+					<get context="Number" data="alpha" id="2022" member="property : alpha" type="unknown">
+						<set data="=" id="2023" type="operator">
+							<get context="Number" data="value" id="2024" member="parameter : value" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</setter>
+		
+		<getter access="public" name="width" override="true" type="Number">
+			<body>
+				<construction data="return" id="2025" type="keyword">
+					<get context="flash.display.Sprite" data="super" id="2026" member="function : Sprite" type="unknown">
+						<get context="Number" data="width" id="2027" member="property : width" type="unknown"/>
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="width" override="true" type="void">
+			<parameter name="value" type="Number"/>
+			<body>
+				<get context="flash.display.Sprite" data="super" id="2028" member="function : Sprite" type="unknown">
+					<get context="Number" data="width" id="2029" member="property : width" type="unknown">
+						<set data="=" id="2030" type="operator">
+							<get context="Number" data="value" id="2031" member="parameter : value" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</setter>
+		
+	</class>
+	
+</package>

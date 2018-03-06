@@ -1,0 +1,42 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="public"/>
+		<keyword data="interface"/>
+		<unknown data="IExample"/>
+		<block data="{">
+			<keyword data="function"/>
+			<unknown data="test"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<operator data=";"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="example"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<operator data=";"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="example"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+		</block>
+		
+	</block>
+	
+</class>

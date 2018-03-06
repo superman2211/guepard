@@ -1,0 +1,284 @@
+
+<package data="com.guepard.tests">
+	<class data="Vector3D">
+		<extends data="Object"/>
+		<variable access="public" const="true" name="X_AXIS" static="true" type="com.guepard.tests.Vector3D">
+			<body>
+				<construction data="new" id="2083" type="keyword">
+					<get context="Class : com.guepard.tests.Vector3D" data="Vector3D" id="2084" type="unknown">
+						<run context="com.guepard.tests.Vector3D" data="(" id="2085" type="block">
+							<body>
+								<get context="int" data="1" id="2086" type="number"/>
+								<get context="int" data="0" id="2088" type="number"/>
+								<get context="int" data="0" id="2090" type="number"/>
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</variable>
+		
+		<variable access="public" const="true" name="Y_AXIS" static="true" type="com.guepard.tests.Vector3D">
+			<body>
+				<construction data="new" id="2091" type="keyword">
+					<get context="Class : com.guepard.tests.Vector3D" data="Vector3D" id="2092" type="unknown">
+						<run context="com.guepard.tests.Vector3D" data="(" id="2093" type="block">
+							<body>
+								<get context="int" data="0" id="2094" type="number"/>
+								<get context="int" data="1" id="2096" type="number"/>
+								<get context="int" data="0" id="2098" type="number"/>
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</variable>
+		
+		<variable access="public" const="true" name="Z_AXIS" static="true" type="com.guepard.tests.Vector3D">
+			<body>
+				<construction data="new" id="2099" type="keyword">
+					<get context="Class : com.guepard.tests.Vector3D" data="Vector3D" id="2100" type="unknown">
+						<run context="com.guepard.tests.Vector3D" data="(" id="2101" type="block">
+							<body>
+								<get context="int" data="0" id="2102" type="number"/>
+								<get context="int" data="0" id="2104" type="number"/>
+								<get context="int" data="1" id="2106" type="number"/>
+							</body>
+							
+						</run>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</variable>
+		
+		<variable access="public" name="w" type="Number"/>
+		<variable access="public" name="x" type="Number"/>
+		<variable access="public" name="y" type="Number"/>
+		<variable access="public" name="z" type="Number"/>
+		<getter access="public" name="length" type="Number">
+			<body>
+				<construction data="return" id="2107" type="keyword">
+					<get context="int" data="0" id="2108" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<getter access="public" name="lengthSquared" type="Number">
+			<body>
+				<construction data="return" id="2109" type="keyword">
+					<get context="int" data="0" id="2110" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<function access="public" name="add" type="com.guepard.tests.Vector3D">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2111" type="keyword">
+					<get data="null" id="2112" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="angleBetween" static="true" type="Number">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+			<parameter name="b" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2113" type="keyword">
+					<get context="int" data="0" id="2114" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="clone" type="com.guepard.tests.Vector3D">
+			<body>
+				<construction data="return" id="2115" type="keyword">
+					<get data="null" id="2116" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="copyFrom" type="void">
+			<parameter name="sourceVector3D" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="crossProduct" type="com.guepard.tests.Vector3D">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2117" type="keyword">
+					<get data="null" id="2118" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="decrementBy" type="void">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="distance" static="true" type="Number">
+			<parameter name="pt1" type="com.guepard.tests.Vector3D"/>
+			<parameter name="pt2" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2119" type="keyword">
+					<get context="int" data="0" id="2120" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="dotProduct" type="Number">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2121" type="keyword">
+					<get context="int" data="0" id="2122" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="equals" type="Boolean">
+			<parameter name="toCompare" type="com.guepard.tests.Vector3D"/>
+			<parameter name="allFour" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="2123" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<construction data="return" id="2124" type="keyword">
+					<get context="Boolean" data="false" id="2125" type="boolean"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="incrementBy" type="void">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+		</function>
+		
+		<function access="public" name="nearEquals" type="Boolean">
+			<parameter name="toCompare" type="com.guepard.tests.Vector3D"/>
+			<parameter name="tolerance" type="Number"/>
+			<parameter name="allFour" type="Boolean">
+				<body>
+					<get context="Boolean" data="false" id="2126" type="boolean"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<construction data="return" id="2127" type="keyword">
+					<get context="Boolean" data="false" id="2128" type="boolean"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="negate" type="void"/>
+		<function access="public" name="normalize" type="Number">
+			<body>
+				<construction data="return" id="2129" type="keyword">
+					<get context="int" data="0" id="2130" type="number"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="project" type="void"/>
+		<function access="public" name="scaleBy" type="void">
+			<parameter name="s" type="Number"/>
+		</function>
+		
+		<function access="public" name="setTo" type="void">
+			<parameter name="xa" type="Number"/>
+			<parameter name="ya" type="Number"/>
+			<parameter name="za" type="Number"/>
+		</function>
+		
+		<function access="public" name="subtract" type="com.guepard.tests.Vector3D">
+			<parameter name="a" type="com.guepard.tests.Vector3D"/>
+			<body>
+				<construction data="return" id="2131" type="keyword">
+					<get data="null" id="2132" type="literal"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="toString" type="String">
+			<body>
+				<construction data="return" id="2133" type="keyword">
+					<get context="String" data="&quot;&quot;" id="2134" type="string"/>
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="Vector3D">
+			<parameter name="x" type="Number">
+				<body>
+					<get context="int" data="0" id="2135" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="y" type="Number">
+				<body>
+					<get context="int" data="0" id="2136" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="z" type="Number">
+				<body>
+					<get context="int" data="0" id="2137" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="w" type="Number">
+				<body>
+					<get context="int" data="0" id="2138" type="number"/>
+				</body>
+				
+			</parameter>
+			
+		</function>
+		
+	</class>
+	
+</package>

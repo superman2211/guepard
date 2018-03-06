@@ -1,0 +1,434 @@
+
+<class>
+	<keyword data="package"/>
+	<unknown data="com"/>
+	<operator data="."/>
+	<unknown data="guepard"/>
+	<operator data="."/>
+	<unknown data="tests"/>
+	<block data="{">
+		<keyword data="import"/>
+		<unknown data="flash"/>
+		<operator data="."/>
+		<unknown data="utils"/>
+		<operator data="."/>
+		<unknown data="setTimeout"/>
+		<operator data=";"/>
+		<keyword data="public"/>
+		<keyword data="class"/>
+		<unknown data="Vertex"/>
+		<keyword data="implements"/>
+		<unknown data="IExample"/>
+		<block data="{">
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="x"/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="y"/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="var"/>
+			<unknown data="z"/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<operator data=";"/>
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="example"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="x"/>
+				<operator data="+"/>
+				<unknown data="y"/>
+				<operator data="+"/>
+				<unknown data="z"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="example"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="x"/>
+				<operator data="="/>
+				<unknown data="y"/>
+				<operator data="="/>
+				<unknown data="z"/>
+				<operator data="="/>
+				<unknown data="value"/>
+				<operator data="/"/>
+				<number data="3"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="get"/>
+			<unknown data="length"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="return"/>
+				<unknown data="Math"/>
+				<operator data="."/>
+				<unknown data="sqrt"/>
+				<block data="(">
+					<unknown data="x"/>
+					<operator data="*"/>
+					<unknown data="x"/>
+					<operator data="+"/>
+					<unknown data="y"/>
+					<operator data="*"/>
+					<unknown data="y"/>
+					<operator data="+"/>
+					<unknown data="z"/>
+					<operator data="*"/>
+					<unknown data="z"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<keyword data="set"/>
+			<unknown data="length"/>
+			<block data="(">
+				<unknown data="value"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="l"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="length"/>
+				<operator data=";"/>
+				<keyword data="if"/>
+				<block data="(">
+					<unknown data="l"/>
+					<operator data="!="/>
+					<number data="0"/>
+				</block>
+				
+				<block data="{">
+					<unknown data="l"/>
+					<operator data="="/>
+					<unknown data="value"/>
+					<operator data="/"/>
+					<unknown data="l"/>
+					<operator data=";"/>
+					<unknown data="x"/>
+					<operator data="*="/>
+					<unknown data="l"/>
+					<operator data=";"/>
+					<unknown data="y"/>
+					<operator data="*="/>
+					<unknown data="l"/>
+					<operator data=";"/>
+					<unknown data="z"/>
+					<operator data="*="/>
+					<unknown data="l"/>
+					<operator data=";"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="Vertex"/>
+			<block data="(">
+				<unknown data="x"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="y"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<number data="0"/>
+				<operator data=","/>
+				<unknown data="z"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<number data="0"/>
+			</block>
+			
+			<block data="{">
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data="="/>
+				<unknown data="x"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data="="/>
+				<unknown data="y"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data="="/>
+				<unknown data="z"/>
+				<operator data=";"/>
+				<unknown data="setTimeout"/>
+				<block data="(">
+					<keyword data="function"/>
+					<block data="("/>
+					<operator data=":"/>
+					<unknown data="void"/>
+					<block data="{">
+						<unknown data="this"/>
+						<operator data="."/>
+						<unknown data="x"/>
+						<operator data="="/>
+						<number data="10"/>
+						<operator data=";"/>
+					</block>
+					
+					<operator data=","/>
+					<number data="1000"/>
+				</block>
+				
+				<operator data=";"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="add"/>
+			<block data="(">
+				<unknown data="vertex"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data="+="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data="+="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data="+="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="z"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="subtract"/>
+			<block data="(">
+				<unknown data="vertex"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data="-="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data="-="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data=";"/>
+				<unknown data="this"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data="-="/>
+				<unknown data="vertex"/>
+				<operator data="."/>
+				<unknown data="z"/>
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="static"/>
+			<keyword data="function"/>
+			<unknown data="distance"/>
+			<block data="(">
+				<unknown data="vertex0"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+				<operator data=","/>
+				<unknown data="vertex1"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+			</block>
+			
+			<operator data=":"/>
+			<unknown data="Number"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="dx"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<unknown data="vertex0"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data="-"/>
+				<unknown data="vertex1"/>
+				<operator data="."/>
+				<unknown data="x"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="dy"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<unknown data="vertex0"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data="-"/>
+				<unknown data="vertex1"/>
+				<operator data="."/>
+				<unknown data="y"/>
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="dz"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<unknown data="vertex0"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data="-"/>
+				<unknown data="vertex1"/>
+				<operator data="."/>
+				<unknown data="z"/>
+				<operator data=";"/>
+				<keyword data="return"/>
+				<unknown data="Math"/>
+				<operator data="."/>
+				<unknown data="sqrt"/>
+				<block data="(">
+					<unknown data="dx"/>
+					<operator data="*"/>
+					<unknown data="dx"/>
+					<operator data="+"/>
+					<unknown data="dy"/>
+					<operator data="*"/>
+					<unknown data="dy"/>
+					<operator data="+"/>
+					<unknown data="dz"/>
+					<operator data="*"/>
+					<unknown data="dz"/>
+				</block>
+				
+			</block>
+			
+			<keyword data="public"/>
+			<keyword data="function"/>
+			<unknown data="test"/>
+			<block data="("/>
+			<operator data=":"/>
+			<unknown data="void"/>
+			<block data="{">
+				<keyword data="var"/>
+				<unknown data="v1"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Vertex"/>
+				<block data="(">
+					<number data="1"/>
+					<operator data=","/>
+					<number data="2"/>
+					<operator data=","/>
+					<number data="3"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="v2"/>
+				<operator data=":"/>
+				<unknown data="Vertex"/>
+				<operator data="="/>
+				<keyword data="new"/>
+				<unknown data="Vertex"/>
+				<block data="(">
+					<number data="4"/>
+					<operator data=","/>
+					<number data="5"/>
+					<operator data=","/>
+					<number data="6"/>
+				</block>
+				
+				<operator data=";"/>
+				<keyword data="var"/>
+				<unknown data="d"/>
+				<operator data=":"/>
+				<unknown data="Number"/>
+				<operator data="="/>
+				<unknown data="Vertex"/>
+				<operator data="."/>
+				<unknown data="distance"/>
+				<block data="(">
+					<unknown data="v1"/>
+					<operator data=","/>
+					<unknown data="v2"/>
+				</block>
+				
+			</block>
+			
+		</block>
+		
+	</block>
+	
+</class>

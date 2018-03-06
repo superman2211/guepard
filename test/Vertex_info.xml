@@ -1,0 +1,554 @@
+
+<package data="com.guepard.tests">
+	<import data="flash.utils.setTimeout"/>
+	<class data="Vertex">
+		<implements data="com.guepard.tests.IExample"/>
+		<variable access="public" name="x" type="Number"/>
+		<variable access="public" name="y" type="Number"/>
+		<variable access="public" name="z" type="Number"/>
+		<getter access="public" name="example" type="Number">
+			<body>
+				<construction data="return" id="2139" type="keyword">
+					<get context="Number" data="x" id="2140" member="variable : x" type="unknown">
+						<operation data="+" id="2141" type="operator">
+							<get context="Number" data="y" id="2142" member="variable : y" type="unknown">
+								<operation data="+" id="2143" type="operator">
+									<get context="Number" data="z" id="2144" member="variable : z" type="unknown"/>
+								</operation>
+								
+							</get>
+							
+						</operation>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="example" type="void">
+			<parameter name="value" type="Number"/>
+			<body>
+				<get context="Number" data="x" id="2145" member="variable : x" type="unknown">
+					<set data="=" id="2146" type="operator">
+						<get context="Number" data="y" id="2147" member="variable : y" type="unknown">
+							<set data="=" id="2148" type="operator">
+								<get context="Number" data="z" id="2149" member="variable : z" type="unknown">
+									<set data="=" id="2150" type="operator">
+										<get context="Number" data="value" id="2151" member="parameter : value" type="unknown">
+											<operation data="/" id="2152" type="operator">
+												<get context="int" data="3" id="2153" type="number"/>
+											</operation>
+											
+										</get>
+										
+									</set>
+									
+								</get>
+								
+							</set>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</setter>
+		
+		<getter access="public" name="length" type="Number">
+			<body>
+				<construction data="return" id="2154" type="keyword">
+					<get context="Class : Math" data="Math" id="2155" type="unknown">
+						<get context="Function : Number" data="sqrt" id="2156" member="static function : sqrt" type="unknown">
+							<run context="Number" data="(" id="2157" type="block">
+								<body>
+									<get context="Number" data="x" id="2158" member="variable : x" type="unknown">
+										<operation data="*" id="2159" type="operator">
+											<get context="Number" data="x" id="2160" member="variable : x" type="unknown">
+												<operation data="+" id="2161" type="operator">
+													<get context="Number" data="y" id="2162" member="variable : y" type="unknown">
+														<operation data="*" id="2163" type="operator">
+															<get context="Number" data="y" id="2164" member="variable : y" type="unknown">
+																<operation data="+" id="2165" type="operator">
+																	<get context="Number" data="z" id="2166" member="variable : z" type="unknown">
+																		<operation data="*" id="2167" type="operator">
+																			<get context="Number" data="z" id="2168" member="variable : z" type="unknown"/>
+																		</operation>
+																		
+																	</get>
+																	
+																</operation>
+																
+															</get>
+															
+														</operation>
+														
+													</get>
+													
+												</operation>
+												
+											</get>
+											
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</getter>
+		
+		<setter access="public" name="length" type="void">
+			<parameter name="value" type="Number"/>
+			<local name="l" type="Number"/>
+			<body>
+				<get context="Number" data="l" id="2169" member="local : l" type="unknown">
+					<set data="=" id="2170" type="operator">
+						<get context="com.guepard.tests.Vertex" data="this" id="2171" type="unknown">
+							<get context="Number" data="length" id="2172" member="property : length" type="unknown"/>
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<construction data="if" id="2173" type="keyword">
+					<body>
+						<get context="Number" data="l" id="2174" member="local : l" type="unknown">
+							<operation data="!=" id="2175" type="operator">
+								<get context="int" data="0" id="2176" type="number"/>
+							</operation>
+							
+						</get>
+						
+					</body>
+					
+					<construction id="2177">
+						<body>
+							<get context="Number" data="l" id="2178" member="local : l" type="unknown">
+								<set data="=" id="2179" type="operator">
+									<get context="Number" data="value" id="2180" member="parameter : value" type="unknown">
+										<operation data="/" id="2181" type="operator">
+											<get context="Number" data="l" id="2182" member="local : l" type="unknown"/>
+										</operation>
+										
+									</get>
+									
+								</set>
+								
+							</get>
+							
+							<get context="Number" data="x" id="2183" member="variable : x" type="unknown">
+								<set data="*=" id="2184" type="operator">
+									<get context="Number" data="l" id="2185" member="local : l" type="unknown"/>
+								</set>
+								
+							</get>
+							
+							<get context="Number" data="y" id="2186" member="variable : y" type="unknown">
+								<set data="*=" id="2187" type="operator">
+									<get context="Number" data="l" id="2188" member="local : l" type="unknown"/>
+								</set>
+								
+							</get>
+							
+							<get context="Number" data="z" id="2189" member="variable : z" type="unknown">
+								<set data="*=" id="2190" type="operator">
+									<get context="Number" data="l" id="2191" member="local : l" type="unknown"/>
+								</set>
+								
+							</get>
+							
+						</body>
+						
+					</construction>
+					
+				</construction>
+				
+			</body>
+			
+		</setter>
+		
+		<function access="public" name="Vertex">
+			<parameter name="x" type="Number">
+				<body>
+					<get context="int" data="0" id="2192" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="y" type="Number">
+				<body>
+					<get context="int" data="0" id="2193" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<parameter name="z" type="Number">
+				<body>
+					<get context="int" data="0" id="2194" type="number"/>
+				</body>
+				
+			</parameter>
+			
+			<body>
+				<get context="com.guepard.tests.Vertex" data="this" id="2195" type="unknown">
+					<get context="Number" data="x" id="2196" member="variable : x" type="unknown">
+						<set data="=" id="2197" type="operator">
+							<get context="Number" data="x" id="2198" member="parameter : x" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2199" type="unknown">
+					<get context="Number" data="y" id="2200" member="variable : y" type="unknown">
+						<set data="=" id="2201" type="operator">
+							<get context="Number" data="y" id="2202" member="parameter : y" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2203" type="unknown">
+					<get context="Number" data="z" id="2204" member="variable : z" type="unknown">
+						<set data="=" id="2205" type="operator">
+							<get context="Number" data="z" id="2206" member="parameter : z" type="unknown"/>
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="Function : uint" data="setTimeout" id="2207" type="unknown">
+					<run context="uint" data="(" id="2208" type="block">
+						<body>
+							<construction data="function" id="2209" type="keyword">
+								<method>
+									<anonymous type="void">
+										<body>
+											<get context="com.guepard.tests.Vertex" data="this" id="2210" type="unknown">
+												<get context="Number" data="x" id="2211" member="variable : x" type="unknown">
+													<set data="=" id="2212" type="operator">
+														<get context="int" data="10" id="2213" type="number"/>
+													</set>
+													
+												</get>
+												
+											</get>
+											
+										</body>
+										
+									</anonymous>
+									
+								</method>
+								
+							</construction>
+							
+							<get context="int" data="1000" id="2215" type="number"/>
+						</body>
+						
+					</run>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="add" type="void">
+			<parameter name="vertex" type="com.guepard.tests.Vertex"/>
+			<body>
+				<get context="com.guepard.tests.Vertex" data="this" id="2216" type="unknown">
+					<get context="Number" data="x" id="2217" member="variable : x" type="unknown">
+						<set data="+=" id="2218" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2219" member="parameter : vertex" type="unknown">
+								<get context="Number" data="x" id="2220" member="variable : x" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2221" type="unknown">
+					<get context="Number" data="y" id="2222" member="variable : y" type="unknown">
+						<set data="+=" id="2223" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2224" member="parameter : vertex" type="unknown">
+								<get context="Number" data="y" id="2225" member="variable : y" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2226" type="unknown">
+					<get context="Number" data="z" id="2227" member="variable : z" type="unknown">
+						<set data="+=" id="2228" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2229" member="parameter : vertex" type="unknown">
+								<get context="Number" data="z" id="2230" member="variable : z" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="subtract" type="void">
+			<parameter name="vertex" type="com.guepard.tests.Vertex"/>
+			<body>
+				<get context="com.guepard.tests.Vertex" data="this" id="2231" type="unknown">
+					<get context="Number" data="x" id="2232" member="variable : x" type="unknown">
+						<set data="-=" id="2233" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2234" member="parameter : vertex" type="unknown">
+								<get context="Number" data="x" id="2235" member="variable : x" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2236" type="unknown">
+					<get context="Number" data="y" id="2237" member="variable : y" type="unknown">
+						<set data="-=" id="2238" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2239" member="parameter : vertex" type="unknown">
+								<get context="Number" data="y" id="2240" member="variable : y" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="this" id="2241" type="unknown">
+					<get context="Number" data="z" id="2242" member="variable : z" type="unknown">
+						<set data="-=" id="2243" type="operator">
+							<get context="com.guepard.tests.Vertex" data="vertex" id="2244" member="parameter : vertex" type="unknown">
+								<get context="Number" data="z" id="2245" member="variable : z" type="unknown"/>
+							</get>
+							
+						</set>
+						
+					</get>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="distance" static="true" type="Number">
+			<parameter name="vertex0" type="com.guepard.tests.Vertex"/>
+			<parameter name="vertex1" type="com.guepard.tests.Vertex"/>
+			<local name="dx" type="Number"/>
+			<local name="dy" type="Number"/>
+			<local name="dz" type="Number"/>
+			<body>
+				<get context="Number" data="dx" id="2246" member="local : dx" type="unknown">
+					<set data="=" id="2247" type="operator">
+						<get context="com.guepard.tests.Vertex" data="vertex0" id="2248" member="parameter : vertex0" type="unknown">
+							<get context="Number" data="x" id="2249" member="variable : x" type="unknown">
+								<operation data="-" id="2250" type="operator">
+									<get context="com.guepard.tests.Vertex" data="vertex1" id="2251" member="parameter : vertex1" type="unknown">
+										<get context="Number" data="x" id="2252" member="variable : x" type="unknown"/>
+									</get>
+									
+								</operation>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="dy" id="2253" member="local : dy" type="unknown">
+					<set data="=" id="2254" type="operator">
+						<get context="com.guepard.tests.Vertex" data="vertex0" id="2255" member="parameter : vertex0" type="unknown">
+							<get context="Number" data="y" id="2256" member="variable : y" type="unknown">
+								<operation data="-" id="2257" type="operator">
+									<get context="com.guepard.tests.Vertex" data="vertex1" id="2258" member="parameter : vertex1" type="unknown">
+										<get context="Number" data="y" id="2259" member="variable : y" type="unknown"/>
+									</get>
+									
+								</operation>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="dz" id="2260" member="local : dz" type="unknown">
+					<set data="=" id="2261" type="operator">
+						<get context="com.guepard.tests.Vertex" data="vertex0" id="2262" member="parameter : vertex0" type="unknown">
+							<get context="Number" data="z" id="2263" member="variable : z" type="unknown">
+								<operation data="-" id="2264" type="operator">
+									<get context="com.guepard.tests.Vertex" data="vertex1" id="2265" member="parameter : vertex1" type="unknown">
+										<get context="Number" data="z" id="2266" member="variable : z" type="unknown"/>
+									</get>
+									
+								</operation>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+				<construction data="return" id="2267" type="keyword">
+					<get context="Class : Math" data="Math" id="2268" type="unknown">
+						<get context="Function : Number" data="sqrt" id="2269" member="static function : sqrt" type="unknown">
+							<run context="Number" data="(" id="2270" type="block">
+								<body>
+									<get context="Number" data="dx" id="2271" member="local : dx" type="unknown">
+										<operation data="*" id="2272" type="operator">
+											<get context="Number" data="dx" id="2273" member="local : dx" type="unknown">
+												<operation data="+" id="2274" type="operator">
+													<get context="Number" data="dy" id="2275" member="local : dy" type="unknown">
+														<operation data="*" id="2276" type="operator">
+															<get context="Number" data="dy" id="2277" member="local : dy" type="unknown">
+																<operation data="+" id="2278" type="operator">
+																	<get context="Number" data="dz" id="2279" member="local : dz" type="unknown">
+																		<operation data="*" id="2280" type="operator">
+																			<get context="Number" data="dz" id="2281" member="local : dz" type="unknown"/>
+																		</operation>
+																		
+																	</get>
+																	
+																</operation>
+																
+															</get>
+															
+														</operation>
+														
+													</get>
+													
+												</operation>
+												
+											</get>
+											
+										</operation>
+										
+									</get>
+									
+								</body>
+								
+							</run>
+							
+						</get>
+						
+					</get>
+					
+				</construction>
+				
+			</body>
+			
+		</function>
+		
+		<function access="public" name="test" type="void">
+			<local name="v1" type="com.guepard.tests.Vertex"/>
+			<local name="v2" type="com.guepard.tests.Vertex"/>
+			<local name="d" type="Number"/>
+			<body>
+				<get context="com.guepard.tests.Vertex" data="v1" id="2282" member="local : v1" type="unknown">
+					<set data="=" id="2283" type="operator">
+						<construction data="new" id="2284" type="keyword">
+							<get context="Class : com.guepard.tests.Vertex" data="Vertex" id="2285" type="unknown">
+								<run context="com.guepard.tests.Vertex" data="(" id="2286" type="block">
+									<body>
+										<get context="int" data="1" id="2287" type="number"/>
+										<get context="int" data="2" id="2289" type="number"/>
+										<get context="int" data="3" id="2291" type="number"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="com.guepard.tests.Vertex" data="v2" id="2292" member="local : v2" type="unknown">
+					<set data="=" id="2293" type="operator">
+						<construction data="new" id="2294" type="keyword">
+							<get context="Class : com.guepard.tests.Vertex" data="Vertex" id="2295" type="unknown">
+								<run context="com.guepard.tests.Vertex" data="(" id="2296" type="block">
+									<body>
+										<get context="int" data="4" id="2297" type="number"/>
+										<get context="int" data="5" id="2299" type="number"/>
+										<get context="int" data="6" id="2301" type="number"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</construction>
+						
+					</set>
+					
+				</get>
+				
+				<get context="Number" data="d" id="2302" member="local : d" type="unknown">
+					<set data="=" id="2303" type="operator">
+						<get context="Class : com.guepard.tests.Vertex" data="Vertex" id="2304" type="unknown">
+							<get context="Function : Number" data="distance" id="2305" member="static function : distance" type="unknown">
+								<run context="Number" data="(" id="2306" type="block">
+									<body>
+										<get context="com.guepard.tests.Vertex" data="v1" id="2307" member="local : v1" type="unknown"/>
+										<get context="com.guepard.tests.Vertex" data="v2" id="2309" member="local : v2" type="unknown"/>
+									</body>
+									
+								</run>
+								
+							</get>
+							
+						</get>
+						
+					</set>
+					
+				</get>
+				
+			</body>
+			
+		</function>
+		
+	</class>
+	
+</package>
