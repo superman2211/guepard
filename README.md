@@ -12,7 +12,7 @@
 
 ## Usage
 - Install **Adobe AIR**
-- Install application from **/out/production/utilite/utilite.air**
+- Install application from **/air/utilite.air**
 - Download and extract **Guepard SDK** from **/sdk**
 - Start application and create new project
 - Set all fields in all tabs as you need
