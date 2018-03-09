@@ -7,7 +7,7 @@
 - Export resources to **XML** (for animations and structure), **JPG** and **PNG** (for graphics and atlases)
 - Parsing **action script 3** code
 - Analysing code and fixing unknown types
-- Export **javascript** code
+- Export **java script** code
 - Generate **HTML** page
 
 ## Usage
