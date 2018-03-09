@@ -10,11 +10,12 @@ package flash.geom
 		{
 			return 0;
 		}
-
+		
 		public static function distance(pt1:Vector3D, pt2:Vector3D):Number
 		{
 			return 0;
 		}
+		
 		public var w:Number;
 		public var x:Number;
 		public var y:Number;

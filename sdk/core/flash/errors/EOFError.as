@@ -6,7 +6,7 @@ package flash.errors
 		
 		public function EOFError(param1:String = "", param2:int = 0)
 		{
-		
+			
 		}
 		
 	}

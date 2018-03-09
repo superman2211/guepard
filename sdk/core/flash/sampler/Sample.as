@@ -8,7 +8,7 @@ package flash.sampler
 		
 		public function Sample()
 		{
-		
+			
 		}
 		
 	}

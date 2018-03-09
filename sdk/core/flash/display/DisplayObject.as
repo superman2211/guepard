@@ -108,12 +108,12 @@ package flash.display
 		
 		public function get loaderInfo():LoaderInfo
 		{
-		
+			
 		}
 		
 		public function get root():DisplayObject
 		{
-		
+			
 		}
 		
 		public function get cacheAsBitmap():Boolean
@@ -136,7 +136,7 @@ package flash.display
 		
 		public function get filters():Array
 		{
-		
+			
 		}
 		
 		public function set filters(value:Array):void
@@ -145,12 +145,12 @@ package flash.display
 		
 		public function get stage():Stage
 		{
-		
+			
 		}
 		
 		public function get transform():Transform
 		{
-		
+			
 		}
 		
 		public function set transform(value:Transform):void
@@ -159,7 +159,7 @@ package flash.display
 		
 		public function get scale9Grid():Rectangle
 		{
-		
+			
 		}
 		
 		public function set scale9Grid(innerRectangle:Rectangle):void
@@ -168,7 +168,7 @@ package flash.display
 		
 		public function get accessibilityProperties():AccessibilityProperties
 		{
-		
+			
 		}
 		
 		public function set accessibilityProperties(value:AccessibilityProperties):void
@@ -177,7 +177,7 @@ package flash.display
 		
 		public function get blendMode():String
 		{
-		
+			
 		}
 		
 		public function set blendMode(value:String):void
@@ -186,12 +186,12 @@ package flash.display
 		
 		public function get parent():DisplayObjectContainer
 		{
-		
+			
 		}
 		
 		public function get opaqueBackground():Object
 		{
-		
+			
 		}
 		
 		public function set opaqueBackground(value:Object):void
@@ -200,17 +200,17 @@ package flash.display
 		
 		public function get mouseX():Number
 		{
-		
+			
 		}
 		
 		public function get mouseY():Number
 		{
-		
+			
 		}
 		
 		public function DisplayObject()
 		{
-		
+			
 		}
 		
 		public function globalToLocal(point:Point):Point

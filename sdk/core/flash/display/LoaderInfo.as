@@ -14,7 +14,7 @@ package flash.display
 		
 		public function get bytesLoaded():uint
 		{
-		
+			
 		}
 		
 		public function get contentType():String
@@ -59,7 +59,7 @@ package flash.display
 		
 		public function get parameters():Object
 		{
-		
+			
 		}
 		
 		public function get bytes():ByteArray
@@ -92,7 +92,7 @@ package flash.display
 		
 		public function LoaderInfo()
 		{
-		
+			
 		}
 		
 		private function _getArgs():Object
@@ -101,7 +101,7 @@ package flash.display
 		
 		override public function dispatchEvent(event:Event):Boolean
 		{
-		
+			
 		}
 		
 	}

@@ -78,25 +78,29 @@ package com.guepard.converter
 		{
 			var text:String = "";
 			
-			//TODO: add google fonts
-			/*if (Converter.resources.custom.exportFonts.selected)
+			var data:Array = [];
+			
+			data.push('<style type="text/css">');
+			
+			if (Converter.resources.custom.exportFonts.selected)
 			{
-				var data:Array = [];
-				
-				data.push('<style type="text/css">');
-				data.push('\t@font-face {');
-				data.push('\t\tfont-family:"Pricedown Bl";');
-				data.push('\t\tsrc: url("data/font/pricedown_bl-webfont.eot");');
-				data.push('\t\tsrc: url("data/font/pricedown_bl-webfont.eot?#iefix") format("embedded-opentype"),');
-				data.push('\t\turl("data/font/pricedown_bl-webfont.ttf") format("truetype"),');
-				data.push('\t\turl("data/font/pricedown_bl-webfont.svg#pricedownblack") format("svg");');
-				data.push('\t\tfont-weight: normal;');
-				data.push('\t\tfont-style: normal;');
-				data.push('\t}');
-				data.push('</style>');
-				
-				text = data.join("\n\t\t");
-			}//*/
+				for each (var name:String in FontsExporter.fonts)
+				{
+					data.push('\t@font-face {');
+					data.push('\t\tfont-family:"' + name + '";');
+					data.push('\t\tsrc: url("fonts/' + name + '.eot");');
+					data.push('\t\tsrc: url("fonts/' + name + '.eot?#iefix") format("embedded-opentype"),');
+					data.push('\t\turl("fonts/' + name + '.ttf") format("truetype"),');
+					data.push('\t\turl("fonts/' + name + '.svg#' + name + '") format("svg");');
+					data.push('\t\tfont-weight: normal;');
+					data.push('\t\tfont-style: normal;');
+					data.push('\t}');
+				}
+			}
+			
+			data.push('</style>');
+			
+			text = data.join("\n\t\t");
 			
 			template = template.replace(new RegExp("{embed fonts}", 'g'), text);
 			

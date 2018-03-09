@@ -8,7 +8,7 @@ package flash.net
 		
 		public function URLRequestHeader(name:String = "", value:String = "")
 		{
-		
+			
 		}
 		
 	}

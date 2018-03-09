@@ -8,17 +8,17 @@ package flash.display
 		
 		public function get textSnapshot():TextSnapshot
 		{
-		
+			
 		}
 		
 		public function get numChildren():int
 		{
-		
+			
 		}
 		
 		public function get tabChildren():Boolean
 		{
-		
+			
 		}
 		
 		public function set tabChildren(enable:Boolean):void
@@ -27,7 +27,7 @@ package flash.display
 		
 		public function get mouseChildren():Boolean
 		{
-		
+			
 		}
 		
 		public function set mouseChildren(enable:Boolean):void
@@ -36,22 +36,22 @@ package flash.display
 		
 		public function DisplayObjectContainer()
 		{
-		
+			
 		}
 		
 		public function addChild(child:DisplayObject):DisplayObject
 		{
-		
+			
 		}
 		
 		public function getChildByName(name:String):DisplayObject
 		{
-		
+			
 		}
 		
 		public function getChildIndex(child:DisplayObject):int
 		{
-		
+			
 		}
 		
 		public function setChildIndex(child:DisplayObject, index:int):void
@@ -60,12 +60,12 @@ package flash.display
 		
 		public function addChildAt(child:DisplayObject, index:int):DisplayObject
 		{
-		
+			
 		}
 		
 		public function contains(child:DisplayObject):Boolean
 		{
-		
+			
 		}
 		
 		public function swapChildrenAt(index1:int, index2:int):void
@@ -74,7 +74,7 @@ package flash.display
 		
 		public function getChildAt(index:int):DisplayObject
 		{
-		
+			
 		}
 		
 		public function swapChildren(child1:DisplayObject, child2:DisplayObject):void
@@ -83,12 +83,12 @@ package flash.display
 		
 		public function getObjectsUnderPoint(point:Point):Array
 		{
-		
+			
 		}
 		
 		public function removeChildAt(index:int):DisplayObject
 		{
-		
+			
 		}
 		
 		public function areInaccessibleObjectsUnderPoint(point:Point):Boolean

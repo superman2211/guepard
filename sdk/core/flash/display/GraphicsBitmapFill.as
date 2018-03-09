@@ -11,7 +11,7 @@ package flash.display
 		
 		public function GraphicsBitmapFill(param1:BitmapData = null, param2:Matrix = null, param3:Boolean = true, param4:Boolean = false)
 		{
-		
+			
 		}
 		
 	}

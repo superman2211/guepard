@@ -9,12 +9,12 @@ package flash.sampler
 		
 		public function StackFrame()
 		{
-		
+			
 		}
 		
 		public function toString():String
 		{
-		
+			
 		}
 		
 	}

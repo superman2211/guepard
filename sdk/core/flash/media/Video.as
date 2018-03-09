@@ -6,7 +6,7 @@ package flash.media
 	public class Video extends DisplayObject
 	{
 		
-				public function get videoHeight():int
+		public function get videoHeight():int
 		{
 		};
 		
@@ -30,7 +30,7 @@ package flash.media
 		{
 		}
 		
-public function Video(width:int = 320, height:int = 240)
+		public function Video(width:int = 320, height:int = 240)
 		
 		public function attachNetStream(netStream:NetStream):void
 		{

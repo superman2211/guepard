@@ -71,7 +71,7 @@ package flash.display
 		
 		public function SimpleButton(upState:DisplayObject = null, overState:DisplayObject = null, downState:DisplayObject = null, hitTestState:DisplayObject = null)
 		{
-		
+			
 		}
 		
 		private function _updateButton():void

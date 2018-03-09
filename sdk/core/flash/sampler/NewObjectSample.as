@@ -12,7 +12,7 @@ package flash.sampler
 		
 		public function NewObjectSample()
 		{
-		
+			
 		}
 		
 	}

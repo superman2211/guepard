@@ -15,7 +15,7 @@ package flash.display
 		
 		public function call(functionName:String, ...args:Array):void
 		{
-		
+			
 		}
 	}
 }

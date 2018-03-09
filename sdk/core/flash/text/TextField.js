@@ -1643,25 +1643,25 @@ import flash.geom.*;
 	/*public*/
 	d.getFirstCharInParagraph = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.getImageReference = function (id/*String*/)/*DisplayObject*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.getLineIndexAtPoint = function (x/*Number*/, y/*Number*/)/*int*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.getLineIndexOfChar = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	/*public*/
@@ -1691,13 +1691,13 @@ import flash.geom.*;
 	/*public*/
 	d.getParagraphLength = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.getRawText = function ()/*String*/
 	{
-	
+		
 	};
 	
 	/*public*/
@@ -1709,19 +1709,19 @@ import flash.geom.*;
 	/*public*/
 	d.getTextRuns = function (beginIndex/*int*/, endIndex/*int*/)/*Array*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.getXMLText = function (beginIndex/*int*/, endIndex/*int*/)/*String*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.insertXMLText = function (beginIndex/*int*/, endIndex/*int*/, richText/*String*/, pasting/*Boolean*/)/*void*/
 	{
-	
+		
 	};
 	
 	/*internal*/
@@ -1733,13 +1733,13 @@ import flash.geom.*;
 	/*public*/
 	d.replaceSelectedText = function (value/*String*/)/*void*/
 	{
-	
+		
 	};
 	
 	/*public*/
 	d.replaceText = function (beginIndex/*int*/, endIndex/*int*/, newText/*String*/)/*void*/
 	{
-	
+		
 	};
 	
 	/*public*/

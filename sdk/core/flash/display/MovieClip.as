@@ -6,7 +6,7 @@ package flash.display
 		
 		public function get currentLabels():Array
 		{
-		
+			
 		}
 		
 		public function get currentLabel():String
@@ -55,7 +55,7 @@ package flash.display
 		
 		public function MovieClip()
 		{
-		
+			
 		}
 		
 		public function stop():void

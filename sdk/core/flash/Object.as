@@ -26,7 +26,7 @@ package
 		
 		public function setPropertyIsEnumerable(name:String, isEnum:Boolean = true):void
 		{
-		
+			
 		}
 		
 		public function toLocaleString():String

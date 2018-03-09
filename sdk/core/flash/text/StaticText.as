@@ -11,7 +11,7 @@ package flash.text
 		
 		public function StaticText()
 		{
-		
+			
 		}
 		
 	}

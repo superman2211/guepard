@@ -10,6 +10,7 @@ package
 		static function fromCharCode(...args:Array):String
 		{
 		}
+		
 		public var length:int;
 		
 		public function String(param1:String = "")

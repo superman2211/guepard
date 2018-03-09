@@ -9,7 +9,7 @@ package flash.text
 		
 		public function CSMSettings(fontSize:Number, insideCutoff:Number, outsideCutoff:Number)
 		{
-		
+			
 		}
 		
 	}

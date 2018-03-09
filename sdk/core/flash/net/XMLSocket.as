@@ -11,7 +11,7 @@ package flash.net
 		
 		public function XMLSocket(host:String = null, port:int = 0)
 		{
-		
+			
 		}
 		
 		public function send(object:Object):void

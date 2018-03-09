@@ -12,7 +12,7 @@ package flash.text
 		
 		public function TextLineMetrics(x:Number, width:Number, height:Number, ascent:Number, descent:Number, leading:Number)
 		{
-		
+			
 		}
 		
 	}

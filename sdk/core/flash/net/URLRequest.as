@@ -6,7 +6,7 @@ package flash.net
 		
 		public function get digest():String
 		{
-		
+			
 		}
 		
 		public function set digest(value:String):void
@@ -15,7 +15,7 @@ package flash.net
 		
 		public function get method():String
 		{
-		
+			
 		}
 		
 		public function set method(value:String):void
@@ -24,7 +24,7 @@ package flash.net
 		
 		public function get data():Object
 		{
-		
+			
 		}
 		
 		public function set data(value:Object):void
@@ -33,7 +33,7 @@ package flash.net
 		
 		public function get url():String
 		{
-		
+			
 		}
 		
 		public function set url(value:String):void
@@ -42,7 +42,7 @@ package flash.net
 		
 		public function get requestHeaders():Array
 		{
-		
+			
 		}
 		
 		public function set requestHeaders(value:Array):void
@@ -51,7 +51,7 @@ package flash.net
 		
 		public function get contentType():String
 		{
-		
+			
 		}
 		
 		public function set contentType(value:String):void
@@ -60,7 +60,7 @@ package flash.net
 		
 		public function URLRequest(url:String = null)
 		{
-		
+			
 		}
 		
 	}

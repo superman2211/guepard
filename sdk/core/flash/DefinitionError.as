@@ -5,7 +5,7 @@ package
 	{
 		public function DefinitionError(message:String = "", id:uint = 0)
 		{
-		
+			
 		}
 	}
 }

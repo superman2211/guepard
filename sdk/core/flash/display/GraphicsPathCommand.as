@@ -13,7 +13,7 @@ package flash.display
 		
 		public function GraphicsPathCommand()
 		{
-		
+			
 		}
 		
 	}

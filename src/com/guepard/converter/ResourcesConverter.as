@@ -12,6 +12,7 @@ package com.guepard.converter
 	import com.guepard.decompiler.data.TagType;
 	import com.guepard.decompiler.serialization.SWFSerializator;
 	import com.guepard.decompiler.tags.AudioCodingFormat;
+	import com.guepard.decompiler.tags.DefineFont;
 	import com.guepard.decompiler.tags.DefineShape;
 	import com.guepard.decompiler.tags.DefineSound;
 	import com.guepard.tasks.Task;
@@ -84,10 +85,10 @@ package com.guepard.converter
 		{
 			super("Convert Resources '" + name + "'");
 			
-			_file = file;// Converter.source.swfPath;
-			_debug = debug;// Converter.settings.debugDataPath;
-			_name = name;// Converter.source.custom.projectName.text;
-			_target = target;// Converter.target.targetDataPath;
+			_file = file;
+			_debug = debug;
+			_name = name;
+			_target = target;
 			
 			_dataFiles = new Vector.<File>();
 		}
@@ -348,6 +349,22 @@ package com.guepard.converter
 		
 		private function exportFonts():Boolean
 		{
+			if (Converter.resources.custom.exportFonts.selected)
+			{
+				var tags:Vector.<Tag> = _swf.getTagsByTypes(
+					[TagType.DEFINE_FONT, TagType.DEFINE_FONT_2, TagType.DEFINE_FONT_3, TagType.DEFINE_FONT_4],
+					true
+				);
+				
+				for each(var tag:DefineFont in tags)
+				{
+					if (tag.name && FontsExporter.fonts.indexOf(tag.name) == -1)
+					{
+						FontsExporter.fonts.push(tag.name);
+					}
+				}
+			}
+			
 			return true;
 		}
 		

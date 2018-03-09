@@ -8,7 +8,7 @@ package flash.display
 		
 		public function GraphicsPathWinding()
 		{
-		
+			
 		}
 		
 	}

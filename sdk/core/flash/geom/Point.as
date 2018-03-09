@@ -6,7 +6,7 @@ package flash.geom
 		public static function interpolate(point1:Point, point2:Point, value:Number):Point
 		{
 		}
-
+		
 		public static function distance(point1:Point, point2:Point):Number
 		{
 		}
@@ -14,6 +14,7 @@ package flash.geom
 		public static function polar(length:Number, angle:Number):Point
 		{
 		}
+		
 		public var x:Number;
 		public var y:Number;
 		

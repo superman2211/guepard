@@ -351,7 +351,7 @@ import flash.media.*;
 	/*public*/
 	d.set_hitArea = function (value/*Sprite*/)/*void*/
 	{
-	
+		
 	};
 	
 	/*public*/
@@ -364,7 +364,7 @@ import flash.media.*;
 	/*public*/
 	d.set_soundTransform = function (sndTransform/*SoundTransform*/)/*void*/
 	{
-	
+		
 	};
 	
 	
@@ -380,7 +380,7 @@ import flash.media.*;
 	/*public*/
 	d.stopDrag = function ()/*void*/
 	{
-	
+		
 	};
 	
 	d._checkInteractiveEvent = function (data)

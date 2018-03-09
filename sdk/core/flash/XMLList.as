@@ -5,7 +5,7 @@ package
 	{
 		public function XMLList(value:Object = null)
 		{
-		
+			
 		}
 		
 		public function addNamespace(ns:Object):XML

@@ -15,7 +15,7 @@ package
 		
 		public function QName(namespace:Object = null, name:Object = null)
 		{
-		
+			
 		}
 		
 		public function toString():String

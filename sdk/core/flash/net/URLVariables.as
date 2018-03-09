@@ -11,12 +11,12 @@ package flash.net
 		
 		public function toString():String
 		{
-		
+			
 		}
 		
 		public function decode(source:String):void
 		{
-		
+			
 		}
 		
 	}

@@ -8,7 +8,7 @@ package flash.display
 		
 		public function GraphicsSolidFill(param1:uint = 0, param2:Number = 1)
 		{
-		
+			
 		}
 		
 	}

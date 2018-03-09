@@ -2,6 +2,7 @@ package com.guepard.app.gui
 {
 	import com.guepard.app.Converter;
 	import com.guepard.app.data.Builder;
+	import com.guepard.converter.FontsExporter;
 	import com.guepard.utils.StringUtil;
 	import com.guepard.utils.XMLUtil;
 	
@@ -263,6 +264,8 @@ package com.guepard.app.gui
 				XMLUtil.COMPRESS_VALUE = Math.pow(10, Converter.resources.custom.compressDigits.value);
 				
 				clear();
+				
+				FontsExporter.init();
 				
 				_builders = Converter.getBuilders();
 				_builderIndex = 0;

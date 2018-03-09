@@ -34,7 +34,7 @@ package flash.text
 		
 		public function TextRenderer()
 		{
-		
+			
 		}
 		
 	}

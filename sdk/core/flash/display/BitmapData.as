@@ -7,7 +7,7 @@ package flash.display
 	public class BitmapData implements IBitmapDrawable
 	{
 		
-				public function get width():int
+		public function get width():int
 		{
 		};
 		
@@ -17,14 +17,14 @@ package flash.display
 		
 		public function get rect():Rectangle
 		{
-		
+			
 		}
 		
 		public function get height():int
 		{
 		}
 		
-public function BitmapData(width:int, height:int, transparent:Boolean = true, fillColor:uint = 4.29497e+009)
+		public function BitmapData(width:int, height:int, transparent:Boolean = true, fillColor:uint = 4.29497e+009)
 		
 		public function copyPixels(sourceBitmapData:BitmapData, sourceRect:Rectangle, destPoint:Point, alphaBitmapData:BitmapData = null, alphaPoint:Point = null, mergeAlpha:Boolean = false):void
 		{
