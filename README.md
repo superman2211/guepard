@@ -21,7 +21,7 @@
 
 ## Demos
 
-Demos from Adobe Animation / Adobe Flash Proffesional:
+**Demos from Adobe Animation / Adobe Flash Proffesional:**
 
 Shapes
 [flash](https://antonovsergey2211.github.io/guepard/demo/shapes/shapes.swf)
