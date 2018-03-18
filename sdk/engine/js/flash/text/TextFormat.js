@@ -108,15 +108,6 @@
 			value = flash.text.TextFormat._embedFonts[ value ];
 		}
 		
-		/*if(value.split("Arial_")>0) value="Arial";
-		
-		if(value=="Arial Black")
-		{
-			value="Arial";
-			this._bold = true;
-		}
-		*/
-		
 		this._font = value;
 		return value;
 	};

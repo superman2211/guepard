@@ -28,8 +28,6 @@
 	
 	d._convolute = function (s, t, w, h, sw, sh, weights, useColor)
 	{
-		//var time = flash.utils.getTimer();
-		
 		var hsw = Math.floor(sw / 2);
 		var hsh = Math.floor(sh / 2);
 		
@@ -123,11 +121,8 @@
 				}
 			}
 		}
-		
-		//console.log("BitmapFilter._convolute: " + (flash.utils.getTimer() - time));
 	};
 	
-	/**/
 	d._fastShadow = function (s, width, height, radius, iterations, cr, cg, cb, strength)
 	{
 		var rsum, gsum, bsum, asum, x, y, i, p, p1, p2, yp, yi, yw, idx, pa;
@@ -153,121 +148,96 @@
 		var ta = 0;
 		var tm = 0;
 		
-		//while (iterations-- > 0)
+		yw = yi = 0;
+		
+		for (y = 0; y < height; y++)
 		{
-			yw = yi = 0;
+			asum = s[ yw + 3 ] * rad1;
 			
-			for (y = 0; y < height; y++)
+			for (i = 1; i <= radius; i++)
 			{
-				//rsum = s[yw] * rad1;
-				//gsum = s[yw + 1] * rad1;
-				//bsum = s[yw + 2] * rad1;
-				asum = s[ yw + 3 ] * rad1;
+				p = yw + (((i > wm ? wm : i)) << 2) + 3;//add 3
 				
-				for (i = 1; i <= radius; i++)
-				{
-					p = yw + (((i > wm ? wm : i)) << 2) + 3;//add 3
-					//rsum += s[p++];
-					//gsum += s[p++];
-					//bsum += s[p++];
-					asum += s[ p ];
-				}
-				
-				for (x = 0; x < width; x++)
-				{
-					//r[yi] = rsum;
-					//g[yi] = gsum;
-					//b[yi] = bsum;
-					a[ yi ] = asum;
-					
-					if (y == 0)
-					{
-						vmin[ x ] = ((p = x + rad1) < wm ? p : wm) << 2;
-						vmax[ x ] = ((p = x - radius) > 0 ? p << 2 : 0);
-					}
-					
-					p1 = yw + vmin[ x ] + 3;//add 3
-					p2 = yw + vmax[ x ] + 3;//add 3
-					
-					//rsum += s[p1++] - s[p2++];
-					//gsum += s[p1++] - s[p2++];
-					//bsum += s[p1++] - s[p2++];
-					asum += s[ p1 ] - s[ p2 ];
-					
-					yi++;
-				}
-				
-				yw += (width << 2);
+				asum += s[ p ];
 			}
 			
 			for (x = 0; x < width; x++)
 			{
-				yp = x;
-				//rsum = r[yp] * rad1;
-				//gsum = g[yp] * rad1;
-				//bsum = b[yp] * rad1;
-				asum = a[ yp ] * rad1;
+				a[ yi ] = asum;
 				
-				for (i = 1; i <= radius; i++)
+				if (y == 0)
 				{
-					yp += (i > hm ? 0 : width);
-					//rsum += r[yp];
-					//gsum += g[yp];
-					//bsum += b[yp];
-					asum += a[ yp ];
+					vmin[ x ] = ((p = x + rad1) < wm ? p : wm) << 2;
+					vmax[ x ] = ((p = x - radius) > 0 ? p << 2 : 0);
 				}
 				
-				yi = x << 2;
+				p1 = yw + vmin[ x ] + 3;//add 3
+				p2 = yw + vmax[ x ] + 3;//add 3
 				
-				for (y = 0; y < height; y++)
+				asum += s[ p1 ] - s[ p2 ];
+				
+				yi++;
+			}
+			
+			yw += (width << 2);
+		}
+		
+		for (x = 0; x < width; x++)
+		{
+			yp = x;
+			
+			asum = a[ yp ] * rad1;
+			
+			for (i = 1; i <= radius; i++)
+			{
+				yp += (i > hm ? 0 : width);
+				
+				asum += a[ yp ];
+			}
+			
+			yi = x << 2;
+			
+			for (y = 0; y < height; y++)
+			{
+				
+				pa = (asum * mul_sum) >>> shg_sum;
+				
+				if (pa > 0)
 				{
+					tr = s[ yi ];
+					tg = s[ yi + 1 ];
+					tb = s[ yi + 2 ];
+					ta = s[ yi + 3 ];
 					
-					pa = (asum * mul_sum) >>> shg_sum;
+					tm = ta / 255;
 					
-					if (pa > 0)
-					{
-						tr = s[ yi ];
-						tg = s[ yi + 1 ];
-						tb = s[ yi + 2 ];
-						ta = s[ yi + 3 ];
-						
-						//pa = 255 / pa;
-						//s[yi] = ((rsum * mul_sum) >>> shg_sum) * pa;
-						//s[yi + 1] = ((gsum * mul_sum) >>> shg_sum) * pa;
-						//s[yi + 2] = ((bsum * mul_sum) >>> shg_sum) * pa;
-						
-						tm = ta / 255;
-						
-						pa = pa * strength;
-						
-						s[ yi ] = (tr - cr) * tm + cr;
-						s[ yi + 1 ] = (tg - cg) * tm + cg;
-						s[ yi + 2 ] = (tb - cb) * tm + cb;
-						s[ yi + 3 ] = (ta - pa) * tm + pa;
-					}
-					else
-					{
-						s[ yi ] = s[ yi + 1 ] = s[ yi + 2 ] = s[ yi + 3 ] = 0;
-					}
+					pa = pa * strength;
 					
-					if (x == 0)
-					{
-						vmin[ y ] = ((p = y + rad1) < hm ? p : hm) * width;
-						vmax[ y ] = ((p = y - radius) > 0 ? p * width : 0);
-					}
-					
-					p1 = x + vmin[ y ];
-					p2 = x + vmax[ y ];
-					
-					//rsum += r[p1] - r[p2];
-					//gsum += g[p1] - g[p2];
-					//bsum += b[p1] - b[p2];
-					asum += a[ p1 ] - a[ p2 ];
-					
-					yi += width << 2;
+					s[ yi ] = (tr - cr) * tm + cr;
+					s[ yi + 1 ] = (tg - cg) * tm + cg;
+					s[ yi + 2 ] = (tb - cb) * tm + cb;
+					s[ yi + 3 ] = (ta - pa) * tm + pa;
 				}
+				else
+				{
+					s[ yi ] = s[ yi + 1 ] = s[ yi + 2 ] = s[ yi + 3 ] = 0;
+				}
+				
+				if (x == 0)
+				{
+					vmin[ y ] = ((p = y + rad1) < hm ? p : hm) * width;
+					vmax[ y ] = ((p = y - radius) > 0 ? p * width : 0);
+				}
+				
+				p1 = x + vmin[ y ];
+				p2 = x + vmax[ y ];
+				
+				asum += a[ p1 ] - a[ p2 ];
+				
+				yi += width << 2;
 			}
 		}
+		
 	}
 	
 	d._fastBlur = function (s, width, height, radius, iterations)
@@ -289,109 +259,114 @@
 		var vmin = [];
 		var vmax = [];
 		
-		//while (iterations-- > 0)
+		yw = yi = 0;
+		
+		for (y = 0; y < height; y++)
 		{
+			rsum = s[ yw ] * rad1;
+			gsum = s[ yw + 1 ] * rad1;
+			bsum = s[ yw + 2 ] * rad1;
+			asum = s[ yw + 3 ] * rad1;
 			
-			yw = yi = 0;
-			
-			for (y = 0; y < height; y++)
+			for (i = 1; i <= radius; i++)
 			{
-				rsum = s[ yw ] * rad1;
-				gsum = s[ yw + 1 ] * rad1;
-				bsum = s[ yw + 2 ] * rad1;
-				asum = s[ yw + 3 ] * rad1;
-				
-				for (i = 1; i <= radius; i++)
-				{
-					p = yw + (((i > wm ? wm : i)) << 2);
-					rsum += s[ p++ ];
-					gsum += s[ p++ ];
-					bsum += s[ p++ ];
-					asum += s[ p ]
-				}
-				
-				for (x = 0; x < width; x++)
-				{
-					r[ yi ] = rsum;
-					g[ yi ] = gsum;
-					b[ yi ] = bsum;
-					a[ yi ] = asum;
-					
-					if (y == 0)
-					{
-						vmin[ x ] = ((p = x + rad1) < wm ? p : wm) << 2;
-						vmax[ x ] = ((p = x - radius) > 0 ? p << 2 : 0);
-					}
-					
-					p1 = yw + vmin[ x ];
-					p2 = yw + vmax[ x ];
-					
-					rsum += s[ p1++ ] - s[ p2++ ];
-					gsum += s[ p1++ ] - s[ p2++ ];
-					bsum += s[ p1++ ] - s[ p2++ ];
-					asum += s[ p1 ] - s[ p2 ];
-					
-					yi++;
-				}
-				yw += (width << 2);
+				p = yw + (((i > wm ? wm : i)) << 2);
+				rsum += s[ p++ ];
+				gsum += s[ p++ ];
+				bsum += s[ p++ ];
+				asum += s[ p ]
 			}
 			
 			for (x = 0; x < width; x++)
 			{
-				yp = x;
-				rsum = r[ yp ] * rad1;
-				gsum = g[ yp ] * rad1;
-				bsum = b[ yp ] * rad1;
-				asum = a[ yp ] * rad1;
+				r[ yi ] = rsum;
+				g[ yi ] = gsum;
+				b[ yi ] = bsum;
+				a[ yi ] = asum;
 				
-				for (i = 1; i <= radius; i++)
+				if (y == 0)
 				{
-					yp += (i > hm ? 0 : width);
-					rsum += r[ yp ];
-					gsum += g[ yp ];
-					bsum += b[ yp ];
-					asum += a[ yp ];
+					vmin[ x ] = ((p = x + rad1) < wm ? p : wm) << 2;
+					vmax[ x ] = ((p = x - radius) > 0 ? p << 2 : 0);
 				}
 				
-				yi = x << 2;
+				p1 = yw + vmin[ x ];
+				p2 = yw + vmax[ x ];
 				
-				for (y = 0; y < height; y++)
-				{
-					
-					s[ yi + 3 ] = pa = (asum * mul_sum) >>> shg_sum;
-					
-					if (pa > 0)
-					{
-						pa = 255 / pa;
-						s[ yi ] = ((rsum * mul_sum) >>> shg_sum) * pa;
-						s[ yi + 1 ] = ((gsum * mul_sum) >>> shg_sum) * pa;
-						s[ yi + 2 ] = ((bsum * mul_sum) >>> shg_sum) * pa;
-					}
-					else
-					{
-						s[ yi ] = s[ yi + 1 ] = s[ yi + 2 ] = 0;
-					}
-					
-					if (x == 0)
-					{
-						vmin[ y ] = ((p = y + rad1) < hm ? p : hm) * width;
-						vmax[ y ] = ((p = y - radius) > 0 ? p * width : 0);
-					}
-					
-					p1 = x + vmin[ y ];
-					p2 = x + vmax[ y ];
-					
-					rsum += r[ p1 ] - r[ p2 ];
-					gsum += g[ p1 ] - g[ p2 ];
-					bsum += b[ p1 ] - b[ p2 ];
-					asum += a[ p1 ] - a[ p2 ];
-					
-					yi += width << 2;
-				}
+				rsum += s[ p1++ ] - s[ p2++ ];
+				gsum += s[ p1++ ] - s[ p2++ ];
+				bsum += s[ p1++ ] - s[ p2++ ];
+				asum += s[ p1 ] - s[ p2 ];
+				
+				yi++;
 			}
+			yw += (width << 2);
 		}
 		
-	}
+		for (x = 0; x < width; x++)
+		{
+			yp = x;
+			rsum = r[ yp ] * rad1;
+			gsum = g[ yp ] * rad1;
+			bsum = b[ yp ] * rad1;
+			asum = a[ yp ] * rad1;
+			
+			for (i = 1; i <= radius; i++)
+			{
+				yp += (i > hm ? 0 : width);
+				rsum += r[ yp ];
+				gsum += g[ yp ];
+				bsum += b[ yp ];
+				asum += a[ yp ];
+			}
+			
+			yi = x << 2;
+			
+			for (y = 0; y < height; y++)
+			{
+				
+				s[ yi + 3 ] = pa = (asum * mul_sum) >>> shg_sum;
+				
+				if (pa > 0)
+				{
+					pa = 255 / pa;
+					s[ yi ] = ((rsum * mul_sum) >>> shg_sum) * pa;
+					s[ yi + 1 ] = ((gsum * mul_sum) >>> shg_sum) * pa;
+					s[ yi + 2 ] = ((bsum * mul_sum) >>> shg_sum) * pa;
+				}
+				else
+				{
+					s[ yi ] = s[ yi + 1 ] = s[ yi + 2 ] = 0;
+				}
+				
+				if (x == 0)
+				{
+					vmin[ y ] = ((p = y + rad1) < hm ? p : hm) * width;
+					vmax[ y ] = ((p = y - radius) > 0 ? p * width : 0);
+				}
+				
+				p1 = x + vmin[ y ];
+				p2 = x + vmax[ y ];
+				
+				rsum += r[ p1 ] - r[ p2 ];
+				gsum += g[ p1 ] - g[ p2 ];
+				bsum += b[ p1 ] - b[ p2 ];
+				asum += a[ p1 ] - a[ p2 ];
+				
+				yi += width << 2;
+			}
+		}
+	};
+	
+	d.__getHTMLColor = function ()
+	{
+		var r = (this._color >> 16) & 0xff;
+		var g = (this._color >> 8) & 0xff;
+		var b = this._color & 0xff;
+		var a = this._alpha * this._strength;
+		
+		return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + a + ')';
+	};
 	
 	var s = {};
 	

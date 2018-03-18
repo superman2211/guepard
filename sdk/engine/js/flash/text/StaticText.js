@@ -14,15 +14,14 @@ import flash.display.*;
 	d._bounds = null;
 	d._matrix = null;
 	d._checkTouch_point = null;
+	d._scaleCorrection = 1;
+	d._canvasUpdated = false;
 	
 	d._render_ = function (render)
 	{
 		this.__updateTransform__();
 		
-		if (!this._bitmapData)
-		{
-			this._updateCanvas();
-		}
+		this._updateCanvas();
 		
 		render.drawBitmapData(
 			this._bitmapData,
@@ -50,17 +49,57 @@ import flash.display.*;
 		return text;
 	};
 	
+	d._checkScaleCorrection = function ()
+	{
+		var currentMatrix = this.get_transform().get_concatenatedMatrix();
+		
+		var currentCorrection = Math.max(
+			Math.abs(currentMatrix.a),
+			Math.abs(currentMatrix.b),
+			Math.abs(currentMatrix.c),
+			Math.abs(currentMatrix.d)
+		);
+		
+		var stage = this.get_stage();
+		
+		if (stage)
+		{
+			var stageMatrix = stage._render._baseMatrix;
+			
+			currentCorrection *= Math.max(stageMatrix.a, stageMatrix.d);
+		}
+		
+		if (this._scaleCorrection != currentCorrection)
+		{
+			this._scaleCorrection = currentCorrection;
+			this._canvasUpdated = false;
+		}
+	}
+	
 	d._updateCanvas = function ()
 	{
-		if (this._bitmapData) return;
+		this._checkScaleCorrection();
 		
-		var textureWidth = flash.getTextureSize(this._bounds.width);
-		var textureHeight = flash.getTextureSize(this._bounds.height);
+		if (this._canvasUpdated) return;
 		
-		this._bitmapData = new flash.display.BitmapData(textureWidth, textureHeight, true, 0);
+		this._canvasUpdated = true;
+		
+		var textureWidth = flash.getTextureSize(this._bounds.width * this._scaleCorrection);
+		var textureHeight = flash.getTextureSize(this._bounds.height * this._scaleCorrection);
+		
+		if (this._bitmapData && this._bitmapData.width == textureWidth && this._bitmapData.height == textureHeight)
+		{
+			this._bitmapData.fillRect(0, 0, this._bitmapData.width, this._bitmapData.height, 0);
+		}
+		else
+		{
+			this._bitmapData = new flash.display.BitmapData(textureWidth, textureHeight, true, 0);
+		}
 		
 		this._textureRect = this._bounds.clone();
 		this._textureRect.x = this._textureRect.y = 0;
+		this._textureRect.width = this._bounds.width * this._scaleCorrection;
+		this._textureRect.height = this._bounds.height * this._scaleCorrection;
 		
 		var context = this._bitmapData._context2d;
 		
@@ -69,12 +108,23 @@ import flash.display.*;
 			var m = this._matrix;
 			
 			context.setTransform(
-				m.a,
+				m.a * this._scaleCorrection,
 				m.b,
 				m.c,
-				m.d,
-				m.tx,
-				m.ty
+				m.d * this._scaleCorrection,
+				m.tx * this._scaleCorrection,
+				m.ty * this._scaleCorrection
+			);
+		}
+		else
+		{
+			context.setTransform(
+				this._scaleCorrection,
+				0,
+				0,
+				this._scaleCorrection,
+				0,
+				0
 			);
 		}
 		
@@ -111,7 +161,7 @@ import flash.display.*;
 				color = Number(record.color);
 			}
 			
-			context.font = fontSize + "px " + fontName;
+			context.font = flash.text.TextFormat._formatFont(fontName, fontSize);
 			context.fillStyle = flash.numberToHex(color);
 			
 			if (record.x != undefined)

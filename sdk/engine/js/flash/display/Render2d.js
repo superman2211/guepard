@@ -56,16 +56,22 @@
 		this._width = width;
 		this._height = height;
 		
-		this._canvas.width = width;
-		this._canvas.height = height;
-		
-		this._maskCanvas.width = width;
-		this._maskCanvas.height = height;
-		
-		this._maskedCanvas.width = width;
-		this._maskedCanvas.height = height;
+		this.updateSize(this._canvas);
+		this.updateSize(this._maskCanvas);
+		this.updateSize(this._maskedCanvas);
 		
 		this._clearMasks = true;
+	}
+	
+	d.updateSize = function(canvas)
+	{
+		var ratio = flash.getPixelRatio();
+		
+		canvas.width = this._width * ratio;
+		canvas.height = this._height * ratio;
+		
+		canvas.style.width = this._width + 'px';
+		canvas.style.height = this._height + 'px';
 	}
 	
 	d.setCanvas = function (canvas, context, width, height)
@@ -131,8 +137,10 @@
 	
 	d.clear = function ()
 	{
+		var ratio = flash.getPixelRatio();
+		
 		this._context.setTransform(1, 0, 0, 1, 0, 0);
-		this._context.clearRect(0, 0, this._width, this._height);
+		this._context.clearRect(0, 0, this._width * ratio, this._height * ratio);
 		
 		this._currentcontext = this._context;
 	}
@@ -142,6 +150,11 @@
 		this.setMatrix(matrix, roundPosition);
 		
 		var imageData;
+		
+		this._currentcontext.shadowBlur = 0;
+		this._currentcontext.shadowOffsetX = 0;
+		this._currentcontext.shadowOffsetY = 0;
+		this._currentcontext.shadowColor = 0;
 		
 		if (colorTransform.isEmptyColor() && !filters.length)
 		{
@@ -158,6 +171,29 @@
 			imageData = bitmapData._getTransfomedCanvas(map, colorTransform, filters);
 			
 			this._currentcontext.globalAlpha = 1;
+			
+			if (filters.length > 0)
+			{
+				for (var i in filters)
+				{
+					var filter = filters[i];
+					
+					if (flash.is(filter, flash.filters.DropShadowFilter))
+					{
+						this._currentcontext.shadowBlur = filter.get_blurX();
+						this._currentcontext.shadowOffsetX = Math.cos(filter.get_angle()) * filter.get_distance();
+						this._currentcontext.shadowOffsetY = Math.sin(filter.get_angle()) * filter.get_distance();
+						this._currentcontext.shadowColor = filter.__getHTMLColor();
+					}
+					else if (flash.is(filter, flash.filters.GlowFilter))
+					{
+						this._currentcontext.shadowBlur = filter.get_blurX();
+						this._currentcontext.shadowOffsetX = 0;
+						this._currentcontext.shadowOffsetY = 0;
+						this._currentcontext.shadowColor = filter.__getHTMLColor();
+					}
+				}
+			}
 		}
 		
 		this._currentcontext.drawImage(
@@ -181,10 +217,12 @@
 		
 		this._maskBounds = mask.getBounds(null);
 		
-		this._maskBounds.x = this._baseMatrix.tx + this._maskBounds.x * this._baseMatrix.a;
-		this._maskBounds.y = this._baseMatrix.ty + this._maskBounds.y * this._baseMatrix.d;
-		this._maskBounds.width = this._maskBounds.width * this._baseMatrix.a;
-		this._maskBounds.height = this._maskBounds.height * this._baseMatrix.d;
+		var ratio = flash.getPixelRatio();
+		
+		this._maskBounds.x =  (this._baseMatrix.tx + this._maskBounds.x * this._baseMatrix.a);
+		this._maskBounds.y =  (this._baseMatrix.ty + this._maskBounds.y * this._baseMatrix.d);
+		this._maskBounds.width = ratio * this._maskBounds.width * this._baseMatrix.a;
+		this._maskBounds.height = ratio * this._maskBounds.height * this._baseMatrix.d;
 		
 		this._currentcontext = this._maskContext;
 		
@@ -204,10 +242,12 @@
 			if (this._maskBounds.get_right() > this._width) this._maskBounds.set_right(this._width);
 			if (this._maskBounds.get_bottom() > this._height) this._maskBounds.set_bottom(this._height);
 			
-			var mx = Math.round(this._maskBounds.x);
-			var my = Math.round(this._maskBounds.y);
-			var mw = Math.round(this._maskBounds.width);
-			var mh = Math.round(this._maskBounds.height);
+			var ratio = flash.getPixelRatio();
+			
+			var mx = Math.round(this._maskBounds.x );
+			var my = Math.round(this._maskBounds.y );
+			var mw = Math.round(this._maskBounds.width * ratio);
+			var mh = Math.round(this._maskBounds.height * ratio);
 			
 			//draw
 			this._maskedCanvasContext.globalAlpha = 1;

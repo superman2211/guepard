@@ -54,6 +54,11 @@
 					this._createFilters();
 					this.filters.push(this.parseGlowFilter(child));
 					break;
+				
+				case "DropShadowFilter":
+					this._createFilters();
+					this.filters.push(this.parseDropShadowFilter(child));
+					break;
 			}
 		}
 	};
@@ -87,6 +92,25 @@
 			Number(attributes.quality),
 			attributes.inner == "true",
 			attributes.knockout == "true"
+		);
+	};
+	
+	d.parseDropShadowFilter = function (node)
+	{
+		var attributes = node.get_attributes();
+		
+		return new flash.filters.DropShadowFilter(
+			Number(attributes.distance),
+			Number(attributes.angle),
+			Number(attributes.color),
+			Number(attributes.alpha),
+			Number(attributes.blurX),
+			Number(attributes.blurY),
+			Number(attributes.strength),
+			Number(attributes.quality),
+			attributes.inner == "true",
+			attributes.knockout == "true",
+			attributes.hideObject == "true"
 		);
 	};
 	

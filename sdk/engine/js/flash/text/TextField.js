@@ -668,10 +668,17 @@ import flash.geom.*;
 			
 			var stageMatrix = stage._render._baseMatrix;
 			
-			this._setStyleProperty(this._input, "left", (stageMatrix.tx + stageMatrix.a * matrix.tx + this._bounds.x * stageMatrix.a * matrix.a) + "px");
-			this._setStyleProperty(this._input, "top", (stageMatrix.ty + stageMatrix.d * matrix.ty + this._bounds.y * stageMatrix.d * matrix.d) + "px");
-			this._setStyleProperty(this._input, "width", this._bounds.width * stageMatrix.a * matrix.a + "px");
-			this._setStyleProperty(this._input, "fontSize", (textFormat.get_size() * stageMatrix.a * matrix.a) + "px");
+			var ratio = 1 / flash.getPixelRation();
+			
+			var left = ratio * (stageMatrix.tx + stageMatrix.a * matrix.tx + this._bounds.x * stageMatrix.a * matrix.a);
+			var top = ratio * (stageMatrix.ty + stageMatrix.d * matrix.ty + this._bounds.y * stageMatrix.d * matrix.d);
+			var width = ratio * this._bounds.width * stageMatrix.a * matrix.a;
+			var size = ratio * textFormat.get_size() * stageMatrix.a * matrix.a;
+			
+			this._setStyleProperty(this._input, "left", left + "px");
+			this._setStyleProperty(this._input, "top", top + "px");
+			this._setStyleProperty(this._input, "width", width + "px");
+			this._setStyleProperty(this._input, "fontSize", size + "px");
 			this._setStyleProperty(this._input, "fontFamily", textFormat.get_font());
 			this._setStyleProperty(this._input, "textAlign", textFormat.get_align());
 			this._setStyleProperty(this._input, "color", flash.numberToColor(textFormat.get_color()));
@@ -1047,6 +1054,7 @@ import flash.geom.*;
 		
 		x = x * this._scaleCorrection;
 		y = y * this._scaleCorrection;
+		
 		space = space * this._scaleCorrection;
 		
 		while (c < charsCount)
@@ -1060,7 +1068,6 @@ import flash.geom.*;
 				var color = letter.color;
 				
 				context.textBaseline = "top";
-				//context.font = size + "px " + font;
 				context.font = flash.text.TextFormat._formatFont(font, size);
 				context.fillStyle = flash.numberToHex(color);
 			}

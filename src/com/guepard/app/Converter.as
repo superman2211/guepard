@@ -141,6 +141,12 @@ package com.guepard.app
 				project.write();
 				
 				updateTitle();
+				
+				if (settings.sdkPath && settings.sdkPath.exists)
+				{
+					_sharedObject.data.sdkPath = settings.custom.sdkPath.text;
+					_sharedObject.flush();
+				}
 			}
 		}
 		
@@ -159,6 +165,10 @@ package com.guepard.app
 			_start.visible = false;
 			
 			updateTitle();
+			
+			_design.sourceButton.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			
+			output.clear();
 		}
 		
 		public function createProject(file:File):void
@@ -178,6 +188,11 @@ package com.guepard.app
 			project.changed = true;
 			project.file = file;
 			
+			if (_sharedObject.data.sdkPath)
+			{
+				settings.custom.sdkPath.text = _sharedObject.data.sdkPath;
+			}
+			
 			getParametersFromGUI();
 			
 			project.write();
@@ -190,6 +205,12 @@ package com.guepard.app
 			if (!settings.sdkPath || !settings.sdkPath.exists)
 			{
 				_design.settingsButton.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			}
+			else
+			{
+				_design.sourceButton.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+				
+				output.clear();
 			}
 		}
 		

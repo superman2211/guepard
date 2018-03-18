@@ -7,25 +7,16 @@
 	flash.classes = {};
 	flash.descriptions = {};
 	
+	flash.getPixelRatio = function(context)
+	{
+		//return 1;
+		
+		return window.devicePixelRatio || 1;
+	};
+	
 	flash.minimize = function ()
 	{
 		window.scrollTo(0, 0);
-	}
-	
-	flash.setPixelRatio = function ()
-	{
-		if (window.hasOwnProperty("devicePixelRatio"))
-		{
-			var meta = document.createElement("meta");
-			meta.name = "viewport";
-			meta.content = "parameters-densitydpi=device-dpi, user-scalable=0, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no, minimal-ui";
-			
-			document.getElementsByTagName("head")[ 0 ].appendChild(meta)
-		}
-		else
-		{
-			
-		}
 	};
 	
 	flash.correctTopLevel = function ()
@@ -1053,6 +1044,5 @@
 	flash.correctTopLevel();
 	flash.correctTypedArrays();
 	flash.correctArray();
-	flash.setPixelRatio();
 	
 })();

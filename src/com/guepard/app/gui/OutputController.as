@@ -192,7 +192,7 @@ package com.guepard.app.gui
 			custom.outputField.verticalScrollPosition = custom.outputField.maxVerticalScrollPosition;
 		}
 		
-		private function clear():void
+		public function clear():void
 		{
 			_datas.length = 0;
 			

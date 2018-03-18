@@ -489,10 +489,8 @@ import flash.utils.*;
 			
 			if (!colorTransform.isEmpty())
 			{
-				//var time = flash.utils.getTimer();
-				
 				i = d.length;
-				
+
 				while (i--)
 				{
 					if (d[ i ])
@@ -510,10 +508,8 @@ import flash.utils.*;
 						i -= 3;
 					}
 				}
-				
-				//console.log(flash.utils.getTimer() - time);
 			}
-			
+
 			for (i in filters)
 			{
 				var filter = filters[ i ];

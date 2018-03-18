@@ -92,12 +92,18 @@ import flash.ui.*;
 			this._rendermode = gl ? "3d" : "2d";
 		}
 		
+		if (this._rendermode != "2d")
+		{
+			console.warn("Render 3d is not supported");
+			
+			this._rendermode == "2d";
+		}
+		
 		if (this._rendermode == "2d")
 		{
 			this._render = new flash.display.Render2d(canvasId, width, height);
 		}
-		
-		if (this._rendermode == "3d")
+		else if (this._rendermode == "3d")
 		{
 			this._render = new flash.display.Render3d(canvasId, width, height);
 		}
@@ -537,8 +543,10 @@ import flash.ui.*;
 	
 	d.updateSize = function (width, height)
 	{
-		this._height = height;
-		this._width = width;
+		var ratio = flash.getPixelRatio();
+		
+		this._height = height * ratio;
+		this._width = width * ratio;
 		
 		this._render.setSize(width, height);
 		

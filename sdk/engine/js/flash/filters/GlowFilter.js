@@ -147,68 +147,13 @@
 	/*override*/
 	d._apply = function (d/*Array*/, w/*Number*/, h/*Number*/)/*void*/
 	{
-		if (this._blurX < 2 || this._blurY < 2) return;
-		
-		//var time = flash.utils.getTimer();
-		
-		/*var c = this._blurX * this._blurY;
-		var v = 1 / c;
-
-		var weights = [];
-
-		while (c--) weights.push(v);
-
-		var t = [];
-
-		this._convolute(d, t, w, h, this._blurX, this._blurY, weights, false);//*/
-		
-		//var t = [];
-		
-		//var l = d.length;
-		//while (l--) t[l] = d[l];
-		
-		var r = (this._color >> 16) & 0xff;
-		var g = (this._color >> 8) & 0xff;
-		var b = this._color & 0xff;
-		
-		this._fastShadow(d, w, h, this._blurX / 2, this._quality, r, g, b, this._alpha * this._strength);
-		
-		/*var r = (this._color >> 16) & 0xff;
-		var g = (this._color >> 8) & 0xff;
-		var b = this._color & 0xff;
-		
-		var l = d.length;
-
-		var a1 = this._alpha * this._strength;
-		var a2 = 0;
-		var s1 = 0;
-		var s2 = 0;
-		
-		while(l--)
-		{
-			a2 = d[l] / 256;
-
-			s1 = t[l] * a1;
-			s2 = d[l];
-			d[l] = (s2 - s1) * a2 + s1;
-
-			l--;
-
-			s2 = d[l];
-			d[l] = (s2 - b) * a2 + b;
-
-			l--;
-
-			s2 = d[l];
-			d[l] = (s2 - g) * a2 + g;
-
-			l--;
-
-			s2 = d[l];
-			d[l] = (s2 - r) * a2 + r;
-		}//*/
-		
-		//flash.trace("GlowFilter._apply(" + this._quality + "):" + (flash.utils.getTimer() - time));
+		// if (this._blurX < 2 || this._blurY < 2) return;
+		//
+		// var r = (this._color >> 16) & 0xff;
+		// var g = (this._color >> 8) & 0xff;
+		// var b = this._color & 0xff;
+		//
+		// this._fastShadow(d, w, h, this._blurX / 2, this._quality, r, g, b, this._alpha * this._strength);
 	};
 	
 	var s = {};

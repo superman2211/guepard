@@ -73,29 +73,7 @@
 	{
 		if (this._blurX < 2 || this._blurY < 2) return;
 		
-		//var time = flash.utils.getTimer();
-		
-		//convolute
-		/*var c = this._blurX * this._blurY;
-		var v = 1 / c;
-
-		var weights = [];
-
-		while (c--) weights.push(v);
-
-		var t = [];
-
-		this._convolute(d, t, w, h, this._blurX, this._blurY, weights, true);
-
-		var l = d.length;
-
-		while (l--) d[l] = t[l];//*/
-		
-		
-		//super fast blur
 		this._fastBlur(d, w, h, this._blurX / 2, this._quality);
-		
-		//flash.trace("BlurFilter._apply(" + this._quality + "):"  + (flash.utils.getTimer() - time));
 	};
 	
 	var s = {};
