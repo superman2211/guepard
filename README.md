@@ -24,6 +24,21 @@ Shapes
 [flash](https://antonovsergey2211.github.io/guepard/demo/shapes/shapes.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/shapes/build/)
 
+Images
+[flash](https://antonovsergey2211.github.io/guepard/demo/images/images.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/images/build/)
+
+Texts
+[flash](https://antonovsergey2211.github.io/guepard/demo/texts/texts.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/texts/build/)
+
+Animation
+[flash](https://antonovsergey2211.github.io/guepard/demo/animation/animation.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/animation/build/)
+
+Mask
+[flash](https://antonovsergey2211.github.io/guepard/demo/mask/mask.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/mask/build/)
 
 ## Known issues
 - **WebGL** not works - only **Canvas** render
