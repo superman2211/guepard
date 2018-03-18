@@ -21,6 +21,7 @@
 
 ## Demos
 Shapes
+[flash](https://antonovsergey2211.github.io/guepard/demo/shapes/shapes.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/shapes/build/)
 
 
