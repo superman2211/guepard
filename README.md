@@ -20,7 +20,9 @@
 - Build project
 
 ## Demos
-Coming soon
+Shapes
+[html5](https://antonovsergey2211.github.io/guepard/demo/shapes/build/)
+
 
 ## Known issues
 - **WebGL** not works - only **Canvas** render
