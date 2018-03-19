@@ -15,10 +15,7 @@ import flash.utils.*;
 	d._rect = null;
 	d._virtualcanvas = null;
 	d._context2d = null;
-	
-	d._cTransformedvirtualcanvas = null;
-	d._cTransformedcontext2d = null;
-	d._cTransformedAtlas = null;
+	d._transformedImages = null;
 	
 	d._checkTouch_point = null;
 	d._checkTouch_matrix = null;
@@ -92,13 +89,7 @@ import flash.utils.*;
 		this._virtualcanvas.width = width;
 		this._virtualcanvas.height = height;
 		
-		if (this._cTransformedvirtualcanvas)
-		{
-			this._cTransformedvirtualcanvas.width = width;
-			this._cTransformedvirtualcanvas.height = height;
-		}
-		
-		this._cTransformedAtlas = {};
+		this._transformedImages = null;
 	};
 	
 	d.applyFilter = function (sourceBitmapData/*BitmapData*/, sourceRect/*Rectangle*/, destPoint/*Point*/, filter/*BitmapFilter*/)/*void*/
@@ -175,9 +166,7 @@ import flash.utils.*;
 		this._virtualcanvas = null;
 		this._context2d = null;
 		
-		this._cTransformedvirtualcanvas = null;
-		this._cTransformedcontext2d = null;
-		this._cTransformedAtlas = null;
+		this._transformedImages = null;
 		
 		this._checkTouch_point = null;
 		this._checkTouch_matrix = null;
@@ -450,16 +439,8 @@ import flash.utils.*;
 		map.width = Math.floor(map.width);
 		map.height = Math.floor(map.height);
 		
-		if (!this._cTransformedvirtualcanvas)
-		{
-			this._cTransformedvirtualcanvas = document.createElement('canvas');
-			this._cTransformedvirtualcanvas.width = this._virtualcanvas.width;
-			this._cTransformedvirtualcanvas.height = this._virtualcanvas.height;
-			this._cTransformedcontext2d = this._cTransformedvirtualcanvas.getContext('2d');
-			this._cTransformedAtlas = {};
-		}
-		
 		var id = map.x + "_" + map.y + "_" + map.width + "_" + map.height;
+		
 		var value = colorTransform._toValue();
 		
 		for (var i in filters)
@@ -467,41 +448,84 @@ import flash.utils.*;
 			value += "_" + filters[ i ]._toValue();
 		}
 		
-		if (this._cTransformedAtlas[ id ] != value)
+		if (!this._transformedImages) this._transformedImages = [];
+		
+		var image = null;
+		var canvas = null;
+		
+		for (var i in this._transformedImages)
 		{
-			this._cTransformedAtlas[ id ] = value;
+			var current = this._transformedImages[i];
 			
-			var mr = colorTransform.redMultiplier;
-			var mg = colorTransform.greenMultiplier;
-			var mb = colorTransform.blueMultiplier;
-			var ma = colorTransform.alphaMultiplier;
+			if (current.map[id] == value)
+			{
+				canvas = current.canvas;
+			}
 			
-			var or = colorTransform.redOffset;
-			var og = colorTransform.greenOffset;
-			var ob = colorTransform.blueOffset;
-			var oa = colorTransform.alphaOffset;
+			if (!current.map[id] && !image)
+			{
+				image = current;
+			}
+		}
+		
+		if (!canvas)
+		{
+			if (image)
+			{
+				canvas = image.canvas;
+			}
+			else
+			{
+				canvas = document.createElement('canvas');
+				canvas.width = this._virtualcanvas.width;
+				canvas.height = this._virtualcanvas.height;
+				
+				image = {
+					canvas: canvas,
+					map: {}
+				};
+				
+				this._transformedImages.push(image);
+				
+				if (this._transformedImages.length > 8)
+				{
+					this._transformedImages.shift();
+				}
+			}
+			
+			image.map[ id ] = value;
+			
+			var context = canvas.getContext('2d');
 			
 			var imagedata = this._context2d.getImageData(map.x, map.y, map.width, map.height);
 			
-			var d = imagedata.data;
-			
-			var i = 0;
+			var data = imagedata.data;
 			
 			if (!colorTransform.isEmpty())
 			{
-				i = d.length;
+				var mr = colorTransform.redMultiplier;
+				var mg = colorTransform.greenMultiplier;
+				var mb = colorTransform.blueMultiplier;
+				var ma = colorTransform.alphaMultiplier;
+				
+				var or = colorTransform.redOffset;
+				var og = colorTransform.greenOffset;
+				var ob = colorTransform.blueOffset;
+				var oa = colorTransform.alphaOffset;
+				
+				var i = data.length;
 
 				while (i--)
 				{
-					if (d[ i ])
+					if (data[ i ])
 					{
-						d[ i ] = d[ i ] * ma + oa;
+						data[ i ] = data[ i ] * ma + oa;
 						i--;
-						d[ i ] = d[ i ] * mb + ob;
+						data[ i ] = data[ i ] * mb + ob;
 						i--;
-						d[ i ] = d[ i ] * mg + og;
+						data[ i ] = data[ i ] * mg + og;
 						i--;
-						d[ i ] = d[ i ] * mr + or;
+						data[ i ] = data[ i ] * mr + or;
 					}
 					else
 					{
@@ -513,13 +537,14 @@ import flash.utils.*;
 			for (i in filters)
 			{
 				var filter = filters[ i ];
-				filter._apply(d, map.width, map.height);
+				
+				filter._apply(data, map.width, map.height);
 			}
 			
-			this._cTransformedcontext2d.putImageData(imagedata, map.x, map.y);
+			context.putImageData(imagedata, map.x, map.y);
 		}
 		
-		return this._cTransformedvirtualcanvas;
+		return canvas;
 	};
 	
 	d._checkTouch = function (x, y, displayObject)

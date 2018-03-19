@@ -668,12 +668,14 @@ import flash.geom.*;
 			
 			var stageMatrix = stage._render._baseMatrix;
 			
-			var ratio = 1 / flash.getPixelRation();
+			var ratio = flash.getPixelRatio();
 			
-			var left = ratio * (stageMatrix.tx + stageMatrix.a * matrix.tx + this._bounds.x * stageMatrix.a * matrix.a);
-			var top = ratio * (stageMatrix.ty + stageMatrix.d * matrix.ty + this._bounds.y * stageMatrix.d * matrix.d);
-			var width = ratio * this._bounds.width * stageMatrix.a * matrix.a;
-			var size = ratio * textFormat.get_size() * stageMatrix.a * matrix.a;
+			var scale = 1 / ratio;
+			
+			var left = scale * (stageMatrix.tx + stageMatrix.a * matrix.tx + this._bounds.x * stageMatrix.a * matrix.a);
+			var top = scale * (stageMatrix.ty + stageMatrix.d * matrix.ty + this._bounds.y * stageMatrix.d * matrix.d);
+			var width = scale * this._bounds.width * stageMatrix.a * matrix.a;
+			var size = scale * textFormat.get_size() * stageMatrix.a * matrix.a;
 			
 			this._setStyleProperty(this._input, "left", left + "px");
 			this._setStyleProperty(this._input, "top", top + "px");
