@@ -50,7 +50,7 @@ Fla
 **Demos from Flash Develop / Flex:**
 
 Game 
-[flash](https://antonovsergey2211.github.io/guepard/demo/game/game.swf)
+[flash](https://antonovsergey2211.github.io/guepard/demo/game/match3.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/game/build/)
 
 ## Known issues
