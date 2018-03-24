@@ -364,6 +364,8 @@ import flash.ui.*;
 	{
 		if (!e) e = window.event;
 		
+		var ratio = flash.getPixelRatio();
+		
 		var mouseType = null;
 		var touchType = null;
 		
@@ -437,8 +439,8 @@ import flash.ui.*;
 			var firstTouch = touches[ 0 ];
 			
 			p = this._getMousePoint(
-				firstTouch.clientX - canvasRect.left,
-				firstTouch.clientY - canvasRect.top
+				firstTouch.clientX * ratio - canvasRect.left,
+				firstTouch.clientY * ratio - canvasRect.top
 			);
 			
 			this._mouseX = p.x;
@@ -471,8 +473,8 @@ import flash.ui.*;
 				for (var i = 0; i < touches.length; i++)
 				{
 					p = this._getMousePoint(
-						touches[ i ].clientX - canvasRect.left,
-						touches[ i ].clientY - canvasRect.top
+						touches[ i ].clientX * ratio - canvasRect.left,
+						touches[ i ].clientY * ratio - canvasRect.top
 					);
 					
 					data.type = touchType;
@@ -508,8 +510,8 @@ import flash.ui.*;
 			}
 			
 			p = this._getMousePoint(
-				e.clientX - canvasRect.left,
-				e.clientY - canvasRect.top
+				e.clientX * ratio - canvasRect.left,
+				e.clientY * ratio - canvasRect.top
 			);
 			
 			this._mouseX = p.x;
