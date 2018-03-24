@@ -47,6 +47,12 @@ Fla
 [flash](https://antonovsergey2211.github.io/guepard/demo/fla/fla.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/fla/build/)
 
+**Demos from Flash Develop / Flex:**
+
+Game 
+[flash](https://antonovsergey2211.github.io/guepard/demo/game/game.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/game/build/)
+
 ## Known issues
 - **WebGL** not works - only **Canvas** render
 - There are many limitations in **as3** to **js** conversion
