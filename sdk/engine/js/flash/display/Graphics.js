@@ -255,20 +255,15 @@ import flash.geom.*;
 	{
 		this._textureInfo = null;
 		
-		if (!color)
+		if (color == undefined)
 		{
-			
 			color = 0x000000;
-			
 		}
 		
-		if (!alpha)
+		if (alpha == undefined)
 		{
-			
 			alpha = 1;
-			
 		}
-		
 		
 		this._data.push(new flash.display.GraphicsSolidFill(color, alpha));
 		
@@ -342,12 +337,12 @@ import flash.geom.*;
 		{
 			
 			var k = .5522848;
-			var ox = (w / 2) * k;
-			var oy = (h / 2) * k;
-			var xe = x + w;
-			var ye = y + h;
-			var xm = x + w / 2;
-			var ym = y + h / 2;
+			var ox = (width / 2) * k;
+			var oy = (height / 2) * k;
+			var xe = x + width;
+			var ye = y + height;
+			var xm = x + width / 2;
+			var ym = y + height / 2;
 			
 			this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
 			this._path.data.push(x, ym);
