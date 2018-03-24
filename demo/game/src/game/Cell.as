@@ -99,6 +99,14 @@ package game
 			graphics.clear();
 			graphics.beginFill(0, 0);
 			graphics.drawEllipse(0, 0, _size, _size);
+			
+			_design.eyeRight.addFrameScript(0, function() {
+				_design.eyeRight.stop();
+			});
+			
+			_design.eyeLeft.addFrameScript(0, function() {
+				_design.eyeLeft.stop();
+			});
 		}
 		
 		public function eyeAnimation():void

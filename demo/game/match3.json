@@ -1,0 +1,52 @@
+{
+  "source": {
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/game/bin/match3.swf",
+    "preloaderFile": "",
+    "mainClass": "",
+    "projectName": "match3",
+    "flaFile": "/Users/superman/Documents/Work/My/guepard/demo/game/bin/design/background.fla;/Users/superman/Documents/Work/My/guepard/demo/game/bin/design/items.fla;/Users/superman/Documents/Work/My/guepard/demo/game/bin/design/itemspider.fla",
+    "sourceCodePath": "/Users/superman/Documents/Work/My/guepard/demo/game/src"
+  },
+  "target": {
+    "enableBuild": true,
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/game/build",
+    "htmlTemplate": "",
+    "exportDataInZIP": false,
+    "minify": true,
+    "copyOriginalSWF": false,
+    "renderType": 1,
+    "convertExternalSWF": true
+  },
+  "resources": {
+    "shapeScaleMin": 90,
+    "exportFonts": true,
+    "texturePowerMin": 5,
+    "exportCodeTokens": false,
+    "exportDebugTextures": false,
+    "shapeScale": 100,
+    "shapeBorder": 2,
+    "exportCodeEmbed": false,
+    "imageQuality": 80,
+    "texturePowerBig": 11,
+    "texturePowerMax": 11,
+    "exportCode": true,
+    "exportCodeTree": false,
+    "exportSounds": true,
+    "scaleMargin": 5,
+    "shapeBigScale": true,
+    "exportResources": true,
+    "compressDigits": 3
+  },
+  "settings": {
+    "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
+  },
+  "parameters": {
+    "frameRate": 30,
+    "appWidth": 320,
+    "align": 0,
+    "fillScreen": true,
+    "appHeight": 480,
+    "scaleMode": 0,
+    "backgroundColor": "0xffffff"
+  }
+}
