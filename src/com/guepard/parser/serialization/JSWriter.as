@@ -991,11 +991,14 @@ package com.guepard.parser.serialization
 							
 							if (bind) stream.writeSymbol("flash", ".", "bindFunction", "(");
 							
+							if (bind) stream.writeSymbol("this", ",");
+							
 							stream.writeSymbol(expression.tokenData);
 							
 							writeFunction(stream, expression.method, info);
 							
-							if (bind) stream.writeSymbol(",", "this", ")");
+							if (bind) stream.writeSymbol(")");
+							
 							return;
 						
 						case "catch":

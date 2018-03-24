@@ -75,16 +75,60 @@ package com.guepard.app.gui
 					
 					var name:String = Converter.settings.preloaderTemplatePath.name.replace(".swf", "");
 					
-					var converter:ResourcesConverter = new ResourcesConverter(
+					var preloaderConverter:ResourcesConverter = new ResourcesConverter(
 						Converter.settings.preloaderTemplatePath,
 						Converter.settings.debugDataPath.resolvePath(name),
 						name,
 						Converter.target.targetDataPath
 					);
 					
-					builders.push(converter);
+					builders.push(preloaderConverter);
+					
+					if (custom.convertExternalSWF.selected)
+					{
+						var sourceFolder:File = Converter.source.swfPath.parent;
+						var targetFolder:File = targetPath;
+						
+						addExternalBuilders(builders, sourceFolder, targetFolder);
+					}
 					
 					builders.push(new HTMLGenerator());
+				}
+			}
+		}
+		
+		private function addExternalBuilders(builders:Vector.<Builder>, sourceFolder:File, targetFolder:File):void
+		{
+			var files:Array = sourceFolder.getDirectoryListing();
+			
+			for each(var sourceFile:File in files)
+			{
+				if (sourceFile.nativePath != Converter.source.swfPath.nativePath)
+				{
+					if (sourceFile.isDirectory)
+					{
+						var targetFile:File = targetFolder.resolvePath(sourceFile.name);
+						
+						if (!targetFile.exists)
+						{
+							targetFile.createDirectory();
+						}
+						
+						addExternalBuilders(builders, sourceFile, targetFile);
+					}
+					else if (sourceFile.extension == "swf")
+					{
+						var name:String = sourceFile.name.replace(".swf", "");
+						
+						var swfConverter:ResourcesConverter = new ResourcesConverter(
+							sourceFile,
+							Converter.settings.debugDataPath.resolvePath(name),
+							name,
+							targetFolder
+						);
+						
+						builders.push(swfConverter);
+					}
 				}
 			}
 		}
