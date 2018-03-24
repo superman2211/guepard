@@ -1,0 +1,51 @@
+{
+  "source": {
+    "mainClass": "",
+    "flaFile": "/Users/superman/Documents/Work/My/guepard/demo/fla/fla.fla",
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/fla/fla.swf",
+    "sourceCodePath": "",
+    "projectName": "fla",
+    "preloaderFile": ""
+  },
+  "target": {
+    "renderType": 1,
+    "exportDataInZIP": false,
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/fla/build",
+    "htmlTemplate": "",
+    "minify": true,
+    "copyOriginalSWF": false,
+    "enableBuild": true
+  },
+  "resources": {
+    "exportCodeTree": false,
+    "scaleMargin": 5,
+    "compressDigits": 3,
+    "texturePowerMax": 11,
+    "exportSounds": false,
+    "exportDebugTextures": false,
+    "shapeScale": 100,
+    "exportCodeEmbed": false,
+    "exportCodeTokens": false,
+    "imageQuality": 80,
+    "shapeBorder": 2,
+    "texturePowerMin": 5,
+    "texturePowerBig": 11,
+    "exportFonts": false,
+    "exportResources": true,
+    "shapeScaleMin": 90,
+    "exportCode": true,
+    "shapeBigScale": true
+  },
+  "settings": {
+    "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
+  },
+  "parameters": {
+    "frameRate": 24,
+    "appHeight": 400,
+    "align": 0,
+    "fillScreen": true,
+    "appWidth": 550,
+    "scaleMode": 0,
+    "backgroundColor": "0xffffff"
+  }
+}
