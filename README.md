@@ -4,10 +4,10 @@
 ## Conversion process
 - Parsing resources (from **SWF** or **FLA** files)
 - Creation atlases
-- Export resources to **XML** (for animations and structure), **JPG** and **PNG** (for graphics and atlases)
-- Parsing **action script 3** code
+- Export resources from **SWF** to **XML** for animations and structure, and **JPG** / **PNG** for graphics and atlases
+- Parsing **AS3** code
 - Analysing code and fixing unknown types
-- Export **java script** code
+- Export **JS** code
 - Generate **HTML** page
 
 ## Usage
