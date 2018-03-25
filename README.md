@@ -54,5 +54,5 @@ Game
 [html5](https://antonovsergey2211.github.io/guepard/demo/game/build/)
 
 ## Known issues
-- **WebGL** not works - only **Canvas** render
-- There are many limitations in **as3** to **js** conversion
+- Now **WebGL** not works - only **Canvas** render.
+- There are many limitations in **AS3** to **JS** conversion.
