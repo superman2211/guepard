@@ -4,10 +4,10 @@
 ## Conversion process
 - Parsing resources (from **SWF** or **FLA** files)
 - Creation atlases
-- Export resources to **XML** (for animations and structure), **JPG** and **PNG** (for graphics and atlases)
-- Parsing **action script 3** code
+- Export resources from **SWF** to **XML** for animations and structure, and **JPG** / **PNG** for graphics and atlases
+- Parsing **AS3** code
 - Analysing code and fixing unknown types
-- Export **java script** code
+- Export **JS** code
 - Generate **HTML** page
 
 ## Usage
@@ -50,9 +50,9 @@ Fla
 **Demos from Flash Develop / Flex:**
 
 Game 
-[flash](https://antonovsergey2211.github.io/guepard/demo/game/game.swf)
+[flash](https://antonovsergey2211.github.io/guepard/demo/game/bin/match3.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/game/build/)
 
 ## Known issues
-- **WebGL** not works - only **Canvas** render
-- There are many limitations in **as3** to **js** conversion
+- Now **WebGL** not works - only **Canvas** render.
+- There are many limitations in **AS3** to **JS** conversion.
