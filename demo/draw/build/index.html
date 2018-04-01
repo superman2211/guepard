@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>images</title>
+		<title>draw</title>
 		
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -15,14 +15,14 @@
 		<script charset="UTF-8" src="js/guepard.min.js"></script>
 		
 		<!-- application code -->
-		
+		<script charset="UTF-8" src="js/draw.min.js"></script>
 		
 	</head>
 	
 	<body bgcolor="#ffffff" style="margin:0; padding:0; overflow: hidden;">
 		
 		<div id="flashContainer">
-			<canvas id="flashCanvas" width="550" height="400" style="background-color:#ffffff;"></canvas>
+			<canvas id="flashCanvas" width="500" height="375" style="background-color:#ffffff;"></canvas>
 		</div>
 
 		<script>
@@ -89,8 +89,8 @@
 				flash.trace = function () { };
 			}
 
-			var originalWidth = 550;
-			var originalHeight = 400;
+			var originalWidth = 500;
+			var originalHeight = 375;
 			
 			var stage = new flash.display.Stage('flashCanvas', mode, originalWidth, originalHeight);
 			stage.set_frameRate(fps);
@@ -114,7 +114,7 @@
 
 				updatePreloader();
 
-				loader.load(new flash.net.URLRequest("data/images.xml"));
+				loader.load(new flash.net.URLRequest("data/draw.xml"));
 			}
 			
 			function loadComplete(e)

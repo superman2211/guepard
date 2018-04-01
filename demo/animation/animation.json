@@ -1,52 +1,52 @@
-ù{
+{
   "source": {
     "sourceCodePath": "",
     "flaFile": "",
+    "mainClass": "",
     "projectName": "animation",
     "preloaderFile": "",
-    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/animation/animation.swf",
-    "mainClass": ""
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/animation/animation.swf"
   },
   "target": {
-    "enableBuild": true,
-    "htmlTemplate": "",
     "exportDataInZIP": false,
-    "renderType": 1,
-    "copyEngine": false,
     "html5ProjectPath": "/Users/superman/Development/localhost/demo/animation/build",
+    "enableBuild": true,
     "minify": true,
-    "copyOriginalSWF": false
+    "copyOriginalSWF": false,
+    "renderType": 1,
+    "htmlTemplate": "",
+    "convertExternalSWF": false
+  },
+  "parameters": {
+    "appWidth": 550,
+    "frameRate": 60,
+    "align": 0,
+    "fillScreen": true,
+    "scaleMode": 0,
+    "backgroundColor": "0xccff",
+    "appHeight": 400
   },
   "resources": {
-    "compressDigits": 3,
-    "exportCodeEmbed": false,
-    "exportResources": true,
-    "texturePowerMin": 5,
-    "shapeBigScale": true,
-    "exportDebugTextures": false,
-    "texturePowerBig": 11,
-    "exportSounds": false,
-    "shapeScale": 100,
-    "shapeBorder": 2,
     "exportCodeTree": false,
-    "texturePowerMax": 11,
-    "exportCode": true,
-    "scaleMargin": 5,
-    "exportCodeTokens": false,
-    "exportFonts": false,
     "imageQuality": 80,
-    "shapeScaleMin": 90
+    "exportCode": true,
+    "exportSounds": false,
+    "shapeBorder": 2,
+    "texturePowerBig": 11,
+    "shapeScale": 100,
+    "texturePowerMin": 5,
+    "exportDebugTextures": false,
+    "exportResources": true,
+    "exportCodeTokens": false,
+    "scaleMargin": 5,
+    "shapeScaleMin": 90,
+    "exportFonts": false,
+    "exportCodeEmbed": false,
+    "compressDigits": 3,
+    "shapeBigScale": true,
+    "texturePowerMax": 11
   },
   "settings": {
     "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
-  },
-  "parameters": {
-    "appHeight": 400,
-    "scaleMode": 0,
-    "frameRate": 60,
-    "align": 0,
-    "appWidth": 550,
-    "fillScreen": true,
-    "backgroundColor": "0xccff"
   }
 }

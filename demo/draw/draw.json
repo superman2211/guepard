@@ -1,15 +1,15 @@
-ò{
+:{
   "source": {
-    "sourceCodePath": "",
+    "sourceCodePath": "/Users/superman/Documents/Work/My/guepard/demo/draw/src",
     "flaFile": "",
     "mainClass": "",
-    "projectName": "texts",
+    "projectName": "draw",
     "preloaderFile": "",
-    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/texts/texts.swf"
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/draw/out/production/draw/Main.swf"
   },
   "target": {
     "exportDataInZIP": false,
-    "html5ProjectPath": "/Users/superman/Development/localhost/demo/texts/build",
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/draw/build",
     "enableBuild": true,
     "minify": true,
     "copyOriginalSWF": false,
@@ -18,13 +18,13 @@
     "convertExternalSWF": false
   },
   "parameters": {
-    "appWidth": 550,
+    "appWidth": 500,
     "frameRate": 24,
     "align": 0,
     "fillScreen": true,
     "scaleMode": 0,
     "backgroundColor": "0xffffff",
-    "appHeight": 400
+    "appHeight": 375
   },
   "resources": {
     "exportCodeTree": false,
@@ -40,7 +40,7 @@
     "exportCodeTokens": false,
     "scaleMargin": 5,
     "shapeScaleMin": 90,
-    "exportFonts": true,
+    "exportFonts": false,
     "exportCodeEmbed": false,
     "compressDigits": 3,
     "shapeBigScale": true,
