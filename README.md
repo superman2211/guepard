@@ -47,11 +47,15 @@ Fla
 [flash](https://antonovsergey2211.github.io/guepard/demo/fla/fla.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/fla/build/)
 
-**Demos from Flash Develop / Flex:**
+**Demos from Flash Develop / Flex / IntelliJ Idea:**
 
 Game 
 [flash](https://antonovsergey2211.github.io/guepard/demo/game/bin/match3.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/game/build/)
+
+Draw 
+[flash](https://antonovsergey2211.github.io/guepard/demo/draw/out/production/draw/Main.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/draw/build)
 
 ## Known issues
 - Now **WebGL** not works - only **Canvas** render.
