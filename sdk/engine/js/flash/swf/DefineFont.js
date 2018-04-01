@@ -64,7 +64,8 @@
 		this.font._path = this.path;
 		this.font._id = this.id;
 		this.font._definefont = this;
-	}
+		
+	};
 	
 	d.setFonts = function (domain)
 	{
@@ -74,23 +75,28 @@
 		}
 	};
 	
-	d.getCharWidth = function (char1, font, size)
+	d.getCharWidth = function (char, font)
 	{
-		var width = this.chars[ char1 ];
+		var width = this.chars[ char ];
 		
 		if (width == undefined)
 		{
-			var context = flash.swf.DefineFont.__tempContext2d;
-			//context.font = 1024 + "px " + font;
-			context.font = flash.text.TextFormat._formatFont(font, 1024);
-			
-			this.chars[ char1 ] = width = context.measureText(char1).width;
+			this.chars[ char ] = width = this.measureText(char, font).width;
 		}
 		
 		return width;
 	};
 	
-	d.getCharsAdvance = function (char1, char2, font, size)
+	d.measureText = function (text, font)
+	{
+		var context = flash.swf.DefineFont.__tempContext2d;
+		
+		context.font = flash.text.TextFormat._formatFont(font, 1024);
+		
+		return context.measureText(text);
+	}
+	
+	d.getCharsAdvance = function (char1, char2, font)
 	{
 		var advance = 0;
 		
@@ -109,17 +115,17 @@
 				
 				if (advance == undefined)
 				{
-					var width1 = this.getCharWidth(char1, font, size);
-					var width2 = this.getCharWidth(char2, font, size);
+					var width1 = this.getCharWidth(char1, font);
+					var width2 = this.getCharWidth(char2, font);
 					
-					var width = this.getCharWidth(char1 + char2, font, size);
+					var width = this.getCharWidth(char1 + char2, font);
 					
 					pair[ char2 ] = advance = width - width2;
 				}
 			}
 			else
 			{
-				advance = this.getCharWidth(char1, font, size);
+				advance = this.getCharWidth(char1, font);
 			}
 		}
 		

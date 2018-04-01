@@ -16,12 +16,13 @@ import flash.geom.*;
 	d._canvasRect = null;
 	d._textureRect = null;
 	
-	d._lineStyle = null;
 	d._maxThickness = 0;
 	
 	d._checkTouch_point = null;
 	d._checkTouch_matrix = null;
 	d._checkTouch_pix = 0;
+	
+	d._scaleCorrection = 1;
 	
 	d._textureInfo = null;
 	
@@ -49,12 +50,16 @@ import flash.geom.*;
 	{
 		if (this._needsRender)
 		{
+			this._needsRender = false;
+			
 			this._canvasRect = this._getBoundingBox();
 			
 			if (this._canvasRect != null)
 			{
-				var textureWidth = flash.getTextureSize(this._canvasRect.width);
-				var textureHeight = flash.getTextureSize(this._canvasRect.height);
+				var scale = this._scaleCorrection;
+				
+				var textureWidth = flash.getTextureSize(this._canvasRect.width * scale);
+				var textureHeight = flash.getTextureSize(this._canvasRect.height * scale);
 				
 				if (!this._bitmapData)
 				{
@@ -66,155 +71,182 @@ import flash.geom.*;
 				}
 				
 				this._textureRect = this._canvasRect.clone();
-				this._textureRect.x = this._textureRect.y = 0;
+				this._textureRect.x = 0;
+				this._textureRect.y = 0;
+				this._textureRect.width *= scale;
+				this._textureRect.height *= scale;
 				
 				var context = this._bitmapData._context2d;
 				
 				var xShift = -this._canvasRect.x;
 				var yShift = -this._canvasRect.y;
 				
+				var stroke = null;
+				var solidFill = null;
+				var gradientFill = null;
+				var bitmapFill = null;
+				
 				for (var i = 0; i < this._data.length; i++)
 				{
 					var item = this._data[ i ];
 					
-					if (item instanceof flash.display.GraphicsSolidFill)
+					if (item instanceof flash.display.GraphicsStroke)
 					{
-						context.globalAlpha = item.alpha;
-						context.fillStyle = flash.numberToHex(item.color);
-						
+						stroke = item;
+					}
+					else if (item instanceof flash.display.GraphicsSolidFill)
+					{
+						solidFill = item;
+					}
+					else if (item instanceof flash.display.GraphicsGradientFill)
+					{
+						gradientFill = item;
 					}
 					else if (item instanceof flash.display.GraphicsBitmapFill)
 					{
-						context.setTransform(
-							item.matrix.a,
-							item.matrix.b,
-							item.matrix.c,
-							item.matrix.d,
-							item.matrix.tx - this._canvasRect.x,
-							item.matrix.ty - this._canvasRect.y
-						);
-						
-						context.fillStyle = context.createPattern(
-							item.bitmapData._virtualcanvas,
-							item.repeat ? "repeat" : "no-repeat"
-						);
+						bitmapFill = item;
 					}
-					
-					if (item instanceof flash.display.GraphicsStroke)
+					else if (item instanceof flash.display.GraphicsEndFill)
 					{
-						this._lineStyle = item.lineStyle;
-						context.lineWidth = item.lineStyle.thickness;
-						context.strokeStyle = flash.numberToHex(item.lineStyle.fill);
-						context.lineCap = "round";
-						context.lineJoin = "round";
+						solidFill = null;
+						gradientFill = null;
+						bitmapFill = null;
+						;
 					}
-					
-					if (item instanceof flash.display.GraphicsEndFill)
+					else if (item instanceof flash.display.GraphicsPath)
 					{
-						context.restore();
-						context.fill(this._data[ i - 1 ]._winding);
-					}
-					
-					context.save();
-					
-					if (item.commands)
-					{
-						context.setTransform(1, 0, 0, 1, 0, 0);
+						context.setTransform(scale, 0, 0, scale, 0, 0);
 						context.beginPath();
 						
-						var dataIndex = 0;
+						var index = 0;
 						
-						for (var i1 = 0; i1 < item.commands.length; i1++)
+						var currentData = item.data;
+						
+						var fillEnabled = solidFill || gradientFill || bitmapFill;
+						
+						var move = null;
+						
+						for (var j = 0; j < item.commands.length; j++)
 						{
-							var command = item.commands[ i1 ];
-							var currentData = item.data;
+							var command = item.commands[ j ];
 							
 							switch (command)
 							{
 								case flash.display.GraphicsPathCommand.MOVE_TO:
+									if (fillEnabled && move)
+									{
+										context.lineTo(
+											move.x,
+											move.y
+										);
+									}
+									
+									move = {
+										x: currentData[ index++ ] + xShift,
+										y: currentData[ index++ ] + yShift
+									};
+									
 									context.moveTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift
+										move.x,
+										move.y
 									);
-									dataIndex += 2;
 									break;
 								
 								case flash.display.GraphicsPathCommand.LINE_TO:
 									context.lineTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift
 									);
-									dataIndex += 2;
 									break;
 								
 								case flash.display.GraphicsPathCommand.CURVE_TO:
 									context.quadraticCurveTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift,
-										currentData[ dataIndex + 2 ] + xShift,
-										currentData[ dataIndex + 3 ] + yShift
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift,
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift
 									);
-									dataIndex += 4;
 									break;
 								
 								case flash.display.GraphicsPathCommand.WIDE_MOVE_TO:
 									context.moveTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift
 									);
-									dataIndex += 4;
 									break;
 								
 								case flash.display.GraphicsPathCommand.WIDE_LINE_TO:
 									context.lineTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift
 									);
-									dataIndex += 4;
 									break;
 								
 								case flash.display.GraphicsPathCommand.CUBIC_CURVE_TO:
 									context.bezierCurveTo(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift,
-										currentData[ dataIndex + 2 ] + xShift,
-										currentData[ dataIndex + 3 ] + yShift,
-										currentData[ dataIndex + 4 ] + xShift,
-										currentData[ dataIndex + 5 ] + yShift
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift,
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift,
+										currentData[ index++ ] + xShift,
+										currentData[ index++ ] + yShift
 									);
-									dataIndex += 6;
-									
-									break;
-								case flash.display.GraphicsPathCommand.CIRCLE:
-									context.arc(
-										currentData[ dataIndex ] + xShift,
-										currentData[ dataIndex + 1 ] + yShift,
-										currentData[ dataIndex + 2 ] - currentData[ dataIndex ],
-										0,
-										2 * Math.PI
-									);
-									dataIndex += 6;
 									break;
 							}
 						}
 						
-						if (i == this._data.length - 1)
+						if (fillEnabled && move)
 						{
+							context.lineTo(
+								move.x,
+								move.y
+							);
+						}
+						
+						if (solidFill)
+						{
+							context.globalAlpha = solidFill.alpha;
+							context.fillStyle = flash.numberToHex(solidFill.color);
+							context.fill();
+						}
+						else if (gradientFill)
+						{
+						
+						}
+						else if (bitmapFill)
+						{
+							context.save();
+							
+							context.setTransform(
+								bitmapFill.matrix.a * scale,
+								bitmapFill.matrix.b * scale,
+								bitmapFill.matrix.c * scale,
+								bitmapFill.matrix.d * scale,
+								bitmapFill.matrix.tx * scale - xShift * scale,
+								bitmapFill.matrix.ty * scale - yShift * scale
+							);
+							
+							context.fillStyle = context.createPattern(
+								bitmapFill.bitmapData._virtualcanvas,
+								bitmapFill.repeat ? "repeat" : "no-repeat"
+							);
+							
+							context.fill();
+							
 							context.restore();
-							context.fill(item._winding);
+						}
+						
+						if (stroke && stroke.thickness)
+						{
+							context.globalAlpha = stroke.fill.alpha;
+							context.lineWidth = stroke.thickness;
+							context.strokeStyle = flash.numberToHex(stroke.fill.color);
+							context.lineCap = stroke.get_caps();
+							context.lineJoin = stroke.get_joints();
+							context.stroke();
 						}
 					}
-					
-					if (this._lineStyle)
-					{
-						context.globalAlpha = this._lineStyle.alpha;
-						context.stroke();
-						context.restore();
-					}
 				}
-				
-				this._needsRender = false;
-				
 			}
 		}
 	};
@@ -222,9 +254,10 @@ import flash.geom.*;
 	d.copyFrom = function (sourceGraphics)
 	{
 		this._textureInfo = null;
+		
 		var sourceData = source._data;
-		var sourceDataLength = sourceGraphics.data.length;
-		for (var i = 0; i < sourceDataLength; i++)
+		
+		for (var i = 0; i < sourceData.length; i++)
 		{
 			this._data.push(sourceData[ i ].clone());
 		}
@@ -235,65 +268,37 @@ import flash.geom.*;
 		this._textureInfo = null;
 		
 		if (matrix == undefined) matrix = new flash.geom.Matrix();
-		;
 		if (repeat == undefined) repeat = true;
 		if (smooth == undefined) smooth = false;
 		
 		if (bitmap)
 		{
 			this._data.push(new flash.display.GraphicsBitmapFill(bitmap, matrix, repeat, smooth));
-			this._path = new flash.display.GraphicsPath();
-			this._path.lineStyle = this._lineStyle;
-			this._data.push(this._path);
 			this._needsRender = true;
 		}
-		
-		
 	};
 	
 	d.beginFill = function (color/*uint*/, alpha/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (color == undefined)
-		{
-			color = 0x000000;
-		}
-		
-		if (alpha == undefined)
-		{
-			alpha = 1;
-		}
+		if (color == undefined) color = 0x000000;
+		if (alpha == undefined) alpha = 1;
 		
 		this._data.push(new flash.display.GraphicsSolidFill(color, alpha));
-		
-		this._path = new flash.display.GraphicsPath();
-		this._path.lineStyle = this._lineStyle;
-		this._data.push(this._path);
 		this._needsRender = true;
-		
-		
 	};
 	
 	d.beginGradientFill = function (type/*String*/, colors/*Array*/, alphas/*Array*/, ratios/*Array*/, matrix/*Matrix*/, spreadMethod/*String*/, interpolationMethod/*String*/, focalPointRatio/*Number*/)/*void*/
 	{
+		this._textureInfo = null;
 		
 		if (matrix == undefined) matrix = null;
 		if (spreadMethod == undefined) spreadMethod = "pad";
 		if (interpolationMethod == undefined) interpolationMethod = "rgb";
 		if (focalPointRatio == undefined) focalPointRatio = 0;
 		
-		/*TODO GRADIENT FILL*/
-		
-		this._textureInfo = null;
-		
-		this._data.push(new flash.display.GraphicsSolidFill(colors[ 0 ], alphas[ 0 ]));
-		
-		this._path = new flash.display.GraphicsPath();
-		this._path.lineStyle = this._lineStyle;
-		this._data.push(this._path);
-		this._needsRender = true;
-		
+		//TODO: Implement Gradient Fill
 	};
 	
 	d.clear = function ()/*void*/
@@ -304,66 +309,80 @@ import flash.geom.*;
 		this._needsRender = true;
 	};
 	
-	d.curveTo = function (controlX/*Number*/, controlY/*Number*/, anchorX/*Number*/, anchorY/*Number*/)/*void*/
+	d.curveTo = function (controlX/*Number*/,
+	                      controlY/*Number*/,
+	                      anchorX/*Number*/,
+	                      anchorY/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (this._path != null)
-		{
-			this._path.commands.push(flash.display.GraphicsPathCommand.CURVE_TO);
-			this._path.data.push(controlX, controlY, anchorX, anchorY);
-			this._needsRender = true;
-		}
+		this._createPath();
+		
+		this._path.commands.push(flash.display.GraphicsPathCommand.CURVE_TO);
+		this._path.data.push(controlX, controlY, anchorX, anchorY);
+		
+		this._needsRender = true;
+	};
+	
+	d.cubicCurveTo = function (controlX1/*Number*/,
+	                           controlY1/*Number*/,
+	                           controlX2/*Number*/,
+	                           controlY2/*Number*/,
+	                           anchorX/*Number*/,
+	                           anchorY/*Number*/)/*void*/
+	{
+		this._textureInfo = null;
+		
+		this._createPath();
+		
+		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
+		this._path.data.push(controlX1, controlY1, controlX2, controlY2, anchorX, anchorY);
+		
+		this._needsRender = true;
 	};
 	
 	d.drawCircle = function (x/*Number*/, y/*Number*/, radius/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (this._path != null)
-		{
-			this._path.commands.push(flash.display.GraphicsPathCommand.CIRCLE);
-			this._path.data.push(x, y, x + radius, y + radius, x - radius, y - radius);
-			this._needsRender = true;
-		}
+		var size = radius * 2;
 		
+		this.drawEllipse(x - radius, y - radius, size, size);
 	};
 	
 	d.drawEllipse = function (x/*Number*/, y/*Number*/, width/*Number*/, height/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (this._path != null)
-		{
-			
-			var k = .5522848;
-			var ox = (width / 2) * k;
-			var oy = (height / 2) * k;
-			var xe = x + width;
-			var ye = y + height;
-			var xm = x + width / 2;
-			var ym = y + height / 2;
-			
-			this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
-			this._path.data.push(x, ym);
-			this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
-			this._path.data.push(x, ym - oy, xm - ox, y, xm, y);
-			this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
-			this._path.data.push(xm + ox, y, xe, ym - oy, xe, ym);
-			this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
-			this._path.data.push(xe, ym + oy, xm + ox, ye, xm, ye);
-			this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
-			this._path.data.push(xm - ox, ye, x, ym + oy, x, ym);
-			
-			this._needsRender = true;
-			
-		}
+		var k = .5522848;
+		var ox = (width / 2) * k;
+		var oy = (height / 2) * k;
+		var xe = x + width;
+		var ye = y + height;
+		var xm = x + width / 2;
+		var ym = y + height / 2;
 		
+		this._createPath(true);
+		
+		this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
+		this._path.data.push(x, ym);
+		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
+		this._path.data.push(x, ym - oy, xm - ox, y, xm, y);
+		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
+		this._path.data.push(xm + ox, y, xe, ym - oy, xe, ym);
+		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
+		this._path.data.push(xe, ym + oy, xm + ox, ye, xm, ye);
+		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
+		this._path.data.push(xm - ox, ye, x, ym + oy, x, ym);
+		
+		this._needsRender = true;
 	};
 	
 	d.drawRect = function (x/*Number*/, y/*Number*/, width/*Number*/, height/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
+		
+		this._createPath(true);
 		
 		this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
 		this._path.data.push(x, y);
@@ -380,11 +399,10 @@ import flash.geom.*;
 	
 	d.drawRoundRect = function (x/*Number*/, y/*Number*/, width/*Number*/, height/*Number*/, ellipseWidth/*Number*/, ellipseHeight/*Number*/)/*void*/
 	{
-		if (ellipseWidth == undefined) ellipseWidth = 0;
-		
-		if (ellipseHeight == undefined) ellipseHeight = ellipseWidth;
-		
 		this._textureInfo = null;
+		
+		if (ellipseWidth == undefined) ellipseWidth = 0;
+		if (ellipseHeight == undefined) ellipseHeight = ellipseWidth;
 		
 		var w = ellipseWidth * 2;
 		var h = ellipseHeight * 2;
@@ -403,6 +421,8 @@ import flash.geom.*;
 		var dx = width - w;
 		var dy = height - h;
 		
+		this._createPath(true);
+		
 		this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
 		this._path.data.push(
 			x,
@@ -468,13 +488,13 @@ import flash.geom.*;
 		);
 		
 		this._needsRender = true;
-		
-		this._needsRender = true;
 	};
 	
 	d.drawRoundRectComplex = function (x/*Number*/, y/*Number*/, width/*Number*/, height/*Number*/, topLeftRadius/*Number*/, topRightRadius/*Number*/, bottomLeftRadius/*Number*/, bottomRightRadius/*Number*/)/*void*/
 	{
-		this._textureInfo = null;
+		// TODO: Implement this method
+		
+		this.drawRoundRect(x, y, width, height, topLeftRadius, bottomRightRadius);
 	};
 	
 	d.endFill = function ()/*void*/
@@ -482,17 +502,22 @@ import flash.geom.*;
 		this._textureInfo = null;
 		
 		this._path = null;
+		
 		this._data.push(new flash.display.GraphicsEndFill());
+		
 		this._needsRender = true;
 	};
 	
 	d.lineGradientStyle = function (type/*String*/, colors/*Array*/, alphas/*Array*/, ratios/*Array*/, matrix/*Matrix*/, spreadMethod/*String*/, interpolationMethod/*String*/, focalPointRatio/*Number*/)/*void*/
 	{
+		this._textureInfo = null;
+		
 		if (matrix == undefined) matrix = null;
 		if (spreadMethod == undefined) spreadMethod = "pad";
 		if (interpolationMethod == undefined) interpolationMethod = "rgb";
 		if (focalPointRatio == undefined) focalPointRatio = 0;
-		this._textureInfo = null;
+		
+		// TODO: Implement this method
 	};
 	
 	d.lineStyle = function (thickness/*Number*/, color/*uint*/, alpha/*Number*/, pixelHinting/*Boolean*/, scaleMode/*String*/, caps/*String*/, joints/*String*/, miterLimit/*Number*/)/*void*/
@@ -501,70 +526,79 @@ import flash.geom.*;
 		
 		if (thickness == undefined) thickness = 0;
 		if (color == undefined) color = 0;
-		color = /*uint*/Math.floor(color);
 		if (alpha == undefined) alpha = 1;
 		if (pixelHinting == undefined) pixelHinting = false;
 		if (scaleMode == undefined) scaleMode = "normal";
-		if (caps == undefined) caps = null;
-		if (joints == undefined) joints = null;
+		if (caps == undefined) caps = flash.display.CapsStyle.ROUND;
+		if (joints == undefined) joints = flash.display.JointStyle.ROUND;
 		if (miterLimit == undefined) miterLimit = 3;
 		
+		color = /*uint*/Math.floor(color);
 		
-		var lineStyle = new flash.display.GraphicsStroke(thickness, pixelHinting, scaleMode, caps, joints, miterLimit, color);
+		var fill = new flash.display.GraphicsSolidFill(color, alpha);
 		
-		if (lineStyle.thickness > this._maxThickness)
+		var stroke = new flash.display.GraphicsStroke(
+			thickness,
+			pixelHinting,
+			scaleMode,
+			caps,
+			joints,
+			miterLimit,
+			fill
+		);
+		
+		if (this._maxThickness < stroke.thickness)
 		{
-			
-			this._maxThickness = lineStyle.thickness;
-			
+			this._maxThickness = stroke.thickness;
 		}
 		
-		if (this.path != null)
-		{
-			
-			this._path.lineStyle = lineStyle;
-			
-		}
+		this._data.push(stroke);
 		
-		this._lineStyle = lineStyle;
-		
+		this._needsRender = true;
 	};
 	
 	d.lineTo = function (x/*Number*/, y/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (this._path != null)
-		{
-			this._path.commands.push(flash.display.GraphicsPathCommand.LINE_TO);
-			this._path.data.push(x, y);
-			this._needsRender = true;
-		}
+		this._createPath();
 		
+		this._path.commands.push(flash.display.GraphicsPathCommand.LINE_TO);
+		this._path.data.push(x, y);
+		
+		this._needsRender = true;
+	};
+	
+	d._createPath = function (clear)
+	{
+		if (clear || !this._path)
+		{
+			this._path = new flash.display.GraphicsPath();
+			this._data.push(this._path);
+		}
 	};
 	
 	d.moveTo = function (x/*Number*/, y/*Number*/)/*void*/
 	{
 		this._textureInfo = null;
 		
-		if (this._path != null)
-		{
-			this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
-			this._path.data.push(x, y);
-			this._needsRender = true;
-		}
-		else
-		{
-			this._path = new flash.display.GraphicsPath();
-			this._path.lineStyle = this._lineStyle;
-			this._data.push(this._path);
-			this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
-			this._path.data.push(x, y);
-		}
+		this._createPath();
+		
+		this._path.commands.push(flash.display.GraphicsPathCommand.MOVE_TO);
+		this._path.data.push(x, y);
+		
+		this._needsRender = true;
 	};
 	
-	d._getBitmapData = function ()
+	d._getBitmapData = function (scaleCorrection)
 	{
+		if (this._scaleCorrection != scaleCorrection)
+		{
+			this._scaleCorrection = scaleCorrection;
+			
+			this._needsRender = true;
+		}
+		
 		if (this._textureInfo)
 		{
 			return this._textureInfo.bitmap;
@@ -599,16 +633,9 @@ import flash.geom.*;
 			var xMin = Number.MAX_VALUE;
 			var yMin = Number.MAX_VALUE;
 			
-			var thickness = 0;
-			
 			for (var i = 0; i < this._data.length; i++)
 			{
 				var item = this._data[ i ];
-				
-				if (item.lineStyle && thickness < item.lineStyle.thickness)
-				{
-					thickness = item.lineStyle.thickness;
-				}
 				
 				if (item.data)
 				{
@@ -642,7 +669,10 @@ import flash.geom.*;
 						height
 					);
 					
-					if (thickness) bounds.inflate(thickness, thickness);
+					if (this._maxThickness)
+					{
+						bounds.inflate(this._maxThickness, this._maxThickness);
+					}
 					
 					return bounds;
 				}
@@ -715,28 +745,20 @@ import flash.geom.*;
 					var bitmapX = Math.floor(map.x + (this._checkTouch_point.x - bounds.x) / bounds.width * map.width);
 					var bitmapY = Math.floor(map.y + (this._checkTouch_point.y - bounds.y) / bounds.height * map.height);
 					
-					//var textureData = this._textureInfo.bitmap._getData();
-					
-					//var index = (bitmapX + bitmapY * this._textureInfo.bitmap.get_width()) * 4 + 3;
-					
 					var color = this._textureInfo.bitmap.getPixel32(bitmapX, bitmapY);
 					
 					this._checkTouch_pix = (color >> 24) & 0xff;//textureData.data[index];
 				}
 				else if (this._bitmapData)
 				{
-					//var textureData = this._bitmapData._getData();
+					var scale = this._scaleCorrection;
 					
-					var bitmapX = Math.floor(this._checkTouch_point.x - bounds.x);
-					var bitmapY = Math.floor(this._checkTouch_point.y - bounds.y);
-					
-					//var index = (bitmapX + bitmapY * this._bitmapData.get_width()) * 4 + 3;
-					
-					//this._checkTouch_pix = textureData.data[index];
+					var bitmapX = Math.floor((this._checkTouch_point.x - bounds.x) * scale);
+					var bitmapY = Math.floor((this._checkTouch_point.y - bounds.y) * scale);
 					
 					var color = this._bitmapData.getPixel32(bitmapX, bitmapY);
 					
-					this._checkTouch_pix = (color >> 24) & 0xff;//textureData.data[index];
+					this._checkTouch_pix = (color >> 24) & 0xff;
 				}
 				
 				if (this._checkTouch_pix)
@@ -753,64 +775,6 @@ import flash.geom.*;
 		}
 		
 		return null;
-	}
-	
-	d._getColorTransfomedData = function (transform)
-	{
-		if (!this._cTransformedvirtualcanvas)
-		{
-			this._cTransformedvirtualcanvas = document.createElement('canvas');
-			this._cTransformedcontext2d = this._cTransformedvirtualcanvas.getContext('2d');
-			this._cTransformedvirtualcanvas.width = this._canvasRect.width;
-			this._cTransformedvirtualcanvas.height = this._canvasRect.height;
-			this._colorTransfomedImgData = this._cTransformedcontext2d.createImageData(_canvasRect.width, _canvasRect.height);
-		}
-		
-		if (this._colorTransfomedData[ 0 ] == transform[ 0 ] &
-			this._colorTransfomedData[ 1 ] == transform[ 1 ] &
-			this._colorTransfomedData[ 2 ] == transform[ 2 ] &
-			this._colorTransfomedData[ 3 ] == transform[ 4 ] &
-			this._colorTransfomedData[ 4 ] == transform[ 5 ] &
-			this._colorTransfomedData[ 5 ] == transform[ 6 ]
-		)
-		{
-			
-			return this._cTransformedvirtualcanvas;
-		}
-		else
-		{
-			
-			
-			if (this._colorTransfomedImgData.width != this._canvasRect.width || this._colorTransfomedImgData.height != this._canvasRect.height)
-			{
-				this._cTransformedcontext2d.width = this._canvasRect.width;
-				this._cTransformedcontext2d.height = this._canvasRect.height;
-				this._colorTransfomedImgData = this._cTransformedcontext2d.createImageData(this._canvasRect.width, this._canvasRect.height);
-				
-			}
-			else
-			{
-				this._cTransformedcontext2d.clearRect(0, 0, this._canvasRect.width, this._canvasRect.height);
-			}
-			
-			this._colorTransfomedImgData.data.set(this._canvasImageData);
-			
-			this._colorTransfomedData = [ transform[ 0 ], transform[ 1 ], transform[ 2 ], transform[ 4 ], transform[ 5 ], transform[ 6 ] ];
-			
-			var colorTransfomedImgDataData = this._colorTransfomedImgData.data;
-			
-			for (var i = 0; i < _colorTransfomedImgData.data.length; i += 4)
-			{
-				colorTransfomedImgDataData[ i ] = (colorTransfomedImgDataData[ i ] * this._colorTransfomedData[ 0 ]) + this._colorTransfomedData[ 3 ];
-				colorTransfomedImgDataData[ i + 1 ] = (colorTransfomedImgDataData[ i + 1 ] * this._colorTransfomedData[ 1 ]) + this._colorTransfomedData[ 4 ];
-				colorTransfomedImgDataData[ i + 2 ] = (colorTransfomedImgDataData[ i + 2 ] * this._colorTransfomedData[ 2 ]) + this._colorTransfomedData[ 5 ];
-			}
-			
-			this._cTransformedcontext2d.putImageData(this._colorTransfomedImgData, 0, 0);
-			return this._cTransformedvirtualcanvas;
-		}
-		
-		
 	}
 	
 	flash.addDescription("flash.display.Graphics", d, null, null, null);

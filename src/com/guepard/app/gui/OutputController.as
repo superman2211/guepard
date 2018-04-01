@@ -146,6 +146,20 @@ package com.guepard.app.gui
 			updateButtons();
 		}
 		
+		public function clear():void
+		{
+			_datas.length = 0;
+			
+			custom.outputField.text = "";
+			custom.outputField.verticalScrollPosition = 0;
+			
+			_errors = 0;
+			_logs = 0;
+			_warnings = 0;
+			
+			updateButtons();
+		}
+		
 		private function disposeBuilders():void
 		{
 			_builderIndex = 0;
@@ -190,20 +204,6 @@ package com.guepard.app.gui
 		{
 			custom.outputField.appendText(object + "\n");
 			custom.outputField.verticalScrollPosition = custom.outputField.maxVerticalScrollPosition;
-		}
-		
-		public function clear():void
-		{
-			_datas.length = 0;
-			
-			custom.outputField.text = "";
-			custom.outputField.verticalScrollPosition = 0;
-			
-			_errors = 0;
-			_logs = 0;
-			_warnings = 0;
-			
-			updateButtons();
 		}
 		
 		private function updateButtons():void

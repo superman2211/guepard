@@ -781,6 +781,26 @@ package com.guepard.parser.serialization
 								break;
 							
 							case "function":
+								expression = new ExpressionInfo();
+								expression.token = token;
+								expression.type = ExpressionType.CONSTRUCTION;
+								expression.method = new MethodInfo();
+								expression.method.methodType = MethodType.ANONYMOUS;
+								
+								var nameToken:Token = stream.readToken();
+								
+								if (nameToken.data != "(")
+								{
+									expression.method.name = nameToken.data;
+								}
+								else
+								{
+									stream.stepPrevious();
+								}
+								
+								readFunction(stream, expression.method, null);
+								break;
+							
 							case "catch":
 								expression = new ExpressionInfo();
 								expression.token = token;

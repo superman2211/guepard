@@ -8,7 +8,7 @@
 	
 	d.BitmapFilter = function ()
 	{
-	
+		
 	};
 	
 	d.clone = function ()/*BitmapFilter*/
@@ -23,7 +23,7 @@
 	
 	d._apply = function (d/*Array*/, w/*Number*/, h/*Number*/)/*void*/
 	{
-	
+		
 	};
 	
 	d._convolute = function (s, t, w, h, sw, sh, weights, useColor)

@@ -11,7 +11,9 @@
 	{
 		this.__updateTransform__();
 		
-		var bitmapData = this._graphics._getBitmapData();
+		this._checkScaleCorrection();
+		
+		var bitmapData = this._graphics._getBitmapData(this._scaleCorrection);
 		
 		if (bitmapData)
 		{

@@ -989,6 +989,11 @@ package com.guepard.parser.serialization
 						case "function":
 							var bind:Boolean = expression.method.bind;
 							
+							if (expression.method.name)
+							{
+								stream.writeSymbol("var", expression.method.name, "=");
+							}
+							
 							if (bind) stream.writeSymbol("flash", ".", "bindFunction", "(");
 							
 							if (bind) stream.writeSymbol("this", ",");

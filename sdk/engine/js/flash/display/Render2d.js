@@ -63,7 +63,7 @@
 		this._clearMasks = true;
 	}
 	
-	d.updateSize = function(canvas)
+	d.updateSize = function (canvas)
 	{
 		var ratio = flash.getPixelRatio();
 		
@@ -176,7 +176,7 @@
 			{
 				for (var i in filters)
 				{
-					var filter = filters[i];
+					var filter = filters[ i ];
 					
 					if (flash.is(filter, flash.filters.DropShadowFilter))
 					{
@@ -219,8 +219,8 @@
 		
 		var ratio = flash.getPixelRatio();
 		
-		this._maskBounds.x =  (this._baseMatrix.tx + this._maskBounds.x * this._baseMatrix.a);
-		this._maskBounds.y =  (this._baseMatrix.ty + this._maskBounds.y * this._baseMatrix.d);
+		this._maskBounds.x = (this._baseMatrix.tx + this._maskBounds.x * this._baseMatrix.a);
+		this._maskBounds.y = (this._baseMatrix.ty + this._maskBounds.y * this._baseMatrix.d);
 		this._maskBounds.width = ratio * this._maskBounds.width * this._baseMatrix.a;
 		this._maskBounds.height = ratio * this._maskBounds.height * this._baseMatrix.d;
 		
@@ -244,8 +244,8 @@
 			
 			var ratio = flash.getPixelRatio();
 			
-			var mx = Math.round(this._maskBounds.x );
-			var my = Math.round(this._maskBounds.y );
+			var mx = Math.round(this._maskBounds.x);
+			var my = Math.round(this._maskBounds.y);
 			var mw = Math.round(this._maskBounds.width * ratio);
 			var mh = Math.round(this._maskBounds.height * ratio);
 			

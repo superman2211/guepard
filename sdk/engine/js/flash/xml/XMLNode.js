@@ -137,7 +137,6 @@
 					
 					if (str2 == prefix)
 					{
-						//console.log("p1");
 						return this.attributes[ str ];
 					}
 					

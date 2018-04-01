@@ -78,30 +78,6 @@ package com.guepard.converter
 		{
 			var text:String = "";
 			
-			var data:Array = [];
-			
-			data.push('<style type="text/css">');
-			
-			if (Converter.resources.custom.exportFonts.selected)
-			{
-				for each (var name:String in FontsExporter.fonts)
-				{
-					data.push('\t@font-face {');
-					data.push('\t\tfont-family:"' + name + '";');
-					data.push('\t\tsrc: url("fonts/' + name + '.eot");');
-					data.push('\t\tsrc: url("fonts/' + name + '.eot?#iefix") format("embedded-opentype"),');
-					data.push('\t\turl("fonts/' + name + '.ttf") format("truetype"),');
-					data.push('\t\turl("fonts/' + name + '.svg#' + name + '") format("svg");');
-					data.push('\t\tfont-weight: normal;');
-					data.push('\t\tfont-style: normal;');
-					data.push('\t}');
-				}
-			}
-			
-			data.push('</style>');
-			
-			text = data.join("\n\t\t");
-			
 			template = template.replace(new RegExp("{embed fonts}", 'g'), text);
 			
 			return template;

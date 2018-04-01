@@ -14,7 +14,6 @@ import flash.display.*;
 	d._bounds = null;
 	d._matrix = null;
 	d._checkTouch_point = null;
-	d._scaleCorrection = 1;
 	d._canvasUpdated = false;
 	
 	d._render_ = function (render)
@@ -49,36 +48,12 @@ import flash.display.*;
 		return text;
 	};
 	
-	d._checkScaleCorrection = function ()
-	{
-		var currentMatrix = this.get_transform().get_concatenatedMatrix();
-		
-		var currentCorrection = Math.max(
-			Math.abs(currentMatrix.a),
-			Math.abs(currentMatrix.b),
-			Math.abs(currentMatrix.c),
-			Math.abs(currentMatrix.d)
-		);
-		
-		var stage = this.get_stage();
-		
-		if (stage)
-		{
-			var stageMatrix = stage._render._baseMatrix;
-			
-			currentCorrection *= Math.max(stageMatrix.a, stageMatrix.d);
-		}
-		
-		if (this._scaleCorrection != currentCorrection)
-		{
-			this._scaleCorrection = currentCorrection;
-			this._canvasUpdated = false;
-		}
-	}
-	
 	d._updateCanvas = function ()
 	{
-		this._checkScaleCorrection();
+		if (this._checkScaleCorrection())
+		{
+			this._canvasUpdated = false;
+		}
 		
 		if (this._canvasUpdated) return;
 		

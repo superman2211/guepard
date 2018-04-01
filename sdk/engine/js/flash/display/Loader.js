@@ -89,7 +89,6 @@ import flash.utils.*;
 		{
 			this._urlLoader = new flash.net.URLLoader();
 			this._urlLoader.dataFormat = flash.net.URLLoaderDataFormat.BINARY;
-			
 			this._urlLoader.addEventListener(flash.events.Event.COMPLETE, flash.bindFunction(this, this._complete));
 			this._urlLoader.load(request);
 		}
@@ -302,23 +301,13 @@ import flash.utils.*;
 		
 		if (this._font)
 		{
-			if (this._font._path)
-			{
-				var path = this._getFolder() + this._font._path;
-				var loader = new flash.text.CssFontLoader(path, this._font);
-				loader.addEventListener(flash.events.Event.COMPLETE, flash.bindFunction(this, this._loadSWFFontComplete));
-			}
-			else
-			{
-				this._loadSWFFontComplete();
-			}
+			var loader = new flash.text.CSSFontLoader(/*path,*/ this._font);
+			loader.addEventListener(flash.events.Event.COMPLETE, flash.bindFunction(this, this._loadSWFFontComplete));
 		}
 		else
 		{
 			this.addEventListener(flash.events.Event.ENTER_FRAME, flash.bindFunction(this, this._loadSWFContentComplete));
 		}
-		
-		
 	}
 	
 	d._loadSWFFontComplete = function (e)

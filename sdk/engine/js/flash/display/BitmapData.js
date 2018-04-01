@@ -455,14 +455,14 @@ import flash.utils.*;
 		
 		for (var i in this._transformedImages)
 		{
-			var current = this._transformedImages[i];
+			var current = this._transformedImages[ i ];
 			
-			if (current.map[id] == value)
+			if (current.map[ id ] == value)
 			{
 				canvas = current.canvas;
 			}
 			
-			if (!current.map[id] && !image)
+			if (!current.map[ id ] && !image)
 			{
 				image = current;
 			}
@@ -514,7 +514,7 @@ import flash.utils.*;
 				var oa = colorTransform.alphaOffset;
 				
 				var i = data.length;
-
+				
 				while (i--)
 				{
 					if (data[ i ])
@@ -533,7 +533,7 @@ import flash.utils.*;
 					}
 				}
 			}
-
+			
 			for (i in filters)
 			{
 				var filter = filters[ i ];

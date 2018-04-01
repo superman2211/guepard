@@ -7,7 +7,7 @@
 	flash.classes = {};
 	flash.descriptions = {};
 	
-	flash.getPixelRatio = function(context)
+	flash.getPixelRatio = function (context)
 	{
 		//return 1;
 		

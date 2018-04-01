@@ -1,4 +1,4 @@
-/*class flash.text.CssFontLoader*/
+/*class flash.text.CSSFontLoader*/
 (function ()
 {
 	"use strict";
@@ -13,21 +13,28 @@
 	d._timer = null;
 	
 	
-	d.CssFontLoader = function (path, font)
+	d.CSSFontLoader = function (font)
 	{
 		
 		this.EventDispatcher_constructor();
 		
-		//this._testChars = font._glyphs.length > 10 ? font._glyphs.substring(0,10):font._glyphs;
+		this._testChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		;
 		
-		this._testChars = "Aa";
+		var name = font._fontName;
 		
-		var css = [ '@font-face {',
-			'font-family:"' + font._fontName + '";',
-			'src: url(' + path + ');',
-			'font-weight: normal;',
-			'font-style: normal;',
-			'}' ].join("\n");
+		var data = [];
+		data.push('\t@font-face {');
+		data.push('\t\tfont-family:"' + name + '";');
+		data.push('\t\tsrc: url("fonts/' + name + '.eot");');
+		data.push('\t\tsrc: url("fonts/' + name + '.eot?#iefix") format("embedded-opentype"),');
+		data.push('\t\turl("fonts/' + name + '.ttf") format("truetype"),');
+		data.push('\t\turl("fonts/' + name + '.svg#' + name + '") format("svg");');
+		data.push('\t\tfont-weight: normal;');
+		data.push('\t\tfont-style: normal;');
+		data.push('\t}');
+		
+		var css = data.join("\n");
 		
 		var head = document.getElementsByTagName('head')[ 0 ];
 		
@@ -44,7 +51,6 @@
 			s.appendChild(document.createTextNode(css));
 		}
 		
-		
 		head.appendChild(s);
 		
 		this._fontName = font._fontName;
@@ -52,13 +58,10 @@
 		flash.trace("load font start: " + this._fontName);
 		
 		this.loadFont(font._fontName);
-		
 	}
-	
 	
 	d.loadFont = function (name)
 	{
-		
 		if (this._virtualcanvas == null)
 		{
 			
@@ -68,7 +71,7 @@
 			this._context2d = this._virtualcanvas.getContext('2d');
 			this._context2d.textBaseline = "top";
 			this._context2d.textAlign = "left";
-			this._timer = new flash.utils.Timer(300);
+			this._timer = new flash.utils.Timer(100);
 			this._timer.addEventListener("timer", flash.bindFunction(this, this._checkFont));
 		}
 		
@@ -96,20 +99,13 @@
 		var currentData = current.data;
 		var testData = this._data.data;
 		
-		//console.log(currentData,testData);
-		
 		var i = currentData.length;
-		
-		//console.log("data");
 		
 		while (currentData)
 		{
-			
-			
 			if (currentData[ i ] != testData[ i ])
 			{
-				
-				console.log(currentData[ i ], testData[ i ], i);
+				flash.trace(currentData[ i ], testData[ i ], i);
 				this.dispatchEvent(new flash.events.Event(flash.events.Event.COMPLETE, false, false));
 				this._timer.removeEventListener("timer", flash.bindFunction(this, this._checkFont));
 				this._timer.stop();
@@ -119,7 +115,6 @@
 			}
 			i--;
 		}
-		//console.log("fdata");
 	}
 	
 	var s = {};
@@ -131,7 +126,7 @@
 	};
 	
 	
-	flash.addDescription("flash.text.CssFontLoader", d, "flash.events.EventDispatcher", s, null);
+	flash.addDescription("flash.text.CSSFontLoader", d, "flash.events.EventDispatcher", s, null);
 	
 	
 }

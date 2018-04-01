@@ -20,7 +20,9 @@ import flash.media.*;
 	{
 		this.__updateTransform__();
 		
-		var bitmapData = this._graphics._getBitmapData();
+		this._checkScaleCorrection();
+		
+		var bitmapData = this._graphics._getBitmapData(this._scaleCorrection);
 		
 		if (bitmapData)
 		{
@@ -366,13 +368,40 @@ import flash.media.*;
 		if (lockCenter == undefined) lockCenter = false;
 		if (bounds == undefined) bounds = null;
 		
+		// TODO: Implement lockCenter and bounds
 		
+		this._dragOldPoint = {
+			x: this.get_mouseX(),
+			y: this.get_mouseY()
+		};
+		
+		this.get_stage().addEventListener(
+			flash.events.MouseEvent.MOUSE_MOVE,
+			flash.bindFunction(this, this._dragMoveTo)
+		);
 	};
 	
 	d.stopDrag = function ()/*void*/
 	{
-		
+		this.get_stage().removeEventListener(
+			flash.events.MouseEvent.MOUSE_MOVE,
+			flash.bindFunction(this, this._dragMoveTo)
+		);
 	};
+	
+	d._dragMoveTo = function (e)
+	{
+		var dx = this.get_mouseX() - this._dragOldPoint.x;
+		var dy = this.get_mouseY() - this._dragOldPoint.y;
+		
+		this.set_x(this.get_x() + dx);
+		this.set_y(this.get_y() + dy);
+		
+		this._dragOldPoint = {
+			x: this.get_mouseX(),
+			y: this.get_mouseY()
+		};
+	}
 	
 	d._checkInteractiveEvent = function (data)
 	{

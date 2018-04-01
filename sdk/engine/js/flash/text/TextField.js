@@ -67,8 +67,6 @@ import flash.geom.*;
 	d._bounds = null;
 	d._realBounds = null;
 	
-	d._scaleCorrection = 1;
-	
 	d._textWidth = 0;
 	d._textHeight = 0;
 	
@@ -730,36 +728,12 @@ import flash.geom.*;
 		}
 	}
 	
-	d._checkScaleCorrection = function ()
-	{
-		var currentMatrix = this.get_transform().get_concatenatedMatrix();
-		
-		var currentCorrection = Math.max(
-			Math.abs(currentMatrix.a),
-			Math.abs(currentMatrix.b),
-			Math.abs(currentMatrix.c),
-			Math.abs(currentMatrix.d)
-		);
-		
-		var stage = this.get_stage();
-		
-		if (stage)
-		{
-			var stageMatrix = stage._render._baseMatrix;
-			
-			currentCorrection *= Math.max(stageMatrix.a, stageMatrix.d);
-		}
-		
-		if (this._scaleCorrection != currentCorrection)
-		{
-			this._scaleCorrection = currentCorrection;
-			this._dataUpdated = false;
-		}
-	}
-	
 	d._updateData = function (force)
 	{
-		this._checkScaleCorrection();
+		if (this._checkScaleCorrection())
+		{
+			this._dataUpdated = false;
+		}
 		
 		if (force)
 		{
@@ -843,7 +817,7 @@ import flash.geom.*;
 					
 					if (currentDefineFont)
 					{
-						advance = currentDefineFont.getCharsAdvance(letter, nextLetter, fontName, size);
+						advance = currentDefineFont.getCharsAdvance(letter, nextLetter, fontName);
 					}
 					
 					step = advance * size / 1024;
@@ -1612,22 +1586,22 @@ import flash.geom.*;
 	
 	d.getFirstCharInParagraph = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	d.getImageReference = function (id/*String*/)/*DisplayObject*/
 	{
-	
+		
 	};
 	
 	d.getLineIndexAtPoint = function (x/*Number*/, y/*Number*/)/*int*/
 	{
-	
+		
 	};
 	
 	d.getLineIndexOfChar = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	d.getLineLength = function (lineIndex/*int*/)/*int*/
@@ -1652,12 +1626,12 @@ import flash.geom.*;
 	
 	d.getParagraphLength = function (charIndex/*int*/)/*int*/
 	{
-	
+		
 	};
 	
 	d.getRawText = function ()/*String*/
 	{
-	
+		
 	};
 	
 	d.getTextFormat = function (beginIndex/*int*/, endIndex/*int*/)/*TextFormat*/
@@ -1667,17 +1641,17 @@ import flash.geom.*;
 	
 	d.getTextRuns = function (beginIndex/*int*/, endIndex/*int*/)/*Array*/
 	{
-	
+		
 	};
 	
 	d.getXMLText = function (beginIndex/*int*/, endIndex/*int*/)/*String*/
 	{
-	
+		
 	};
 	
 	d.insertXMLText = function (beginIndex/*int*/, endIndex/*int*/, richText/*String*/, pasting/*Boolean*/)/*void*/
 	{
-	
+		
 	};
 	
 	d.pasteRichText = function (richText/*String*/)/*Boolean*/
@@ -1687,12 +1661,12 @@ import flash.geom.*;
 	
 	d.replaceSelectedText = function (value/*String*/)/*void*/
 	{
-	
+		
 	};
 	
 	d.replaceText = function (beginIndex/*int*/, endIndex/*int*/, newText/*String*/)/*void*/
 	{
-	
+		
 	};
 	
 	d.setSelection = function (beginIndex/*int*/, endIndex/*int*/)/*void*/

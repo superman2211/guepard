@@ -147,7 +147,7 @@
 		{
 			var font = this._fonts[ path ];
 			
-			if (/*font._path && */!font._loaded) return font;
+			if (!font._loaded) return font;
 		}
 		
 		return null;

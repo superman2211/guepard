@@ -27,6 +27,7 @@ import flash.geom.*;
 	d.__depth__ = -1;
 	d.__id__ = -1;
 	d.__maskDepth__ = -1;
+	d._scaleCorrection = 1;
 	
 	d.get_loaderInfo = function ()
 	{
@@ -421,6 +422,36 @@ import flash.geom.*;
 		}
 		
 		return value;
+	};
+	
+	d._checkScaleCorrection = function ()
+	{
+		var currentMatrix = this.get_transform().get_concatenatedMatrix();
+		
+		var currentCorrection = Math.max(
+			Math.abs(currentMatrix.a),
+			Math.abs(currentMatrix.b),
+			Math.abs(currentMatrix.c),
+			Math.abs(currentMatrix.d)
+		);
+		
+		var stage = this.get_stage();
+		
+		if (stage)
+		{
+			var stageMatrix = stage._render._baseMatrix;
+			
+			currentCorrection *= Math.max(stageMatrix.a, stageMatrix.d);
+		}
+		
+		if (this._scaleCorrection != currentCorrection)
+		{
+			this._scaleCorrection = currentCorrection;
+			
+			return true;
+		}
+		
+		return false;
 	};
 	
 	d._getGraphicsBounds = function (targetCoordinateSpace/*DisplayObject*/)/*Rectangle*/
