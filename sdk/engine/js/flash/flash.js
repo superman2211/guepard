@@ -661,8 +661,10 @@
 		}
 	}
 	
-	flash.initStatic = function (fullClassName)
+	flash.initStatic = function (fullClassName, tab)
 	{
+		if (tab == undefined) tab = "";
+		
 		var description = flash.classes[ fullClassName ];
 		
 		if (!description)
@@ -691,7 +693,7 @@
 				
 				if (!(requiredClass instanceof Function))
 				{
-					flash.initStatic(requiredClass);
+					flash.initStatic(requiredClass, "    ");
 				}
 			}
 		}

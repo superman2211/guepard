@@ -117,61 +117,6 @@ package com.guepard.parser.serialization
 			}
 		}
 		
-		private function writeEnd(stream:Token, info:ClassInfo):void
-		{
-			stream.writeSymbol(ENTER);
-			
-			stream.writeSymbol("flash", ".", "addDescription", "(", '"', info.fullName, '"', ",");
-			stream.writeSymbol(info.hasInstanceMembers ? DESCRIPTION : "null", ",");
-			
-			if (info.extendsInfo && info.extendsInfo.data != "Object")
-			{
-				stream.writeSymbol('"', info.extendsInfo.data, '"');
-			}
-			else
-			{
-				stream.writeSymbol("null");
-			}
-			
-			stream.writeSymbol(",", (info.hasStaticMembers || info.hasTagMembers || info.hasOverride) ? STATICAL : "null", ",");
-			
-			if (info.implementsInfo && info.implementsInfo.length)
-			{
-				var implementation:Array = [];
-				
-				for each(var implementInfo:NamespaceInfo in info.implementsInfo)
-				{
-					implementation.push('"' + implementInfo.data + '"');
-				}
-				
-				stream.writeSymbol("[", implementation.join(", "), "]");
-			}
-			else
-			{
-				stream.writeSymbol("null");
-			}
-			
-			stream.writeSymbol(",");
-			
-			if (info.requiredClasses.length)
-			{
-				var requiredClasses:Array = [];
-				
-				for each(var requiredClassName:String in info.requiredClasses)
-				{
-					requiredClasses.push('"' + requiredClassName + '"');
-				}
-				
-				stream.writeSymbol("[", requiredClasses.join(", "), "]");
-			}
-			else
-			{
-				stream.writeSymbol("null");
-			}
-			
-			stream.writeSymbol(")", ";", "}", "(", ")", ")", ";");
-		}
-		
 		private function writeProperties(stream:Token, info:ClassInfo):void
 		{
 			if (info.variablesInfo && info.variablesInfo.length)

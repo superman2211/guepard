@@ -177,13 +177,12 @@ package com.guepard.compiler
 						{
 							var minifier:JSMinifierUtil = new JSMinifierUtil(code);
 							minifier.run();
+							code = minifier.output;
 						}
 						catch (e:Error)
 						{
 							Converter.output.error("Java Script Minify Error: " + info.fullName);
 						}
-						
-						code = minifier.output;
 						
 						_target = debug.parent.resolvePath(name + ".min.js");
 					}

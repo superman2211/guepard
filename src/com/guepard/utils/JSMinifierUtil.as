@@ -5,6 +5,7 @@
 		public static const MINIMAL:uint = 1;
 		public static const NORMAL:uint = 2;
 		public static const AGRESSIVE:uint = 3;
+		
 		public static const unterminatedComment:String = "Unterminated Comment";
 		public static const unterminatedRegularExpression:String = "Unterminated regular expression literal.";
 		public static const unterminatedStringLiteral:String = "Unterminated string literal : ";
@@ -124,10 +125,10 @@
 			_level = Math.max(Math.min(value, 3), 1);
 		}
 		
-		public function JSMinifierUtil(input:String = "", level:uint = 2)
+		public function JSMinifierUtil(input:String)
 		{
 			this.input = input;
-			this.level = level;
+			this.level = JSMinifierUtil.MINIMAL;
 		}
 		
 		public function run(...arguments:Array):void

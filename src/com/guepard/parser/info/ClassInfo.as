@@ -92,7 +92,6 @@ package com.guepard.parser.info
 		public var type:String;
 		public var overrideMethods:Vector.<MethodInfo>;
 		public var requiredClasses:Vector.<String>;
-		public var addRequiredClassesEnabled:Boolean;
 		public var file:File;
 		public var tag:TagInfo;
 		public var appended:Boolean;
@@ -451,7 +450,7 @@ package com.guepard.parser.info
 					return;
 			}
 			
-			if (addRequiredClassesEnabled && requiredClasses.indexOf(className) == -1)
+			if (requiredClasses.indexOf(className) == -1)
 			{
 				requiredClasses.push(className);
 			}

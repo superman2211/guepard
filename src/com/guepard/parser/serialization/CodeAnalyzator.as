@@ -904,20 +904,12 @@ package com.guepard.parser.serialization
 			
 			for each(variable in info.variablesInfo)
 			{
-				info.addRequiredClassesEnabled = variable.statique;
-				
 				analyzeBodyContext(variable.body, null, info, null);
-				
-				info.addRequiredClassesEnabled = false;
 			}
 			
 			for each(method in info.methodsInfo)
 			{
-				info.addRequiredClassesEnabled = method.statique;
-				
 				analyzeMethodBodyContext(method, info, null);
-				
-				info.addRequiredClassesEnabled = false;
 			}
 			
 			for each(var child:ClassInfo in info.classesInfo)
