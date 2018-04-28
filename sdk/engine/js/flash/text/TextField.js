@@ -432,6 +432,11 @@ import flash.geom.*;
 		{
 			this._textFormats[ i ].set_color(value);
 		}
+
+		if (this._defaultTextFormat)
+		{
+            this._defaultTextFormat.set_color(value);
+		}
 		
 		this._canvasUpdated = false;
 	};
@@ -559,6 +564,7 @@ import flash.geom.*;
 	{
 		this._text = "";
 		this._formatedtext = [];
+        this._linesMetrics = [];
 	}
 	
 	d._render_ = function (render)/*Boolean*/
@@ -814,11 +820,8 @@ import flash.geom.*;
 					
 					var advance = 0;
 					var step = 0;
-					
-					if (currentDefineFont)
-					{
-						advance = currentDefineFont.getCharsAdvance(letter, nextLetter, fontName);
-					}
+
+                    advance = flash.swf.DefineFont.__getCharsAdvance(letter, nextLetter, fontName);
 					
 					step = advance * size / 1024;
 					
@@ -1161,6 +1164,7 @@ import flash.geom.*;
 			
 			if (next)
 			{
+				// TODO: fix it for right to left
 				var pairs = font.kerningsPairs[ current.letter ];
 				
 				if (pairs)
@@ -1234,7 +1238,12 @@ import flash.geom.*;
 					lineWidth += word[ wordLength ].advance;
 					
 					lineHeight = word[ wordLength ].ascent + word[ wordLength ].leading + word[ wordLength ].descent
-					
+
+					if (lineHeight == 0)
+					{
+                        lineHeight = word[ wordLength ].size;
+					}
+
 					if (biggestCharSize < lineHeight)
 					{
 						biggestCharSize = lineHeight;

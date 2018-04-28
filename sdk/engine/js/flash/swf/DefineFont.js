@@ -3,8 +3,7 @@
 	"use strict";
 	
 	var d = {};
-	
-	d.chars = null;
+
 	d.id = null;
 	d.ascent = 0;
 	d.descent = 0;
@@ -14,7 +13,6 @@
 	d.name = "";
 	d.path = "";
 	d.font = null;
-	d.kerningsPairs = null;
 	
 	d.DefineFont = function ()
 	{
@@ -37,9 +35,6 @@
 		
 		var bold = attributes.bold == "true";
 		var italic = attributes.italic == "true";
-		
-		this.kerningsPairs = {};
-		this.chars = {};
 		
 		this.fontStyle = flash.text.FontStyle.REGULAR;
 		
@@ -74,71 +69,80 @@
 			domain._setFont(this.font);
 		}
 	};
-	
-	d.getCharWidth = function (char, font)
-	{
-		var width = this.chars[ char ];
-		
-		if (width == undefined)
-		{
-			this.chars[ char ] = width = this.measureText(char, font).width;
-		}
-		
-		return width;
-	};
-	
-	d.measureText = function (text, font)
-	{
-		var context = flash.swf.DefineFont.__tempContext2d;
-		
-		context.font = flash.text.TextFormat._formatFont(font, 1024);
-		
-		return context.measureText(text);
-	}
-	
-	d.getCharsAdvance = function (char1, char2, font)
-	{
-		var advance = 0;
-		
-		if (char1)
-		{
-			if (char2 && char2 != "\n" && char2 != " " && char2 != "\t")
-			{
-				var pair = this.kerningsPairs[ char1 ];
-				
-				if (!pair)
-				{
-					this.kerningsPairs[ char1 ] = pair = {};
-				}
-				
-				advance = pair[ char2 ];
-				
-				if (advance == undefined)
-				{
-					var width1 = this.getCharWidth(char1, font);
-					var width2 = this.getCharWidth(char2, font);
-					
-					var width = this.getCharWidth(char1 + char2, font);
-					
-					pair[ char2 ] = advance = width - width2;
-				}
-			}
-			else
-			{
-				advance = this.getCharWidth(char1, font);
-			}
-		}
-		
-		return advance;
-	};
-	
+
 	var s = {};
-	
+
+    s.__getCharWidth = function (char, font)
+    {
+    	var key = font + "_" + char;
+
+        var width = this.__chars[ key ];
+
+        if (width == undefined)
+        {
+        	var meashureData = this.__measureText(char, font);
+
+            this.__chars[ key ] = width = meashureData.width;
+        }
+
+        return width;
+    };
+
+    s.__measureText = function (text, font)
+    {
+        var context = this.__tempContext2d;
+
+        context.font = flash.text.TextFormat._formatFont(font, 1024);
+
+        return context.measureText(text);
+    }
+
+    s.__getCharsAdvance = function (char1, char2, font)
+    {
+        var advance = 0;
+
+        if (char1)
+        {
+            if (char2 && char2 != "\n" && char2 != " " && char2 != "\t")
+            {
+                var key = font + " " + char1;
+
+                var pair = this.__kerningsPairs[ key ];
+
+                if (!pair)
+                {
+                    this.__kerningsPairs[ key ] = pair = {};
+                }
+
+                advance = pair[ char2 ];
+
+                if (advance == undefined)
+                {
+                    var width1 = this.__getCharWidth(char1, font);
+                    var width2 = this.__getCharWidth(char2, font);
+
+                    var width = this.__getCharWidth(char1 + char2, font);
+
+                    pair[ char2 ] = advance = width - width2;
+                }
+            }
+            else
+            {
+                advance = this.__getCharWidth(char1, font);
+            }
+        }
+
+        return advance;
+    };
+
 	s.__init__ = function ()
 	{
 		this.prototype.Tag_constructor = this.__base__;
 		this.prototype.Tag_fromXML = this.__base__.prototype.fromXML;
-		
+
+        this.__kerningsPairs = {};
+        this.__chars = {};
+
 		var canvas = document.createElement('canvas');
 		this.__tempContext2d = canvas.getContext("2d");
 	}
