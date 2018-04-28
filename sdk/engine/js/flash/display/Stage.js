@@ -30,6 +30,7 @@ import flash.ui.*;
 	d._mouseX = 0;
 	d._mouseY = 0;
 	d._clickCount = 0;
+	d._buttonDown = false;
 	
 	d._scaleMode = null;
 	d._align = null;
@@ -375,6 +376,8 @@ import flash.ui.*;
 				mouseType = flash.events.MouseEvent.MOUSE_UP;
 				
 				flash.text.TextField.__blur__();
+
+                this._buttonDown = false;
 				break;
 			
 			case 'mousedown':
@@ -383,6 +386,8 @@ import flash.ui.*;
 				flash.text.TextField.__blur__();
 				
 				flash.display.DisplayObject.__pressedObjects.length = 0;
+
+                this._buttonDown = true;
 				break;
 			
 			case 'mousemove':
@@ -397,11 +402,15 @@ import flash.ui.*;
 			case 'touchstart':
 				touchType = flash.events.TouchEvent.TOUCH_BEGIN;
 				mouseType = flash.events.MouseEvent.MOUSE_DOWN;
+
+				this._buttonDown = true;
 				break;
 			
 			case 'touchend':
 				touchType = flash.events.TouchEvent.TOUCH_END;
 				mouseType = flash.events.MouseEvent.MOUSE_UP;
+
+                this._buttonDown = false;
 				break;
 			
 			case 'touchmove':
@@ -485,6 +494,8 @@ import flash.ui.*;
 					data.isPrimaryTouchPoint = false;
 					data.localX = p.x;
 					data.localY = p.y;
+                    data.globalX = p.x;
+                    data.globalY = p.y;
 					data.sizeX = touches[ i ].radiusX;
 					data.sizeY = touches[ i ].radiusY;
 					data.ctrlKey = e.ctrlKey;
@@ -523,10 +534,12 @@ import flash.ui.*;
 			data.cancelable = false;
 			data.localX = this._mouseX;
 			data.localY = this._mouseY;
+            data.globalX = p.x;
+            data.globalY = p.y;
 			data.ctrlKey = e.ctrlKey;
 			data.altKey = e.altKey;
 			data.shiftKey = e.shiftKey;
-			data.buttonDown = false;
+			data.buttonDown = this._buttonDown;
 			data.delta = delta;
 			data.commandKey = false;
 			data.controlKey = false;

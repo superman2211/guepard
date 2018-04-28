@@ -692,7 +692,10 @@ import flash.geom.*;
 					data.isTouchPointCanceled
 				);
 			}
-			
+
+			event.set_stageX(data.globalX);
+			event.set_stageY(data.globalY);
+
 			this.dispatchEvent(event);
 		}
 		

@@ -380,7 +380,7 @@ import flash.geom.*;
 	
 	d.drawRect = function (x/*Number*/, y/*Number*/, width/*Number*/, height/*Number*/)/*void*/
 	{
-		this._textureInfo = null;
+        this._textureInfo = null;
 		
 		this._createPath(true);
 		
@@ -559,7 +559,7 @@ import flash.geom.*;
 	
 	d.lineTo = function (x/*Number*/, y/*Number*/)/*void*/
 	{
-		this._textureInfo = null;
+        this._textureInfo = null;
 		
 		this._createPath();
 		

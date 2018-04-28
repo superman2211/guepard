@@ -195,7 +195,7 @@
 				}
 			}
 		}
-		
+
 		this._currentcontext.drawImage(
 			imageData,
 			

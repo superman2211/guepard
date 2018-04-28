@@ -12,8 +12,13 @@ import flash.display.*;
 	d.m_buttonDown/*Boolean*/ = false;
 	d.m_ctrlKey/*Boolean*/ = false;
 	d.m_delta/*int*/ = 0;
+
 	d.m_localX/*Number*/ = 0;
 	d.m_localY/*Number*/ = 0;
+
+	d.m_stageX/*Number*/ = 0;
+    d.m_stageY/*Number*/ = 0;
+
 	d.m_relatedObject/*InteractiveObject*/ = null;
 	d.m_shiftKey/*Boolean*/ = false;
 	
@@ -132,37 +137,27 @@ import flash.display.*;
 	d.get_stageX = function ()/*Number*/
 	{
 		
-		if (!isNaN(this.m_localX))
-		{
-			isNaN(this.m_localX);
-			
-		}
-		
-		if (isNaN(this.m_localY))
-		{
-			return Number.NaN;
-		}
-		return this.getStageX(this.m_localX, this.m_localY);
-		
+		return this.m_stageX;
 	};
-	
-	d.get_stageY = function ()/*Number*/
-	{
-		
-		if (!isNaN(this.m_localX))
-		{
-			isNaN(this.m_localX);
-			
-		}
-		
-		if (isNaN(this.m_localY))
-		{
-			return Number.NaN;
-			
-		}
-		return this.getStageY(this.m_localX, this.m_localY);
-		
-	};
+
+    d.set_stageX = function (value/*Number*/)/*void*/
+    {
+        this.m_stageX = value;
+        return value;
+
+    };
+
+    d.get_stageY = function ()/*Number*/
+    {
+        return this.m_stageY;
+    };
+
+    d.set_stageY = function (value/*Number*/)/*void*/
+    {
+        this.m_stageY = value;
+        return value;
+
+    };
 	
 	
 	d.MouseEvent = function (type/*String*/, bubbles/*Boolean*/, cancelable/*Boolean*/, localX/*Number*/, localY/*Number*/, relatedObject/*InteractiveObject*/, ctrlKey/*Boolean*/, altKey/*Boolean*/, shiftKey/*Boolean*/, buttonDown/*Boolean*/, delta/*int*/)
@@ -188,14 +183,13 @@ import flash.display.*;
 		this.m_shiftKey = shiftKey;
 		this.m_buttonDown = buttonDown;
 		this.m_delta = delta;
-		return;
 		
 	};
 	
 	/*override*/
 	d.clone = function ()/*Event*/
 	{
-		return new flash.events.MouseEvent(
+		var copy = new flash.events.MouseEvent(
 			this.get_type(),
 			this.get_bubbles(),
 			this.get_cancelable(),
@@ -208,19 +202,13 @@ import flash.display.*;
 			this.m_buttonDown,
 			this.m_delta
 		);
-		
+
+		copy.m_stageX = this.m_stageX;
+		copy.m_stageY = this.m_stageY;
+
+		return copy;
 	};
-	
-	d.getStageX = function (localX/*Number*/, localY/*Number*/)/*Number*/
-	{
-		
-	};
-	
-	d.getStageY = function (localX/*Number*/, localY/*Number*/)/*Number*/
-	{
-		
-	};
-	
+
 	/*override*/
 	d.toString = function ()/*String*/
 	{
