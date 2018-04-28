@@ -1,0 +1,52 @@
+?{
+  "source": {
+    "projectName": "box2d",
+    "mainClass": "",
+    "sourceCodePath": "/Users/superman/Documents/Work/My/guepard/demo/box2d/src",
+    "preloaderFile": "",
+    "flaFile": "",
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/box2d/out/production/box2d/Main.swf"
+  },
+  "target": {
+    "exportDataInZIP": false,
+    "minify": true,
+    "renderType": 1,
+    "convertExternalSWF": false,
+    "enableBuild": true,
+    "copyOriginalSWF": false,
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/box2d/build",
+    "htmlTemplate": ""
+  },
+  "resources": {
+    "exportSounds": false,
+    "shapeBigScale": true,
+    "texturePowerMin": 5,
+    "exportCodeTokens": false,
+    "compressDigits": 3,
+    "exportCode": true,
+    "texturePowerBig": 11,
+    "exportDebugTextures": false,
+    "exportResources": true,
+    "exportCodeTree": false,
+    "shapeScaleMin": 90,
+    "exportFonts": false,
+    "texturePowerMax": 11,
+    "imageQuality": 80,
+    "exportCodeEmbed": false,
+    "scaleMargin": 5,
+    "shapeScale": 100,
+    "shapeBorder": 2
+  },
+  "settings": {
+    "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
+  },
+  "parameters": {
+    "fillScreen": true,
+    "frameRate": 30,
+    "align": 0,
+    "appHeight": 360,
+    "appWidth": 640,
+    "scaleMode": 0,
+    "backgroundColor": "0x292c2c"
+  }
+}
