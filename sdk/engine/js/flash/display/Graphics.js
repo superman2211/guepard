@@ -111,7 +111,6 @@ import flash.geom.*;
 						solidFill = null;
 						gradientFill = null;
 						bitmapFill = null;
-						;
 					}
 					else if (item instanceof flash.display.GraphicsPath)
 					{
@@ -273,7 +272,19 @@ import flash.geom.*;
 		
 		if (bitmap)
 		{
-			this._data.push(new flash.display.GraphicsBitmapFill(bitmap, matrix, repeat, smooth));
+			var fill = new flash.display.GraphicsBitmapFill(bitmap, matrix, repeat, smooth);
+
+            var index = this._path ? this._data.indexOf(this._path) : -1;
+
+            if (index != -1)
+            {
+                this._data.splice(index, 0, fill);
+            }
+            else
+            {
+                this._data.push(fill);
+            }
+
 			this._needsRender = true;
 		}
 	};
@@ -284,8 +295,20 @@ import flash.geom.*;
 		
 		if (color == undefined) color = 0x000000;
 		if (alpha == undefined) alpha = 1;
-		
-		this._data.push(new flash.display.GraphicsSolidFill(color, alpha));
+
+		var fill = new flash.display.GraphicsSolidFill(color, alpha);
+
+		var index = this._path ? this._data.indexOf(this._path) : -1;
+
+		if (index != -1)
+		{
+			this._data.splice(index, 0, fill);
+		}
+		else
+		{
+            this._data.push(fill);
+		}
+
 		this._needsRender = true;
 	};
 	
@@ -374,7 +397,9 @@ import flash.geom.*;
 		this._path.data.push(xe, ym + oy, xm + ox, ye, xm, ye);
 		this._path.commands.push(flash.display.GraphicsPathCommand.CUBIC_CURVE_TO);
 		this._path.data.push(xm - ox, ye, x, ym + oy, x, ym);
-		
+
+        this._path = null;
+
 		this._needsRender = true;
 	};
 	
@@ -394,6 +419,9 @@ import flash.geom.*;
 		this._path.data.push(x, y + height);
 		this._path.commands.push(flash.display.GraphicsPathCommand.LINE_TO);
 		this._path.data.push(x, y);
+
+        this._path = null;
+
 		this._needsRender = true;
 	};
 	
@@ -486,6 +514,8 @@ import flash.geom.*;
 			x,
 			ym + dy
 		);
+
+        this._path = null;
 		
 		this._needsRender = true;
 	};
