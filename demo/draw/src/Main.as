@@ -66,8 +66,8 @@ package
 			
 			// fill
 			graphics.lineStyle();
-			graphics.beginFill(0x999999);
 			graphics.moveTo(350, 250);
+			graphics.beginFill(0x999999);
 			graphics.lineTo(450, 250);
 			graphics.beginFill(0xff9999);
 			graphics.lineTo(450, 350);

@@ -1,52 +1,52 @@
 :{
   "source": {
+    "preloaderFile": "",
     "sourceCodePath": "/Users/superman/Documents/Work/My/guepard/demo/draw/src",
-    "flaFile": "",
     "mainClass": "",
     "projectName": "draw",
-    "preloaderFile": "",
-    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/draw/out/production/draw/Main.swf"
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/draw/out/production/draw/Main.swf",
+    "flaFile": ""
   },
   "target": {
-    "exportDataInZIP": false,
-    "html5ProjectPath": "/Users/superman/Development/localhost/demo/draw/build",
-    "enableBuild": true,
+    "htmlTemplate": "",
     "minify": true,
     "copyOriginalSWF": false,
     "renderType": 1,
-    "htmlTemplate": "",
-    "convertExternalSWF": false
-  },
-  "parameters": {
-    "appWidth": 500,
-    "frameRate": 24,
-    "align": 0,
-    "fillScreen": true,
-    "scaleMode": 0,
-    "backgroundColor": "0xffffff",
-    "appHeight": 375
+    "enableBuild": true,
+    "convertExternalSWF": false,
+    "exportDataInZIP": false,
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/draw/build"
   },
   "resources": {
-    "exportCodeTree": false,
-    "imageQuality": 80,
-    "exportCode": true,
-    "exportSounds": false,
-    "shapeBorder": 2,
-    "texturePowerBig": 11,
-    "shapeScale": 100,
-    "texturePowerMin": 5,
-    "exportDebugTextures": false,
-    "exportResources": true,
+    "shapeBigScale": true,
+    "compressDigits": 3,
     "exportCodeTokens": false,
-    "scaleMargin": 5,
+    "exportDebugTextures": false,
+    "exportCodeTree": false,
+    "shapeScale": 100,
+    "exportCodeEmbed": false,
     "shapeScaleMin": 90,
     "exportFonts": false,
-    "exportCodeEmbed": false,
-    "compressDigits": 3,
-    "shapeBigScale": true,
-    "texturePowerMax": 11
+    "scaleMargin": 5,
+    "exportSounds": false,
+    "exportCode": true,
+    "texturePowerBig": 11,
+    "imageQuality": 80,
+    "texturePowerMax": 11,
+    "exportResources": true,
+    "shapeBorder": 2,
+    "texturePowerMin": 5
   },
   "settings": {
     "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
+  },
+  "parameters": {
+    "frameRate": 24,
+    "align": 0,
+    "appHeight": 375,
+    "fillScreen": true,
+    "scaleMode": 0,
+    "appWidth": 500,
+    "backgroundColor": "0xffffff"
   }
 }
