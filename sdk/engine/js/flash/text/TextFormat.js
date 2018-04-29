@@ -248,12 +248,12 @@
 	
 	d.TextFormat = function (font/*String*/, size/*Object*/, color/*Object*/, bold/*Object*/, italic/*Object*/, underline/*Object*/, url/*String*/, target/*String*/, align/*String*/, leftMargin/*Object*/, rightMargin/*Object*/, indent/*Object*/, leading/*Object*/)
 	{
-		if (font == undefined) font = null;
-		if (size == undefined) size = null;
-		if (color == undefined) color = null;
-		if (bold == undefined) bold = null;
-		if (italic == undefined) italic = null;
-		if (underline == undefined) underline = null;
+		if (font == undefined) font = "times new roman";
+		if (size == undefined) size = 12;
+		if (color == undefined) color = 0;
+		if (bold == undefined) bold = false;
+		if (italic == undefined) italic = false;
+		if (underline == undefined) underline = false;
 		if (url == undefined) url = null;
 		if (target == undefined) target = null;
 		if (align == undefined) align = null;
