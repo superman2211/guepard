@@ -685,7 +685,7 @@ package com.guepard.parser.serialization
 								break;
 							
 							case "trace":
-								stream.writeSymbol(LIBRARY, ".", "trace");
+								stream.writeSymbol("console", ".", "log");
 								break;
 							
 							case "this":

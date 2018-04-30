@@ -525,7 +525,7 @@ package com.guepard.parser.token
 								
 								var exit:Boolean = false;
 								
-								if (token.data == "<")
+								if (token.data == "<" || token.data == ".<")
 								{
 									previous = stream.readToken();
 									
@@ -574,10 +574,6 @@ package com.guepard.parser.token
 									{
 										tagType = "tag";
 									}
-									else
-									{
-										
-									}
 									
 									if (tagType == "begin")
 									{
@@ -587,8 +583,6 @@ package com.guepard.parser.token
 									{
 										depth--;
 									}
-									
-									trace(tagType, depth, xml.data);
 									
 									if (depth == 0)
 									{
