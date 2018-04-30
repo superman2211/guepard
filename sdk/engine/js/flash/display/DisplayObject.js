@@ -713,7 +713,7 @@ import flash.geom.*;
 	
 	s.__enterFrame__ = function ()
 	{
-		//flash.trace("flash.display.DisplayObject.__enterFrame__");
+		//console.log("flash.display.DisplayObject.__enterFrame__");
 		
 		var objects = this.__enterFrameObjects;
 		

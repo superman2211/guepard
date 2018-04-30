@@ -79,7 +79,7 @@
 	{
 		if (path == undefined || path == "undefined")
 		{
-			flash.trace();
+			console.log();
 		}
 		
 		this._images[ path ] = image;
@@ -124,7 +124,7 @@
 	
 	d._setFont = function (font)
 	{
-		flash.trace("_setFont" + ", " + font._path + ", " + font._fontName);
+		console.log("_setFont" + ", " + font._path + ", " + font._fontName);
 		
 		if (font._path)
 		{

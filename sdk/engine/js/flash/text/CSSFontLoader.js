@@ -55,7 +55,7 @@
 		
 		this._fontName = font._fontName;
 		
-		flash.trace("load font start: " + this._fontName);
+		console.log("load font start: " + this._fontName);
 		
 		this.loadFont(font._fontName);
 	}
@@ -105,12 +105,12 @@
 		{
 			if (currentData[ i ] != testData[ i ])
 			{
-				flash.trace(currentData[ i ], testData[ i ], i);
+				console.log(currentData[ i ], testData[ i ], i);
 				this.dispatchEvent(new flash.events.Event(flash.events.Event.COMPLETE, false, false));
 				this._timer.removeEventListener("timer", flash.bindFunction(this, this._checkFont));
 				this._timer.stop();
 				
-				flash.trace("load font complete: " + this._fontName)
+				console.log("load font complete: " + this._fontName)
 				break;
 			}
 			i--;

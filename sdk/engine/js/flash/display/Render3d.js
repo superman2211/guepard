@@ -207,7 +207,7 @@
 		}
 		
 		this._shaderProgram = gl.createProgram();
-		flash.trace(this._shaderProgram, fragmentShader, vertexShader)
+		console.log(this._shaderProgram, fragmentShader, vertexShader)
 		gl.attachShader(this._shaderProgram, fragmentShader);
 		gl.attachShader(this._shaderProgram, vertexShader);
 		gl.linkProgram(this._shaderProgram);

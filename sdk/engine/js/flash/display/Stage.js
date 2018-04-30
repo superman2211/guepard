@@ -134,7 +134,7 @@ import flash.ui.*;
 	d._renderFrame = function ()
 	{
 		//if (this._frames-- <= 0) return;
-		//flash.trace("render");
+		//console.log("render");
 		
 		if (this._renderId != this._requestId) return;
 		

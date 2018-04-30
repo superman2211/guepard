@@ -64,7 +64,7 @@ import flash.utils.*;
 	{
 		if (context == undefined) context = null;
 		
-		flash.trace("load", request.get_url());
+		console.log("load", request.get_url());
 		
 		if (request.get_extension() == "swf")
 		{
@@ -162,7 +162,7 @@ import flash.utils.*;
 	
 	d._complete = function (e)
 	{
-		flash.trace("_complete");
+		console.log("_complete");
 		
 		this._urlLoader.removeEventListener(flash.events.Event.COMPLETE, flash.bindFunction(this, this._complete));
 		
@@ -255,7 +255,7 @@ import flash.utils.*;
 		domain._setDefine(this._defineSprite);
 		domain._initAudio(this._getFolder());
 		
-		flash.trace("swf images = " + domain._images);
+		console.log("swf images = " + domain._images);
 		
 		this._loadSWFImage();
 	};
@@ -356,7 +356,7 @@ import flash.utils.*;
 		
 		this._contentLoaderInfo.set_content(this._content);
 		
-		flash.trace("image loaded");
+		console.log("image loaded");
 	};
 	
 	d.loadBytes = function (bytes/*ByteArray*/, context/*LoaderContext*/)/*void*/

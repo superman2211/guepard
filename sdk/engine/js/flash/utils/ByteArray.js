@@ -234,7 +234,7 @@
 	{
 		if (!bytes || !bytes.get_bytesAvailable)
 		{
-			flash.trace();
+			console.log();
 		}
 		
 		var string = "";

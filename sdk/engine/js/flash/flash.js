@@ -31,10 +31,7 @@
 			{
 			};
 		}
-		
-		//window.XML = function () { };
-		//window.XMLList = function () { };
-		
+
 		window.SecurityError = function ()
 		{
 		};
@@ -310,15 +307,7 @@
 	{
 		return "[package flash]";
 	}
-	
-	flash.trace = function ()
-	{
-		if (window.console)
-		{
-			window.console.log(Array.prototype.join.call(arguments, " "));
-		}
-	};
-	
+
 	flash.createPackage = function (packageName, object, parentName)
 	{
 		if (object == undefined) object = window;

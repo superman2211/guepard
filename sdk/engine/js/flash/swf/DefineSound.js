@@ -34,7 +34,7 @@
 			path = path.replace(".mp3", ".wav");
 		}
 		
-		flash.trace("init audio", path);
+		console.log("init audio", path);
 		
 		this.audio = new Audio(path);
 	};
