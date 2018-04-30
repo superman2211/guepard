@@ -123,8 +123,8 @@
 				
 				loader.get_contentLoaderInfo().removeEventListener(flash.events.Event.COMPLETE, loadComplete);
 				
-				flash.trace("loadComplete");
-				flash.trace("loader.content = " + loader.get_content());
+				console.log("loadComplete");
+				console.log("loader.content = " + loader.get_content());
 
 				stage.addChild(loader.get_content());
 			}
