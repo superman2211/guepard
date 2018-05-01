@@ -1174,8 +1174,19 @@ package com.guepard.parser.serialization
 							expression = new ExpressionInfo();
 							expression.token = token;
 							expression.type = ExpressionType.ATTRIBUTE;
-							expression.child = readIdentifier(stream, method);
-							expression.child.context = new NamespaceInfo("XMLList");
+							
+							var next:Token = stream.readToken();
+							stream.stepPrevious();
+							
+							if(next.data == "[")
+							{
+								expression.child = readBlock(stream, method);
+							}
+							else
+							{
+								expression.child = readIdentifier(stream, method);
+								expression.child.context = new NamespaceInfo("XMLList");
+							}
 						}
 						else
 						{
@@ -1256,7 +1267,22 @@ package com.guepard.parser.serialization
 								expression = new ExpressionInfo();
 								expression.type = ExpressionType.DESCENDANT;
 								expression.token = token;
+								
+								var next:Token = stream.readToken();
+								
+								var prepend:String = "";
+								
+								if (next.data == "@")
+								{
+									prepend = "@";
+								}
+								else
+								{
+									stream.stepPrevious();
+								}
+								
 								expression.child = readIdentifier(stream, method);
+								expression.child.token.data = prepend + expression.child.token.data;
 								expression.child.context = new NamespaceInfo("XMLList");
 								break;
 							

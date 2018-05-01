@@ -44,7 +44,7 @@ package com.guepard.parser.token
 					return "[";
 			}
 			
-			return null;
+			return "";
 		}
 	}
 }

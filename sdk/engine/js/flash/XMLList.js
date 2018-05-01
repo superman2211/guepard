@@ -7,22 +7,22 @@
 	var d = {};
 	
 	
-	d.XMLList = function (value/*Object*/)
+	/*public*/d.XMLList = function (value/*Object*/)
 	{
 		
 		if (value == undefined) value = null;
 		
 		
 	};
-	
-	d.__find__ = function (callback/*Function*/)/*XML*/
+
+	/*private*/d.__find__ = function (callback/*Function*/)/*XML*/
 	{
 		var i = 0;
-		
-		while (this[ i ])
+
+		while (this[i])
 		{
-			var xml = this[ i ];
-			
+			var xml = this[i];
+
 			try
 			{
 				if (callback(xml))
@@ -30,236 +30,280 @@
 					return xml;
 				}
 			}
-			catch (e)
+			catch(e)
 			{
 				
 			}
-			
+
 			i++;
 		}
+
+		return null;
+	};
+
+	/*public*/d.addNamespace = function (ns/*Object*/)/*XML*/
+	{
 		
+	};
+	
+	/*public*/d.appendChild = function (child/*Object*/)/*XML*/
+	{
+		
+	};
+	
+	/*public*/d.attribute = function (arg/*Object*/)/*XMLList*/
+	{
+		var i = 0;
+
+		while (this[i])
+		{
+			var temp = this[i].attribute(arg);
+
+			if (temp != null)
+			{
+				return temp;
+			}
+
+			i++;
+		}
+
 		return null;
 	};
 	
-	d.addNamespace = function (ns/*Object*/)/*XML*/
+	/*public*/d.attributes = function ()/*XMLList*/
 	{
 		
 	};
 	
-	d.appendChild = function (child/*Object*/)/*XML*/
+	/*public*/d.child = function (propertyName/*Object*/)/*XMLList*/
+	{
+		var list = new XMLList();
+
+		var i = 0;
+		var j = 0;
+
+		while (this[i])
+		{
+			var temp = this[i].child(propertyName);
+
+			var t = 0;
+
+			while (temp[t])
+			{
+				list[j++] = temp[t];
+				t++;
+			}
+
+			i++;
+		}
+
+		return list;
+	};
+	
+	/*public*/d.childIndex = function ()/*int*/
 	{
 		
 	};
 	
-	d.attribute = function (arg/*Object*/)/*XMLList*/
+	/*public*/d.children = function ()/*XMLList*/
 	{
 		
 	};
 	
-	d.attributes = function ()/*XMLList*/
+	/*public*/d.comments = function ()/*XMLList*/
 	{
 		
 	};
 	
-	d.child = function (propertyName/*Object*/)/*XMLList*/
+	/*public*/d.contains = function (value/*Object*/)/*Boolean*/
 	{
 		
 	};
 	
-	d.childIndex = function ()/*int*/
+	/*public*/d.copy = function ()/*XMLList*/
 	{
 		
 	};
 	
-	d.children = function ()/*XMLList*/
-	{
-		
-	};
-	
-	d.comments = function ()/*XMLList*/
-	{
-		
-	};
-	
-	d.contains = function (value/*Object*/)/*Boolean*/
-	{
-		
-	};
-	
-	d.copy = function ()/*XMLList*/
-	{
-		
-	};
-	
-	d.descendants = function (name/*Object*/)/*XMLList*/
-	{
-		if (name == undefined) name = "*";
-		
-		
-	};
-	
-	d.elements = function (name/*Object*/)/*XMLList*/
+	/*public*/d.descendants = function (name/*Object*/)/*XMLList*/
 	{
 		if (name == undefined) name = "*";
 		
 		
 	};
 	
-	d.hasComplexContent = function ()/*Boolean*/
+	/*public*/d.elements = function (name/*Object*/)/*XMLList*/
+	{
+		if (name == undefined) name = "*";
+		
+		
+	};
+	
+	/*public*/d.hasComplexContent = function ()/*Boolean*/
 	{
 		
 	};
 	
-	d.hasSimpleContent = function ()/*Boolean*/
+	/*public*/d.hasSimpleContent = function ()/*Boolean*/
 	{
 		
 	};
 	
-	d.inScopeNamespaces = function ()/*Array*/
+	/*public*/d.inScopeNamespaces = function ()/*Array*/
 	{
 		
 	};
 	
-	d.insertChildAfter = function (child1/*Object*/, child2/*Object*/)/*Object*/
+	/*public*/d.insertChildAfter = function (child1/*Object*/, child2/*Object*/)/*Object*/
 	{
 		
 	};
 	
-	d.insertChildBefore = function (child1/*Object*/, child2/*Object*/)/*Object*/
+	/*public*/d.insertChildBefore = function (child1/*Object*/, child2/*Object*/)/*Object*/
 	{
 		
 	};
 	
-	d.length = function ()/*int*/
+	/*public*/d.length = function ()/*int*/
+	{
+        var i = 0;
+
+        while (this[i])
+        {
+            i++;
+        }
+
+        return i;
+	};
+	
+	/*public*/d.localName = function ()/*Object*/
 	{
 		
 	};
 	
-	d.localName = function ()/*Object*/
+	/*public*/d.name = function ()/*Object*/
 	{
 		
 	};
 	
-	d.name = function ()/*Object*/
-	{
-		
-	};
-	
-	d.namespace = function (prefix/*Object*/)/*Object*/
+	/*public*/d.namespace = function (prefix/*Object*/)/*Object*/
 	{
 		if (prefix == undefined) prefix = null;
 		
 		
 	};
 	
-	d.namespaceDeclarations = function ()/*Array*/
+	/*public*/d.namespaceDeclarations = function ()/*Array*/
 	{
 		
 	};
 	
-	d.nodeKind = function ()/*String*/
+	/*public*/d.nodeKind = function ()/*String*/
 	{
 		
 	};
 	
-	d.normalize = function ()/*XMLList*/
+	/*public*/d.normalize = function ()/*XMLList*/
 	{
 		
 	};
 	
-	d.parent = function ()/*Object*/
+	/*public*/d.parent = function ()/*Object*/
 	{
 		
 	};
 	
-	d.prependChild = function (value/*Object*/)/*XML*/
+	/*public*/d.prependChild = function (value/*Object*/)/*XML*/
 	{
 		
 	};
 	
-	d.processingInstructions = function (name/*Object*/)/*XMLList*/
+	/*public*/d.processingInstructions = function (name/*Object*/)/*XMLList*/
 	{
 		if (name == undefined) name = "*";
 		
 		
 	};
 	
-	d.propertyIsEnumerable = function (P/*Object*/)/*Boolean*/
+	/*public*/d.propertyIsEnumerable = function (P/*Object*/)/*Boolean*/
 	{
 		if (P == undefined) P = null;
 		
 		
 	};
 	
-	d.removeNamespace = function (ns/*Object*/)/*XML*/
+	/*public*/d.removeNamespace = function (ns/*Object*/)/*XML*/
 	{
 		
 	};
 	
-	d.replace = function (propertyName/*Object*/, value/*Object*/)/*XML*/
+	/*public*/d.replace = function (propertyName/*Object*/, value/*Object*/)/*XML*/
 	{
 		
 	};
 	
-	d.setChildren = function (value/*Object*/)/*XML*/
+	/*public*/d.setChildren = function (value/*Object*/)/*XML*/
 	{
 		
 	};
 	
-	d.setLocalName = function (name/*Object*/)/*void*/
+	/*public*/d.setLocalName = function (name/*Object*/)/*void*/
 	{
 		
 	};
 	
-	d.setName = function (name/*Object*/)/*void*/
+	/*public*/d.setName = function (name/*Object*/)/*void*/
 	{
 		
 	};
 	
-	d.setNamespace = function (ns/*Object*/)/*void*/
+	/*public*/d.setNamespace = function (ns/*Object*/)/*void*/
 	{
 		
 	};
 	
-	d.text = function ()/*XMLList*/
+	/*public*/d.text = function ()/*XMLList*/
 	{
-		
+		return this.toString();
 	};
 	
-	d.toString = function ()/*String*/
+	/*public*/d.toString = function ()/*String*/
 	{
-		var data = "";
-		
+        var data = [];
+
 		var i = 0;
-		
-		while (this[ i ])
+
+		while (this[i])
 		{
-			data += this[ i ].toString();
+			data.push(this[i].toString());
 			i++;
 		}
-		
-		return data;
+
+		return data.join("\n");
 	};
 	
-	d.toXMLString = function ()/*String*/
+	/*public*/d.toXMLString = function ()/*String*/
 	{
-		var data = "";
-		
+		var data = [];
+
 		var i = 0;
-		
-		while (this[ i ])
+
+		while (this[i])
 		{
-			data += this[ i ].toXMLString();
+			data.push(this[i].toXMLString());
 			i++;
 		}
-		
-		return data;
+
+		return data.join("\n");
 	};
 	
-	d.valueOf = function ()/*XMLList*/
+	/*public*/d.valueOf = function ()/*XMLList*/
 	{
 		
 	};
+	
+	
+	
 	
 	
 	flash.addDescription("XMLList", d, null, null, null, null);

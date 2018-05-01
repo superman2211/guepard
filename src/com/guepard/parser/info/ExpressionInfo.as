@@ -104,6 +104,11 @@ package com.guepard.parser.info
 			return token ? token.data : null;
 		}
 		
+		public function set tokenData(value:String):void
+		{
+			if(token) token.data = value;
+		}
+		
 		public function get tokenType():String
 		{
 			return token ? token.type : null;

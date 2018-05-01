@@ -879,7 +879,22 @@ package com.guepard.parser.serialization
 						}
 						else
 						{
-							stream.writeSymbol("(", "'", expression.child.tokenData, "'", ")");
+							if(expression.child.tokenData == "[")
+							{
+								expression.child.tokenData = "";
+								expression.child.type = ExpressionType.BLOCK;
+								
+								stream.writeSymbol("(");
+								writeExpression(stream, expression.child, method, info);
+								stream.writeSymbol(")");
+								
+								expression.child.tokenData = "[";
+								expression.child.type = ExpressionType.ARRAY;
+							}
+							else
+							{
+								stream.writeSymbol("(", "'", expression.child.tokenData, "'", ")");
+							}
 							
 							if (expression.child.child && expression.child.child.enabled)
 							{
