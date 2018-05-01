@@ -57,6 +57,10 @@ Draw
 [flash](https://antonovsergey2211.github.io/guepard/demo/draw/out/production/draw/Main.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/draw/build)
 
+XML / XMLList 
+[flash](https://antonovsergey2211.github.io/guepard/demo/xml/out/production/draw/Main.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/xml/build)
+
 **Third Party**
 
 Box2D
