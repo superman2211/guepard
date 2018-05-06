@@ -13,10 +13,10 @@
 ## Usage
 - Install **Adobe AIR**
 - Install [converter.air](https://github.com/AntonovSergey2211/guepard/blob/master/air/converter.air)
-- Download and extract **Guepard SDK** from **/sdk**
+- Download and extract **Guepard SDK** from **/sdk** to your folder
 - Start application and create new project
 - Set all fields in all tabs as you need
-- Set **SDK Path** in **Settings** tab
+- Set **SDK Path** to your folder in **Settings** tab
 - Build project
 
 ## Demos
