@@ -8,7 +8,7 @@
 - Parsing **AS3** code
 - Analysing code and fixing unknown types
 - Export **JS** code
-- Generate **HTML** page
+- Generation **HTML** page
 
 ## Usage
 - Install **Adobe AIR**
