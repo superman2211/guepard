@@ -58,7 +58,7 @@ Draw
 [html5](https://antonovsergey2211.github.io/guepard/demo/draw/build)
 
 XML / XMLList 
-[flash](https://antonovsergey2211.github.io/guepard/demo/xml/out/production/draw/Main.swf)
+[flash](https://antonovsergey2211.github.io/guepard/demo/xml/out/production/xml/Main.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/xml/build)
 
 **Third Party**
