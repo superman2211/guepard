@@ -75,4 +75,4 @@ Box2D
 
 ## Known issues
 - Now **WebGL** not works - only **Canvas** render.
-- There are many limitations in **AS3** to **JS** conversion.
+- There are many limitations of code conversion from **AS3** to **JS**.
