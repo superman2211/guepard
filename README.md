@@ -61,6 +61,12 @@ XML / XMLList
 [flash](https://antonovsergey2211.github.io/guepard/demo/xml/out/production/xml/Main.swf)
 [html5](https://antonovsergey2211.github.io/guepard/demo/xml/build)
 
+Extreme AS3 Code
+[flash](https://antonovsergey2211.github.io/guepard/demo/extreme/out/production/extreme/Main.swf)
+[html5](https://antonovsergey2211.github.io/guepard/demo/extreme/build)
+[as3](https://github.com/AntonovSergey2211/guepard/blob/master/demo/extreme/src/Main.as)
+[js](https://github.com/AntonovSergey2211/guepard/blob/master/demo/extreme/build/js/Main.js)
+
 **Third Party**
 
 Box2D
