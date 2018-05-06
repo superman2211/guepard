@@ -1,0 +1,52 @@
+K{
+  "source": {
+    "mainClass": "",
+    "preloaderFile": "",
+    "projectName": "extreme",
+    "swfFile": "/Users/superman/Documents/Work/My/guepard/demo/extreme/out/production/extreme/Main.swf",
+    "sourceCodePath": "/Users/superman/Documents/Work/My/guepard/demo/extreme/src",
+    "flaFile": ""
+  },
+  "target": {
+    "html5ProjectPath": "/Users/superman/Development/localhost/demo/extreme/build",
+    "renderType": 1,
+    "exportDataInZIP": false,
+    "minify": false,
+    "enableBuild": true,
+    "copyOriginalSWF": false,
+    "htmlTemplate": "",
+    "convertExternalSWF": false
+  },
+  "resources": {
+    "exportCode": true,
+    "shapeScale": 100,
+    "texturePowerBig": 11,
+    "shapeBorder": 2,
+    "compressDigits": 3,
+    "shapeBigScale": false,
+    "imageQuality": 80,
+    "exportSounds": false,
+    "exportResources": true,
+    "exportFonts": false,
+    "exportDebugTextures": false,
+    "exportCodeTree": false,
+    "exportCodeTokens": false,
+    "shapeScaleMin": 90,
+    "texturePowerMin": 5,
+    "exportCodeEmbed": false,
+    "scaleMargin": 5,
+    "texturePowerMax": 11
+  },
+  "settings": {
+    "sdkPath": "/Users/superman/Documents/Work/My/guepard/sdk"
+  },
+  "parameters": {
+    "frameRate": 24,
+    "align": 0,
+    "fillScreen": true,
+    "scaleMode": 0,
+    "appWidth": 500,
+    "backgroundColor": "0xffffff",
+    "appHeight": 375
+  }
+}

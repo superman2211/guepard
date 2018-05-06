@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SWFData border="2" color="0xffffff" frameRate="24" hash="null" height="375" version="14" width="500">
+	<FileAttributes/>
+	<EnableDebugger2/>
+	<Unknown/>
+	<ScriptLimits/>
+	<SetBackgroundColor/>
+	<Unknown/>
+	<FrameLabel name="Main"/>
+	<DoABC/>
+	<SymbolClass>
+		<SymbolData id="0" name="Main"/>
+	</SymbolClass>
+	
+	<ShowFrame index="1"/>
+	<End/>
+</SWFData>

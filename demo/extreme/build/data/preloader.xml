@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SWFData border="2" color="0xffffff" frameRate="30" hash="null" height="400" version="10" width="600">
+	<FileAttributes/>
+	<Metadata/>
+	<SetBackgroundColor/>
+	<DefineScene>
+		<Scene name="Scene 1" offset="0"/>
+	</DefineScene>
+	
+	<DefineShape4 atlas="preloader_0.png" id="1">
+		<Rectangle height="45" name="bounds" width="43.85" x="-21.9" y="-22.5"/>
+		<Rectangle height="41" name="map" width="40"/>
+	</DefineShape4>
+	
+	<DefineSprite frames="1" id="2">
+		<PlaceObject2 depth="1" id="1"/>
+		<ShowFrame index="1"/>
+		<End/>
+	</DefineSprite>
+	
+	<DefineSprite frames="60" id="3">
+		<PlaceObject2 depth="1" id="2" name="mcDown">
+			<Matrix a="1.003"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="1"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.996" b="0.11" c="-0.11" d="0.994"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="2"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.977" b="0.222" c="-0.221" d="0.975"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="3"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.945" b="0.331" c="-0.33" d="0.943"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="4"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.903" b="0.432" c="-0.431" d="0.901"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="5"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.848" b="0.532" c="-0.53" d="0.846"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="6"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.782" b="0.624" c="-0.623" d="0.78"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="7"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.709" b="0.707" c="-0.705" d="0.707"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="8"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.624" b="0.782" c="-0.78" d="0.623"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="9"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.532" b="0.848" c="-0.846" d="0.53"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="10"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.432" b="0.903" c="-0.901" d="0.431"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="11"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.331" b="0.945" c="-0.943" d="0.33"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="12"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.222" b="0.977" c="-0.975" d="0.221"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="13"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.11" b="0.996" c="-0.994" d="0.11"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="14"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0" b="1.003" c="-1" d="0"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="15"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.102" b="0.997" c="-0.995" d="-0.101"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="16"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.205" b="0.981" c="-0.978" d="-0.205"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="17"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.307" b="0.954" c="-0.951" d="-0.306"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="18"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.405" b="0.916" c="-0.914" d="-0.404"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="19"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.498" b="0.868" c="-0.866" d="-0.497"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="20"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.587" b="0.811" c="-0.809" d="-0.585"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="21"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.668" b="0.745" c="-0.743" d="-0.667"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="22"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.743" b="0.671" c="-0.669" d="-0.741"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="23"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.809" b="0.589" c="-0.588" d="-0.807"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="24"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.867" b="0.501" c="-0.5" d="-0.864"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="25"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.915" b="0.408" c="-0.407" d="-0.912"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="26"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.952" b="0.31" c="-0.309" d="-0.95"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="27"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.98" b="0.208" c="-0.208" d="-0.977"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="28"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.997" b="0.105" c="-0.105" d="-0.994"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="29"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-1.003" d="-1"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="30"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.997" b="-0.105" c="0.105" d="-0.994"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="31"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.98" b="-0.208" c="0.208" d="-0.977"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="32"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.952" b="-0.31" c="0.309" d="-0.95"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="33"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.915" b="-0.408" c="0.407" d="-0.912"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="34"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.867" b="-0.501" c="0.5" d="-0.864"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="35"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.809" b="-0.589" c="0.588" d="-0.807"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="36"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.743" b="-0.671" c="0.669" d="-0.741"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="37"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.668" b="-0.745" c="0.743" d="-0.667"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="38"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.587" b="-0.811" c="0.809" d="-0.585"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="39"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.498" b="-0.868" c="0.866" d="-0.497"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="40"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.405" b="-0.916" c="0.914" d="-0.404"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="41"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.307" b="-0.954" c="0.951" d="-0.306"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="42"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.205" b="-0.981" c="0.978" d="-0.205"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="43"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.102" b="-0.997" c="0.995" d="-0.101"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="44"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0" b="-1.003" c="1" d="0"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="45"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.105" b="-0.997" c="0.994" d="0.105"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="46"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.208" b="-0.98" c="0.977" d="0.208"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="47"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.31" b="-0.952" c="0.95" d="0.309"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="48"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.408" b="-0.915" c="0.912" d="0.407"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="49"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.501" b="-0.867" c="0.864" d="0.5"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="50"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.589" b="-0.809" c="0.807" d="0.588"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="51"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.671" b="-0.743" c="0.741" d="0.669"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="52"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.745" b="-0.668" c="0.667" d="0.743"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="53"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.811" b="-0.587" c="0.585" d="0.809"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="54"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.868" b="-0.498" c="0.497" d="0.866"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="55"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.916" b="-0.405" c="0.404" d="0.914"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="56"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.954" b="-0.307" c="0.306" d="0.951"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="57"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.981" b="-0.205" c="0.205" d="0.978"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="58"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.997" b="-0.102" c="0.101" d="0.995"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="59"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="1.003"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="60"/>
+		<End/>
+	</DefineSprite>
+	
+	<DefineShape4 atlas="preloader_1.png" id="4">
+		<Rectangle height="33.35" name="bounds" width="35" x="-17.5" y="-16.65"/>
+		<Rectangle height="61" name="map" width="64"/>
+	</DefineShape4>
+	
+	<DefineSprite frames="1" id="5">
+		<PlaceObject2 depth="1" id="4"/>
+		<ShowFrame index="1"/>
+		<End/>
+	</DefineSprite>
+	
+	<DefineSprite frames="40" id="6">
+		<PlaceObject2 depth="1" id="5" name="mcUp">
+			<Matrix a="1.003"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="1"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.987" b="-0.171" c="0.17" d="0.985"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="2"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.942" b="-0.34" c="0.339" d="0.94"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="3"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.868" b="-0.498" c="0.497" d="0.866"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="4"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.768" b="-0.642" c="0.64" d="0.766"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="5"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.644" b="-0.766" c="0.764" d="0.643"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="6"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.501" b="-0.867" c="0.864" d="0.5"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="7"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.343" b="-0.941" c="0.939" d="0.342"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="8"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.174" b="-0.987" c="0.984" d="0.174"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="9"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0" b="-1.003" c="1" d="0"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="10"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.154" b="-0.99" c="0.988" d="-0.153"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="11"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.307" b="-0.954" c="0.951" d="-0.306"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="12"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.452" b="-0.893" c="0.891" d="-0.451"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="13"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.587" b="-0.811" c="0.809" d="-0.585"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="14"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.707" b="-0.709" c="0.707" d="-0.705"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="15"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.809" b="-0.589" c="0.588" d="-0.807"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="16"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.892" b="-0.455" c="0.454" d="-0.889"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="17"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.952" b="-0.31" c="0.309" d="-0.95"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="18"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.99" b="-0.157" c="0.156" d="-0.987"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="19"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-1.003" d="-1"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="20"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.99" b="0.157" c="-0.156" d="-0.987"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="21"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.952" b="0.31" c="-0.309" d="-0.95"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="22"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.892" b="0.455" c="-0.454" d="-0.89"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="23"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.809" b="0.589" c="-0.588" d="-0.807"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="24"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.707" b="0.709" c="-0.707" d="-0.705"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="25"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.587" b="0.811" c="-0.809" d="-0.585"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="26"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.452" b="0.893" c="-0.891" d="-0.451"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="27"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.307" b="0.954" c="-0.951" d="-0.306"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="28"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="-0.154" b="0.99" c="-0.988" d="-0.153"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="29"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0" b="1.003" c="-1" d="0"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="30"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.157" b="0.99" c="-0.987" d="0.156"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="31"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.31" b="0.952" c="-0.95" d="0.309"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="32"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.455" b="0.892" c="-0.889" d="0.454"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="33"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.589" b="0.809" c="-0.807" d="0.588"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="34"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.709" b="0.707" c="-0.705" d="0.707"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="35"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.811" b="0.587" c="-0.585" d="0.809"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="36"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.893" b="0.452" c="-0.451" d="0.891"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="37"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.954" b="0.307" c="-0.306" d="0.951"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="38"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="0.99" b="0.157" c="-0.156" d="0.987"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="39"/>
+		<PlaceObject2 depth="1" move="true">
+			<Matrix a="1.003"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="40"/>
+		<End/>
+	</DefineSprite>
+	
+	<DefineSprite frames="1" id="7">
+		<PlaceObject2 depth="1" id="3">
+			<Matrix tx="-0.05" ty="0.1"/>
+		</PlaceObject2>
+		
+		<PlaceObject2 depth="3" id="6">
+			<Matrix tx="-0.05" ty="0.1"/>
+		</PlaceObject2>
+		
+		<ShowFrame index="1"/>
+		<End/>
+	</DefineSprite>
+	
+	<PlaceObject2 depth="1" id="7">
+		<Matrix tx="291.95" ty="201.5"/>
+	</PlaceObject2>
+	
+	<ShowFrame index="1"/>
+	<End/>
+</SWFData>

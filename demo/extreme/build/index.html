@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>extreme</title>
+		
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+		<!-- embed fonts -->
+		
+		
+        <!-- engine code -->
+		<script charset="UTF-8" src="js/guepard.min.js"></script>
+		<!-- application code -->
+		<script charset="UTF-8" src="js/Main.js"></script>
+		
+	</head>
+	
+	<body bgcolor="#ffffff" style="margin:0; padding:0; overflow: hidden;">
+		
+		<div id="flashContainer">
+			<canvas id="flashCanvas" width="500" height="375" style="background-color:#ffffff;"></canvas>
+		</div>
+
+		<script>
+			
+			//parameters
+			var mode = "2d";
+			var fps = 24;
+			var scale = "showAll";
+			var align = "";
+			var fill = true;
+			var debug = true;
+
+			var flashVars = {};
+			
+			if (window.location.href.indexOf("?") != -1)
+			{
+				var parameters = window.location.href.split("?")[1].split("&");
+				
+				for (var i in parameters)
+				{
+					var parameter = parameters[i];
+					
+					var parts = parameter.split("=");
+					
+					if (parts.length == 2)
+					{
+						var parameterName = parts[0];
+						var parameterValue = parts[1];
+						
+						flashVars[parameterName] = parameterValue;
+
+						if (parameterName == "mode")
+						{
+							mode = parameterValue;
+						}
+						
+						if (parameterName == "fps")
+						{
+							fps = Number(parameterValue);
+						}
+
+						if (parameterName == "scale")
+						{
+						    scale = parameterValue;
+						}
+						
+						if (parameterName == "align")
+						{
+						    align = parameterValue;
+						}
+
+						if (parameterName == "back")
+						{
+						    back = parameterValue;
+						}
+					}
+				}
+			}
+
+			flash.init();
+			
+			if (!debug)
+			{
+				flash.trace = function () { };
+			}
+
+			var originalWidth = 500;
+			var originalHeight = 375;
+			
+			var stage = new flash.display.Stage('flashCanvas', mode, originalWidth, originalHeight);
+			stage.set_frameRate(fps);
+			stage.set_scaleMode(scale);
+			stage.set_align(align);
+			stage.set_color(0xffffff);
+			stage.get_loaderInfo().set_parameters(flashVars);
+			
+			var preloader = new flash.display.Loader();
+			preloader.get_contentLoaderInfo().addEventListener(flash.events.Event.COMPLETE, preloadComplete);
+			preloader.load(new flash.net.URLRequest("data/preloader.xml"));
+			
+			var loader = new flash.display.Loader();
+			loader.get_contentLoaderInfo().addEventListener(flash.events.Event.COMPLETE, loadComplete);
+			
+			function preloadComplete(e)
+			{
+				preloader.get_contentLoaderInfo().removeEventListener(flash.events.Event.COMPLETE, preloadComplete);
+				
+				stage.addChild(preloader.get_content());
+
+				updatePreloader();
+
+				loader.load(new flash.net.URLRequest("data/extreme.xml"));
+			}
+			
+			function loadComplete(e)
+			{
+			    stage.removeChild(preloader.get_content());
+				
+				loader.get_contentLoaderInfo().removeEventListener(flash.events.Event.COMPLETE, loadComplete);
+				
+				console.log("loadComplete");
+				console.log("loader.content = " + loader.get_content());
+
+				stage.addChild(loader.get_content());
+			}
+
+			function onWindowResize()
+			{
+			    flash.minimize();
+
+				var windowWidth = window.innerWidth;
+				var windowHeight = window.innerHeight;
+				
+				var scale = Math.min(windowWidth / originalWidth, windowHeight / originalHeight);
+				
+				var resultWidth = fill ? windowWidth : Math.floor(originalWidth * scale);
+				var resultHeight = fill ? windowHeight : Math.floor(originalHeight * scale);
+				
+				if (stage)
+				{
+					stage.updateSize(resultWidth, resultHeight);
+				}
+				else
+				{
+					var canvas = document.getElementById("flashCanvas");
+					canvas.width = resultWidth;
+					canvas.height = resultHeight;
+				}
+				
+				var container = document.getElementById("flashContainer");
+				container.style.position = "absolute";
+				container.style.left = "0px";
+				container.style.top = "0px";
+				
+				updatePreloader();
+			}
+
+			function updatePreloader()
+			{
+			    if (preloader)
+			    {
+			        var content = preloader.get_content();
+
+			        if (content && content instanceof flash.display.DisplayObject)
+			        {
+			            content.set_x((stage.get_stageWidth() - preloader.get_contentLoaderInfo().get_width()) / 2);
+			            content.set_y((stage.get_stageHeight() - preloader.get_contentLoaderInfo().get_height()) / 2);
+			        }
+			    }
+			}
+			
+			window.addEventListener("resize", onWindowResize);
+			
+			onWindowResize();
+		</script>
+	</body>
+</html>
