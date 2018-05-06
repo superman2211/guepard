@@ -12,7 +12,7 @@
 
 ## Usage
 - Install **Adobe AIR**
-- Install application from **/air/utilite.air**
+- Install [converter.air](https://github.com/AntonovSergey2211/guepard/blob/master/air/converter.air)
 - Download and extract **Guepard SDK** from **/sdk**
 - Start application and create new project
 - Set all fields in all tabs as you need
