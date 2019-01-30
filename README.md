@@ -12,12 +12,20 @@
 
 ## Usage
 - Install **Adobe AIR**
-- Install [converter.air](https://github.com/AntonovSergey2211/guepard/blob/master/air/converter.air)
+- Install [converter.air](https://github.com/AntonovSergey2211/guepard/blob/master/air/converter.air) AIR application
 - Download and extract **Guepard SDK** from **/sdk** to your folder
 - Start application and create new project
 - Set all fields in all tabs as you need
 - Set **SDK Path** to your folder in **Settings** tab
 - Build project
+
+## Build 
+- Download and unpack [Adobe Flex 4.6 SDK](https://www.adobe.com/devnet/flex/flex-sdk-download.html)
+- Download and Install [Flash Develop](http://www.flashdevelop.org/) or[ Intellij Idea](https://www.jetbrains.com/idea/) or another editor
+- Run your editor and setup **Adobe Flex SDK**
+- Download or clone this repository
+- Create new project in your editor with this sources
+- Run or build **converter.air**
 
 ## Demos
 
