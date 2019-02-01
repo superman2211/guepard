@@ -10,7 +10,7 @@
 - Export **JS** code
 - Generation **HTML** page
 
-## Usage
+## Usage (windows, mac, linux)
 - Install **Adobe AIR**
 - Install [converter.air](https://github.com/AntonovSergey2211/guepard/blob/master/air/converter.air) AIR application
 - Download and extract **Guepard SDK** from **/sdk** to your folder
@@ -19,13 +19,26 @@
 - Set **SDK Path** to your folder in **Settings** tab
 - Build project
 
-## Build 
-- Download and unpack [Adobe Flex 4.6 SDK](https://www.adobe.com/devnet/flex/flex-sdk-download.html)
-- Download and Install [Flash Develop](http://www.flashdevelop.org/) or[ Intellij Idea](https://www.jetbrains.com/idea/) or another editor
-- Run your editor and setup **Adobe Flex SDK**
-- Download or clone this repository
-- Create new project in your editor with this sources
-- Run or build **converter.air**
+## Build (windows)
+- Download and unpack or clone **this repository**
+- Download and install [java](https://www.java.com/en/download/)
+- Download and install [.net framework](https://www.microsoft.com/en-us/download/search.aspx?q=.net%20framework)
+- Download and install [FlashDevelop](http://www.flashdevelop.org/)
+- Run **FlashDevelop**
+- In opened **RunMan** select and install:
+	- **Flex SDK + AIR SDK**
+	- **Adobe AIR**
+- You can run **RunMan** after by menu: **Tools -> Install Software**
+- After install all components restart **FlashDevelop**
+- Create project: **Menu -> Project -> Action Script 3 -> AIR AS3 Projector**
+	- Name: **converter**
+	- Location: **guepard repository location**
+- Set main class: **Project Tab -> src/com/guepard/app/Converter.as -> Context Menu -> Set Document Class**
+- In the same tab 
+	- **lib/bloodyCrypto/bloody_crypto.swc -> Context Menu -> Add to library**
+	- **lib/design/design.swc -> Context Menu -> Add to library**
+	- **lib/zip/fzip.swc -> Context Menu -> Add to library**
+- Run project!
 
 ## Demos
 
