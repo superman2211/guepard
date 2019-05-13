@@ -10,7 +10,6 @@ import flash.net.*;
 	var d = {};
 	
 	d._audio = null;
-	d._soundChannel = null;
 	
 	d.get_bytesLoaded = function ()/*uint*/
 	{
@@ -34,6 +33,11 @@ import flash.net.*;
 	
 	d.get_length = function ()/*Number*/
 	{
+		if (this._audio)
+		{
+			return this._audio.duration;
+		}
+
 		return 0;
 	};
 	
@@ -51,8 +55,6 @@ import flash.net.*;
 		if (context == undefined) context = null;
 		
 		this.load(stream, context);
-		
-		this._soundChannel = new flash.media.SoundChannel();
 		
 		flash.linkage(this, flash.media.Sound);
 	};
@@ -74,10 +76,12 @@ import flash.net.*;
 		{
 			this._audio.play();
 		}
+
+		var soundChannel/*SoundChannel*/ = new flash.media.SoundChannel(this);
 		
-		return this._soundChannel;
+		return soundChannel;
 	};
-	
+
 	var s = {};
 	
 	s.__init__ = function ()

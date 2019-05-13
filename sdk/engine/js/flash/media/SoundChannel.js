@@ -21,6 +21,10 @@ import flash.events.*;
 	
 	d.get_position = function ()/*Number*/
 	{
+		if(this._sound && this._sound._audio)
+		{
+			return this._sound._audio.currentTime;
+		}
 		return this._position;
 	};
 	
@@ -37,20 +41,29 @@ import flash.events.*;
 	d.set_soundTransform = function (value/*SoundTransform*/)/*void*/
 	{
 		this._transform = value;
+
+		if(this._sound && this._sound._audio)
+		{
+			this._sound._audio.volume = this._transform.get_volume();
+		}
 		
 		return value;
 	};
 	
 	
-	d.SoundChannel = function ()
+	d.SoundChannel = function (sound/*Sound*/)
 	{
 		this.EventDispatcher_constructor();
-		
+
+		this._sound = sound;
 	};
 	
 	d.stop = function ()/*void*/
 	{
-		
+		if(this._sound && this._sound._audio)
+		{
+			this._sound._audio.pause();
+		}
 	};
 	
 	var s = {};
