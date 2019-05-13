@@ -555,9 +555,13 @@
 		var p2 = this._transformPoint(x0, y1);
 		var p3 = this._transformPoint(x1, y1);
 		
-		this._batch.vertexPositionBuffer.push(p0[ 0 ], p0[ 1 ], p1[ 0 ], p1[ 1 ],
-			
-			p2[ 0 ], p2[ 1 ], p3[ 0 ], p3[ 1 ]);
+		this._batch.vertexPositionBuffer.push(
+			p0[ 0 ], p0[ 1 ],
+			p1[ 0 ], p1[ 1 ],
+			p2[ 0 ], p2[ 1 ],
+			p3[ 0 ], p3[ 1 ]
+		);
+		
 		var tx0 = map.x / img.width;
 		var ty0 = map.y / img.height;
 		var tx1 = (map.width + map.x) / img.width;
